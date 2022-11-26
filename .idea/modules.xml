@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/mobile_app_project.iml" filepath="$PROJECT_DIR$/.idea/mobile_app_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kiosk_project.iml" filepath="$PROJECT_DIR$/.idea/modules/kiosk_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kiosk_project.app.unitTest.iml" />
     </modules>
   </component>
 </project>
