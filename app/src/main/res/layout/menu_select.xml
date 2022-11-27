@@ -21,24 +21,21 @@
             android:layout_height="match_parent"
             android:background="#FF0000"
             android:orientation="vertical"
-            android:layout_weight="1"
-            android:weightSum="4"
-            >
+            android:layout_weight="1">
             <!--category tabs -->
             <Button
                 android:id="@+id/simple"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="단품"
                 android:layout_weight="1"
-                />
+                android:text="단품" />
+
             <Button
                 android:id="@+id/set"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="세트"
                 android:layout_weight="1"
-                />
+                android:text="세트" />
             <Button
                 android:id="@+id/sidemenu"
                 android:layout_width="match_parent"

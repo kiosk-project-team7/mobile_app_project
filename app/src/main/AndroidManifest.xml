@@ -14,8 +14,13 @@
         android:theme="@style/Theme.Kiosk_project"
         tools:targetApi="31">
         <activity
-            android:name=".customDiaglog"
+            android:name=".detailAdapter"
             android:exported="false" />
+        <activity
+            android:name=".detailmenu"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".pay"
             android:exported="false" />
@@ -25,7 +30,8 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".start"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

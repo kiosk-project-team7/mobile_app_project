@@ -17,7 +17,6 @@ import com.example.kiosk_project.databinding.MenuSelectBinding
 import com.google.android.material.tabs.TabLayout
 
 
-val foodlist = arrayListOf<hambuger>()
 class MainActivity : AppCompatActivity() {
     lateinit var transaction : FragmentTransaction
     var present : Fragment? = null
