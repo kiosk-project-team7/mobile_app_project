@@ -69,12 +69,16 @@
                 android:layout_weight="1"
                 />
             <!--왼쪽 카테고리 tab에 의해서 바뀌는 화면 -->
-            <FrameLayout
-                android:id="@+id/menu_container"
+            <HorizontalScrollView
+                android:id="@+id/scroll_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="5"
-                />
+                android:layout_weight="5">
+                <FrameLayout
+                    android:id="@+id/menu_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </HorizontalScrollView>
         </LinearLayout>
         <!-- 오른쪽 화면 주문목록 -->
         <LinearLayout

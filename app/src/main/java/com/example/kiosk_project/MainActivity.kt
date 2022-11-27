@@ -1,15 +1,23 @@
 package com.example.kiosk_project
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TableLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.kiosk_project.databinding.DialogBinding
+import com.example.kiosk_project.databinding.FragmentSimpleBinding
 import com.example.kiosk_project.databinding.MenuSelectBinding
 import com.google.android.material.tabs.TabLayout
 
+
+val foodlist = arrayListOf<hambuger>()
 class MainActivity : AppCompatActivity() {
     lateinit var transaction : FragmentTransaction
     var present : Fragment? = null
@@ -19,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=MenuSelectBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val simple_btn =binding.simple
         val set_btn=binding.set
         val side_btn=binding.sidemenu
@@ -42,11 +49,15 @@ class MainActivity : AppCompatActivity() {
         val step4 : TabLayout.Tab=step_tablayout.newTab()
         step4.text="결제"
         step_tablayout.addTab(step4)
+        val dialogBinding = DialogBinding.inflate(layoutInflater)
+
         simple_btn.setOnClickListener{
+            Log.d("jaehan","simple 버튼이 눌렸습니다")
             replaceTransaction(simpleFragment)
         }
         set_btn.setOnClickListener{
             replaceTransaction(setFragment)
+
         }
         side_btn.setOnClickListener {
             replaceTransaction(sideFragment)
