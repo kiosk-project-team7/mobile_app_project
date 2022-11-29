@@ -72,6 +72,7 @@ class MenuFragment : Fragment() {
                 setNegativeButton("취소", null)
                 show()
             }
+            //
         }
 
         // 돌아가기, 완료 버튼 누르면 넘어가기
