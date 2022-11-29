@@ -6,8 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
+    <!-- 화면의 버거킹 로고 - main_logo
+         주문하기 버튼 - start_btn-->
+
     <ImageView
-        android:id="@+id/main_logo"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -16,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/main_logo"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/logo_burgerking"

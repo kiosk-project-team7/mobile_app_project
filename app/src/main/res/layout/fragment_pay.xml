@@ -4,10 +4,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--
+    카드 - card_btn
+    현금 - cash_btn
+    -->
+
     <Button
         android:id="@+id/card_btn"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         android:text="카드"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,8 +22,8 @@
 
     <Button
         android:id="@+id/cash_btn"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         android:text="현금"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"

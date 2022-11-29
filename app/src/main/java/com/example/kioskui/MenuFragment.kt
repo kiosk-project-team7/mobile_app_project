@@ -51,21 +51,21 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
-        binding.btn1.setOnClickListener {
+        binding.setBtn.setOnClickListener {
             setmenuFragment = SetmenuFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, setmenuFragment!!).commit()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.main_fragment, setmenuFragment!!).commit()
         }
-        binding.btn2.setOnClickListener {
+        binding.singleBtn.setOnClickListener {
             singleFragment = SingleFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, singleFragment!!).commit()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.main_fragment, singleFragment!!).commit()
         }
-        binding.btn3.setOnClickListener {
+        binding.sideBtn.setOnClickListener {
             sideFragment = SideFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, sideFragment!!).commit()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.main_fragment, sideFragment!!).commit()
         }
-        binding.btn4.setOnClickListener {
+        binding.drinkBtn.setOnClickListener {
             drinkFragment = DrinkFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.main_fragment, drinkFragment!!).commit()
         }
 
         val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
@@ -88,7 +88,7 @@ class MenuFragment : Fragment() {
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Inout)
         }
-        binding.comBtn.setOnClickListener {
+        binding.orderBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Pay)
         }
 
