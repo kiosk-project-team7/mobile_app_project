@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_inout.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_option.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_pay.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_start.xml" value="0.30520833333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -12,6 +12,4 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         return navController.navigateUp()
     }
 
-
-
 }
