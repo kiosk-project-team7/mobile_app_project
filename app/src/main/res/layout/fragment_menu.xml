@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="412dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -118,8 +118,8 @@
 
     <HorizontalScrollView
         android:id="@+id/menu_layout"
-        android:layout_width="400dp"
-        android:layout_height="250dp"
+        android:layout_width="410dp"
+        android:layout_height="330dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/menubar_layout"
         app:layout_constraintTop_toBottomOf="@id/step_layout">
@@ -146,8 +146,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -165,8 +165,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -184,8 +184,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -203,8 +203,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -222,8 +222,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -241,8 +241,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -260,8 +260,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -279,8 +279,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -298,8 +298,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -317,8 +317,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -336,8 +336,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -355,8 +355,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -365,13 +365,15 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:background="#FFFF33"
-        app:layout_constraintStart_toEndOf="@id/step_layout"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintStart_toEndOf="@id/step_layout"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -382,8 +384,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -423,8 +425,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -464,8 +466,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -499,15 +501,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="총합 : "
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="총합 : " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -519,21 +521,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="154dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/back_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="돌아가기"/>
+                android:layout_height="154dp"
+                android:text="돌아가기" />
 
             <Button
                 android:id="@+id/com_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="완료"
-                android:layout_marginStart="15dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:text="완료" />
 
         </LinearLayout>
 

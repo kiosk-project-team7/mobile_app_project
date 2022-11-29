@@ -6,8 +6,8 @@
 
     <Button
         android:id="@+id/card_btn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
         android:text="카드"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,13 +17,13 @@
 
     <Button
         android:id="@+id/cash_btn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:text="현금"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/card_btn"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="현금"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
