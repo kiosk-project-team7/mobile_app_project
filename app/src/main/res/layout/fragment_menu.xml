@@ -8,7 +8,7 @@
         android:id="@+id/menubar_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#CC0000"
+        android:background="#565254"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="412dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -118,8 +118,9 @@
 
     <HorizontalScrollView
         android:id="@+id/menu_layout"
-        android:layout_width="410dp"
-        android:layout_height="330dp"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:background="#d0cfcf"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/menubar_layout"
         app:layout_constraintTop_toBottomOf="@id/step_layout">
@@ -128,7 +129,7 @@
             android:id="@+id/menu_grid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#99FF99"
+            android:background="#7a7d7d"
             android:columnCount="6"
             android:rowCount="2">
 
@@ -141,7 +142,8 @@
                     android:id="@+id/menu1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,7 +162,8 @@
                     android:id="@+id/menu2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,7 +182,8 @@
                     android:id="@+id/menu3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -198,7 +202,8 @@
                     android:id="@+id/menu4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,7 +222,8 @@
                     android:id="@+id/menu5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -236,7 +242,8 @@
                     android:id="@+id/menu6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -255,7 +262,8 @@
                     android:id="@+id/menu7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -274,7 +282,8 @@
                     android:id="@+id/menu8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -293,7 +302,8 @@
                     android:id="@+id/menu9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -312,7 +322,8 @@
                     android:id="@+id/menu10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -331,7 +342,8 @@
                     android:id="@+id/menu11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -350,7 +362,8 @@
                     android:id="@+id/menu12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -365,12 +378,10 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#FFFF33"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:background="#EDECED"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/step_layout"
         app:layout_constraintTop_toTopOf="parent">
@@ -521,19 +532,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="154dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/back_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="154dp"
+                android:layout_height="wrap_content"
                 android:text="돌아가기" />
 
             <Button
                 android:id="@+id/com_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:text="완료" />
 
