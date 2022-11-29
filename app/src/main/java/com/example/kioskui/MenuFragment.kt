@@ -66,31 +66,7 @@ class MenuFragment : Fragment() {
             //새로운 navigation으로 메뉴 바꾸기
             findNavController().navigate(R.id.Fragment_Menu)
         }
-
-
         // 메뉴 사진 누르면 다이얼로그
-        binding.menu1.setOnClickListener {
-            val items = arrayOf<String>("00추가","00추가","00추가","00추가","00추가","00추가","00추가","00추가")
-
-            AlertDialog.Builder(view.context).run {
-                setTitle("Test")
-                setIcon(R.drawable.ic_launcher_background)
-                setSingleChoiceItems(items,
-                checkedItem,
-                object : DialogInterface.OnClickListener{
-                    override fun onClick(
-                        p0: DialogInterface?,
-                        which: Int,
-                    ){
-                        Log.d("선택", "${items[which]}이 선택되었습니다." )
-                    }
-                })
-                setPositiveButton("담기", null)
-                setNegativeButton("취소", null)
-                show()
-            }
-            //
-        }
         //val recyclerView : RecyclerView = binding.stepRecyclerview
 
         val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
