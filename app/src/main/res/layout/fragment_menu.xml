@@ -360,179 +360,43 @@
         </GridLayout>
 
     </HorizontalScrollView>
-
+    <!-- 오른쪽화면-->
     <LinearLayout
         android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toEndOf="@id/step_layout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical">
-
+        <!-- 주문 목록-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/step_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            />
+        <!--버튼 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="-" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:hint="수량" />
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="+" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="가격" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="-" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:hint="수량" />
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="+" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="가격" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="-" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:hint="수량" />
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="+" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:text="가격" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
-            android:layout_marginTop="100dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="총합 : "
-                android:layout_marginStart="5dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="100dp"
-                android:text="가격" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            >
             <Button
-                android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="돌아가기"/>
-
+                android:layout_weight="1"
+                android:text="주문"
+                android:id="@+id/comBtn"
+                />
             <Button
-                android:id="@+id/com_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="완료"
-                android:layout_marginStart="15dp"/>
-
+                android:layout_weight="1"
+                android:text="이전"
+                android:id="@+id/backBtn"
+                />
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <!--메뉴이름-->
+    <TextView
+        android:layout_weight="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴이름"
+        />
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/step_menu_name"/>
+    <!--수량-->
+    <TextView
+        android:layout_weight="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수량"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/step_number"
+        android:layout_weight="0.3"/>
+    <TextView
+        android:layout_weight="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가격"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:id="@+id/step_price"
+        />
+
+</LinearLayout>

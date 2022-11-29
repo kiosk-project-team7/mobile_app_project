@@ -1,5 +1,6 @@
 package com.example.kioskui
 
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Layout
@@ -9,13 +10,29 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.FragmentMenuBinding
 
+data class Itemview(val Menu:String, val Menu_name : String, val number : String, val number_count : String, val price_text : String,val price : String)
+lateinit var Activity : AppCompatActivity
 class MenuFragment : Fragment() {
+    lateinit var mainActivity: MainActivity
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        // 2. Context를 액티비티로 형변환해서 할당
+        mainActivity = context as MainActivity
+    }
+    //
     private lateinit var binding: FragmentMenuBinding
     private var checkedItem: Int = 0
 
@@ -74,7 +91,21 @@ class MenuFragment : Fragment() {
             }
             //
         }
+        //val recyclerView : RecyclerView = binding.stepRecyclerview
 
+        val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(mainActivity)
+        //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
+        val data = ArrayList<Itemview>()
+        for(i in 1..20) {
+            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
+            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
+            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
+            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
+        }
+        binding.stepRecyclerview.adapter=stepAdapter(data)
+        binding.stepRecyclerview.addItemDecoration(
+            DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL))
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Inout)
