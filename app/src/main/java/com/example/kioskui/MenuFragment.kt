@@ -1,5 +1,6 @@
 package com.example.kioskui
 
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Layout
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentMenuBinding
 
@@ -18,6 +20,21 @@ class MenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuBinding
     private var checkedItem: Int = 0
+
+    private var setmenuFragment: SetmenuFragment? = null
+    private var singleFragment: SingleFragment? = null
+    private var sideFragment: SideFragment? = null
+    private var drinkFragment: DrinkFragment? = null
+
+
+    private lateinit var mainActivity : MainActivity
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mainActivity = context as MainActivity
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,44 +52,25 @@ class MenuFragment : Fragment() {
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
         binding.btn1.setOnClickListener {
             //새로운 navigation으로 메뉴 바꾸기
-            findNavController().navigate(R.id.Fragment_Menu)
+            setmenuFragment = SetmenuFragment()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, setmenuFragment!!).commit()
         }
         binding.btn2.setOnClickListener {
             //새로운 navigation으로 메뉴 바꾸기
-            findNavController().navigate(R.id.Fragment_Menu)
+            singleFragment = SingleFragment()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, singleFragment!!).commit()
         }
         binding.btn3.setOnClickListener {
             //새로운 navigation으로 메뉴 바꾸기
-            findNavController().navigate(R.id.Fragment_Menu)
+            sideFragment = SideFragment()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, sideFragment!!).commit()
         }
         binding.btn4.setOnClickListener {
             //새로운 navigation으로 메뉴 바꾸기
-            findNavController().navigate(R.id.Fragment_Menu)
+            drinkFragment = DrinkFragment()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
         }
 
-
-        // 메뉴 사진 누르면 다이얼로그
-        binding.menu1.setOnClickListener {
-            val items = arrayOf<String>("00추가","00추가","00추가","00추가","00추가","00추가","00추가","00추가")
-
-            AlertDialog.Builder(view.context).run {
-                setTitle("Test")
-                setIcon(R.drawable.ic_launcher_background)
-                setSingleChoiceItems(items,
-                checkedItem,
-                object : DialogInterface.OnClickListener{
-                    override fun onClick(
-                        p0: DialogInterface?,
-                        which: Int,
-                    ){
-                        Log.d("선택", "${items[which]}이 선택되었습니다." )
-                    }
-                })
-                setPositiveButton("담기", null)
-                setNegativeButton("취소", null)
-                show()
-            }
-        }
 
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
