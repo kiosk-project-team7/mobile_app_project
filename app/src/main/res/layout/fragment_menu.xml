@@ -8,7 +8,7 @@
         android:id="@+id/menubar_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#CC0000"
+        android:background="#565254"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -120,6 +120,7 @@
         android:id="@+id/menu_layout"
         android:layout_width="400dp"
         android:layout_height="250dp"
+        android:background="#d0cfcf"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/menubar_layout"
         app:layout_constraintTop_toBottomOf="@id/step_layout">
@@ -128,7 +129,7 @@
             android:id="@+id/menu_grid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#99FF99"
+            android:background="#7a7d7d"
             android:columnCount="6"
             android:rowCount="2">
 
@@ -141,13 +142,14 @@
                     android:id="@+id/menu1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -160,13 +162,14 @@
                     android:id="@+id/menu2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -179,13 +182,14 @@
                     android:id="@+id/menu3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -198,13 +202,14 @@
                     android:id="@+id/menu4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -217,13 +222,14 @@
                     android:id="@+id/menu5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -236,13 +242,14 @@
                     android:id="@+id/menu6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -255,13 +262,14 @@
                     android:id="@+id/menu7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -274,13 +282,14 @@
                     android:id="@+id/menu8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -293,13 +302,14 @@
                     android:id="@+id/menu9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -312,13 +322,14 @@
                     android:id="@+id/menu10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -331,13 +342,14 @@
                     android:id="@+id/menu11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -350,13 +362,14 @@
                     android:id="@+id/menu12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가격"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="가격" />
 
             </LinearLayout>
 
@@ -367,11 +380,11 @@
     <LinearLayout
         android:layout_width="195dp"
         android:layout_height="wrap_content"
-        android:background="#FFFF33"
-        app:layout_constraintStart_toEndOf="@id/step_layout"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="#EDECED"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintStart_toEndOf="@id/step_layout"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -382,8 +395,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -423,8 +436,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -464,8 +477,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="메뉴 이름"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="메뉴 이름" />
 
             <Button
                 android:layout_width="20dp"
@@ -499,15 +512,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="총합 : "
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="총합 : " />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -526,14 +539,14 @@
                 android:id="@+id/back_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="돌아가기"/>
+                android:text="돌아가기" />
 
             <Button
                 android:id="@+id/com_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="완료"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="15dp"
+                android:text="완료" />
 
         </LinearLayout>
 
