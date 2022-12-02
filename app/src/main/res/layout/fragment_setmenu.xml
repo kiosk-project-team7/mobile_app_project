@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF">
 
     <GridLayout
         android:id="@+id/menu_grid_layout"
@@ -34,8 +35,8 @@
                 android:id="@+id/menu1_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -62,8 +63,8 @@
                 android:id="@+id/menu2_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -90,8 +91,8 @@
                 android:id="@+id/menu3_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -118,8 +119,8 @@
                 android:id="@+id/menu4_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -146,8 +147,8 @@
                 android:id="@+id/menu5_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -174,8 +175,8 @@
                 android:id="@+id/menu6_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -202,8 +203,8 @@
                 android:id="@+id/menu7_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -230,8 +231,8 @@
                 android:id="@+id/menu8_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -258,8 +259,8 @@
                 android:id="@+id/menu9_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -286,8 +287,8 @@
                 android:id="@+id/menu10_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -314,8 +315,8 @@
                 android:id="@+id/menu11_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
@@ -342,8 +343,8 @@
                 android:id="@+id/menu12_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="가격" />
 
         </LinearLayout>
 
