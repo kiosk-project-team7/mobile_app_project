@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".DrinkFragment">
 
     <GridLayout
@@ -18,12 +19,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu1_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_01_americano_ice" />
+
 
             <TextView
+                android:id="@+id/menu1_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이스아메리카노"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu1_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -37,12 +47,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:id="@+id/menu2_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_02_americano" />
 
             <TextView
+                android:id="@+id/menu2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아메리카노"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu2_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -56,12 +74,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu3_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_03_coke_l" />
 
             <TextView
+                android:id="@+id/menu3_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="코카콜라(L)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu3_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -75,12 +101,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu4_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_04_coke_r" />
 
             <TextView
+                android:id="@+id/menu4_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="코카콜라(R)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu4_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -94,12 +128,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu5_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_05_coke_zero_l" />
 
             <TextView
+                android:id="@+id/menu5_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="코카콜라제로(L)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu5_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -113,12 +155,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu6_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_06_coke_zero_r" />
 
             <TextView
+                android:id="@+id/menu6_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="코카콜라제로(R)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu6_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -132,12 +182,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu7_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_07_minutemaid_orange" />
 
             <TextView
+                android:id="@+id/menu7_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미닛메이드오렌지"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu7_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -151,12 +209,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu8_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_08_seagram_l" />
 
             <TextView
+                android:id="@+id/menu8_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="씨그램(L)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu8_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -170,12 +236,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu9_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_09_seagram" />
 
             <TextView
+                android:id="@+id/menu9_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="씨그램(R)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu9_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -189,12 +263,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu10_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_10_soonsoo" />
 
             <TextView
+                android:id="@+id/menu10_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="순수"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu10_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -208,12 +290,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu11_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_11_sprite_l" />
 
             <TextView
+                android:id="@+id/menu11_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스프라이트(L)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu11_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -227,12 +317,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu12_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/drink_12_sprite" />
 
             <TextView
+                android:id="@+id/menu12_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스프라이트(R)"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/menu12_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -241,5 +339,4 @@
         </LinearLayout>
 
     </GridLayout>
-
 </FrameLayout>
