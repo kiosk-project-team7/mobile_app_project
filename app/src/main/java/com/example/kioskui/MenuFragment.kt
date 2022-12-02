@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -19,7 +20,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.FragmentMenuBinding
 
-data class Itemview(val Menu:String, val Menu_name : String, val number : String, val number_count : String, val price_text : String,val price : String)
+data class Itemview(val Menu: ImageView, val Menu_name : String,
+                    val number_count : String, val toping : String, val drink : String, val sidemenu : String)
 class MenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuBinding
@@ -83,7 +85,7 @@ class MenuFragment : Fragment() {
             data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
             data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
             data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
-            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
+            data.add(Itemview(R.drawable.,"햄버거","1","피클","콜라","감자튀김")))
         }
         binding.stepRecyclerview.adapter=stepAdapter(data)
         binding.stepRecyclerview.addItemDecoration(
