@@ -12,6 +12,7 @@ import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.LayoutItemBinding
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
+    val menuImageView : ImageView = binding.bugerImage
     val menutextView  : TextView = binding.stepMenuName
     val numbertextView : TextView = binding.menuCount
     val topingtextView : TextView = binding.topingList
@@ -27,9 +28,12 @@ class stepAdapter(val dataset : MutableList<Itemview>):RecyclerView.Adapter<Recy
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val onviewItem=dataset[position]
         val viewHolder = holder as MyViewHolder
+        viewHolder.menuImageView.setImageResource(onviewItem.Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
         viewHolder.numbertextView.text=dataset[position].number_count
-        viewHolder.topingtextView.text=dataset[position].
+        viewHolder.topingtextView.text=dataset[position].toping
+        viewHolder.drinktextView.text=dataset[position].drink
+        viewHolder.sidemenutextView.text=dataset[position].sidemenu
     }
 
     override fun getItemCount(): Int {

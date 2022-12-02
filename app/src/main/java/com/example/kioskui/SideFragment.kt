@@ -31,7 +31,7 @@ class SideFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 메뉴 사진 누르면 다이얼로그
-        binding.menu1.setOnClickListener {
+        binding.menu1Img.setOnClickListener {
             val cDialogView =
                 LayoutInflater.from(view.context).inflate(R.layout.custom_dialog, null)
             val mBuilder = AlertDialog.Builder(view.context)

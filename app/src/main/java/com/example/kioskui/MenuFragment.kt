@@ -1,27 +1,21 @@
 package com.example.kioskui
 
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.FragmentMenuBinding
 
-data class Itemview(val Menu: ImageView, val Menu_name : String,
-                    val number_count : String, val toping : String, val drink : String, val sidemenu : String)
+data class Itemview(
+    val Menu: Int,
+    val Menu_name: String,
+    val number_count: String, val toping: String, val drink: String, val sidemenu: String)
 class MenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuBinding
@@ -46,6 +40,7 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
 
@@ -79,14 +74,14 @@ class MenuFragment : Fragment() {
 
         val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(mainActivity)
+        //위에 코드는 스크롤 방향을 나타냄.
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
         val data = ArrayList<Itemview>()
         for(i in 1..20) {
-            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
-            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
-            data.add(Itemview("메뉴이름", "햄버거", "수량", "1", "가격", "10000원"))
-            data.add(Itemview(R.drawable.,"햄버거","1","피클","콜라","감자튀김")))
+            data.add(Itemview(R.drawable.single_01_black_onion_chicken,"햄버거","1","피클","콜라","감자튀김"))
         }
+
+
         binding.stepRecyclerview.adapter=stepAdapter(data)
         binding.stepRecyclerview.addItemDecoration(
             DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL)

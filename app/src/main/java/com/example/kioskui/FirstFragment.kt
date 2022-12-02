@@ -35,6 +35,10 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+        binding.mainLogo.setOnClickListener {   //메인 로고를 누를 시
+
+        }
+        binding.imageView
     }
 
     override fun onDestroyView() {
