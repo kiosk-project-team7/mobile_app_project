@@ -44,6 +44,7 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
 

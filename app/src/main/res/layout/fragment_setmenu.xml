@@ -16,12 +16,22 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu1_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_01_black_onion_chicken" />
+
 
             <TextView
+                android:id="@+id/menu1_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="블랙어니언치킨버거 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu1_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -35,12 +45,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu2_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_02_black_onion" />
 
             <TextView
+                android:id="@+id/menu2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="블랙어니언와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu2_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -54,12 +73,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu3_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_03_golden_cheeserela_chicken" />
 
             <TextView
+                android:id="@+id/menu3_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="골든치즈렐라치킨버거 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu3_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -73,12 +101,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu4_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_04_golden_cheeserela_x" />
 
             <TextView
+                android:id="@+id/menu4_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="골든치즈렐라X 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu4_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -92,12 +129,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu5_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_05_golden_cheeserela" />
 
             <TextView
+                android:id="@+id/menu5_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="골든치즈렐라와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu5_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -111,12 +157,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu6_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_06_guinness_quattrocheese" />
 
             <TextView
+                android:id="@+id/menu6_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="기네스콰트로치즈와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu6_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -130,12 +185,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu7_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_07_guinness" />
 
             <TextView
+                android:id="@+id/menu7_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="기네스와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu7_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -149,12 +213,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu8_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_08_monster_x" />
 
             <TextView
+                android:id="@+id/menu8_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="몬스터X 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu8_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -168,12 +241,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu9_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_09_monster" />
 
             <TextView
+                android:id="@+id/menu9_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="몬스터와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu9_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -187,12 +269,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu10_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_10_quattro_cheese" />
 
             <TextView
+                android:id="@+id/menu10_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="콰트로치즈와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu10_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -206,12 +297,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu11_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_11_stacker_2" />
 
             <TextView
+                android:id="@+id/menu11_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="스태커2와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu11_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
@@ -225,12 +325,21 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/menu12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:id="@+id/menu12_img"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:src="@drawable/set_12_stacker_3" />
 
             <TextView
+                android:id="@+id/menu12_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="스태커3와퍼 세트"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/menu12_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격"
