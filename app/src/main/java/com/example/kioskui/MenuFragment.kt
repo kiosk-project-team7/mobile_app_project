@@ -55,22 +55,18 @@ class MenuFragment : Fragment() {
 
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
         binding.btn1.setOnClickListener {
-            //새로운 navigation으로 메뉴 바꾸기
             setmenuFragment = SetmenuFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, setmenuFragment!!).commit()
         }
         binding.btn2.setOnClickListener {
-            //새로운 navigation으로 메뉴 바꾸기
             singleFragment = SingleFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, singleFragment!!).commit()
         }
         binding.btn3.setOnClickListener {
-            //새로운 navigation으로 메뉴 바꾸기
             sideFragment = SideFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, sideFragment!!).commit()
         }
         binding.btn4.setOnClickListener {
-            //새로운 navigation으로 메뉴 바꾸기
             drinkFragment = DrinkFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
         }
