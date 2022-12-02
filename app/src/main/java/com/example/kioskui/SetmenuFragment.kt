@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentMenuBinding
@@ -35,10 +37,14 @@ class SetmenuFragment : Fragment() {
         binding.menu1Img.setOnClickListener {
             val cDialogView =
                 LayoutInflater.from(view.context).inflate(R.layout.custom_dialog, null)
+
+//            val drawable = getDrawable(view.context ,R.drawable.set_01_black_onion_chicken)
+//            val imageView = cDialogView.findViewById<ImageView>(R.id.menu1_img)
+//            imageView.setImageDrawable(drawable)
+
             val mBuilder = AlertDialog.Builder(view.context)
                 .setView(cDialogView)
                 .setTitle("옵션 선택")
-
 
             mBuilder.setNegativeButton("닫기", null)
             mBuilder.show()
