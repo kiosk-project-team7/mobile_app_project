@@ -29,4 +29,11 @@
         tools:layout="@layout/fragment_pay">
     </fragment>
 
+    <fragment
+        android:id="@+id/Fragment_Manager"
+        android:name="com.example.kioskui.ManagerFragment"
+        android:label="MANAGER"
+        tools:layout="@layout/fragment_manager">
+    </fragment>
+
 </navigation>
