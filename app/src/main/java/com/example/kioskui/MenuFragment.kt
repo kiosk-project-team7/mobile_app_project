@@ -67,7 +67,6 @@ class MenuFragment : Fragment() {
             drinkFragment = DrinkFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
         }
-
         val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(mainActivity)
         //위에 코드는 스크롤 방향을 나타냄.
@@ -76,14 +75,10 @@ class MenuFragment : Fragment() {
         for(i in 1..20) {
             data.add(Itemview(R.drawable.single_01_black_onion_chicken,"햄버거","1","피클","콜라","감자튀김"))
         }
-
-
         binding.stepRecyclerview.adapter=stepAdapter(data)
         binding.stepRecyclerview.addItemDecoration(
             DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL)
         )
-
-
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Inout)
@@ -93,5 +88,4 @@ class MenuFragment : Fragment() {
         }
 
     }
-
 }
