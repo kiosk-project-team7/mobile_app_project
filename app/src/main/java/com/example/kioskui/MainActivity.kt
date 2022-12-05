@@ -1,9 +1,12 @@
 package com.example.kioskui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
+import android.widget.ImageView
 import androidx.navigation.findNavController
+import com.example.kioskui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

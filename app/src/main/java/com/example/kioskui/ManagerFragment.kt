@@ -1,36 +1,28 @@
 package com.example.kioskui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.kioskui.databinding.FragmentStartBinding
+import com.example.kioskui.databinding.FragmentManagerBinding
 
-class StartFragment : Fragment() {
+class ManagerFragment : Fragment() {
 
-    private lateinit var binding: FragmentStartBinding
+    private lateinit var binding: FragmentManagerBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentStartBinding.inflate(inflater, container, false)
+        binding = FragmentManagerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.startBtn.setOnClickListener {
-            findNavController().navigate(R.id.Fragment_Inout)
-        }
-        binding.mainLogo.setOnClickListener {   //메인 로고를 누를 시
-            findNavController().navigate(R.id.Fragment_Manager)
-        }
     }
-
 }

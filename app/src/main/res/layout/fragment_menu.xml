@@ -164,16 +164,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="주문"
-                android:id="@+id/comBtn"
-                />
+                android:text="이전"
+                android:id="@+id/backBtn" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="이전"
-                android:id="@+id/backBtn"
-                />
+                android:text="주문"
+                android:id="@+id/comBtn" />
         </LinearLayout>
     </LinearLayout>
 
