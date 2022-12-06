@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menubar_layout"
@@ -14,9 +14,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_marginTop="10dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/logo_burgerking"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
+            android:backgroundTint="@color/colorPrimaryVariant"
             android:text="세트"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +37,7 @@
             android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryVariant"
             android:text="단품"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +47,7 @@
             android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryVariant"
             android:text="사이드"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +57,7 @@
             android:id="@+id/btn4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryVariant"
             android:text="음료"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +69,9 @@
         android:id="@+id/step_layout"
         android:layout_width="400dp"
         android:layout_height="80dp"
+        app:layout_constraintBottom_toTopOf="@id/menu_layout"
         app:layout_constraintStart_toEndOf="@id/menubar_layout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/menu_layout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,41 +82,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_steps"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="단계1"
-                android:textSize="10sp" />
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_steps"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="단계2"
-                android:textSize="10sp" />
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_steps"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="단계3"
-                android:textSize="10sp" />
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_steps"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="단계4"
-                android:textSize="10sp" />
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_steps"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="단계5"
-                android:textSize="10sp" />
+                android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -142,36 +161,39 @@
     <LinearLayout
         android:layout_width="195dp"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@id/step_layout"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintStart_toEndOf="@id/step_layout"
+        app:layout_constraintTop_toTopOf="parent">
         <!-- 주문 목록-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/step_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
-            />
+            android:background="#FFF6F6" />
         <!--버튼 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <Button
+                android:id="@+id/backBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="이전"
-                android:id="@+id/backBtn" />
+                android:backgroundTint="@color/colorPrimary"
+                android:text="이전" />
+
             <Button
+                android:id="@+id/comBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="주문"
-                android:id="@+id/comBtn" />
+                android:backgroundTint="#FF8787"
+                android:text="주문" />
         </LinearLayout>
     </LinearLayout>
 

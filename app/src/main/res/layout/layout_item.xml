@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     android:orientation="vertical">
     <!--위쪽레이아웃-->
     <LinearLayout
@@ -27,19 +28,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="토핑" />
+                android:text="토핑"
+                android:textColor="#000000" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="음료" />
+                android:text="음료"
+                android:textColor="#000000" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="사이드메뉴" />
+                android:text="사이드메뉴"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <!-- 상세 리스트 레이아웃 -->
@@ -54,21 +58,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="토핑 리스트" />
+                android:text="토핑 리스트"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/drink_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="음료 리스트" />
+                android:text="음료 리스트"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/sidemenu_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="사이드메뉴 리스트" />
+                android:text="사이드메뉴 리스트"
+                android:textColor="#000000" />
 
         </LinearLayout>
     </LinearLayout>
@@ -95,6 +102,7 @@
             android:gravity="center_vertical"
             android:text="수량"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="25dp" />
 
         <!--메뉴 이름-->
@@ -111,7 +119,8 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:text="메뉴이름" />
+            android:text="메뉴이름"
+            android:textColor="#000000" />
     </LinearLayout>
 
 </LinearLayout>
