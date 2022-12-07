@@ -133,6 +133,7 @@ class SetmenuFragment : Fragment() {
 
             }
         }
+
         /*val items = arrayOf<String>("00추가","00추가","00추가","00추가","00추가","00추가","00추가","00추가")
 
             AlertDialog.Builder(view.context).run {
