@@ -3,6 +3,9 @@
     <style name="Theme.KioskUI" parent="Theme.AppCompat">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
+        <item name="colorBackgroundFloating">@color/white</item>
+        <item name="android:colorBackgroundFloating" tools:targetApi="23">@color/white</item>
+        <item name="android:textColor">#000000</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">#B4A6AB</item>
         <item name="colorPrimaryVariant">#946E83</item>
@@ -14,6 +17,16 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.KioskUI.Alert" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColor">#000000</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="Theme.KioskUI.NoActionBar">
