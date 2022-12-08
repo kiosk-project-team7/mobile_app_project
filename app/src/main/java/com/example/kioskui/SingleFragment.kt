@@ -44,7 +44,7 @@ class SingleFragment : Fragment() {
             val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
             cusButton.setOnClickListener {
                 val items =
-                    arrayOf<String>("00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가")
+                    arrayOf<String>("양상추 0원", "양파 0원", "토마토 0원", "마요네즈 0원", "케찹 0원", "직화특제소스", "베이컨1장", "치즈1장", "할라피뇨2조각", "피클")
 
                 AlertDialog.Builder(view.context).run {
                     setTitle("Test")
