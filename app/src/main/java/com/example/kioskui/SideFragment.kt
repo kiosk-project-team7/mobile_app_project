@@ -11,12 +11,13 @@ import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.databinding.FragmentSideBinding
-
+import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
 
 class SideFragment : Fragment() {
     private lateinit var binding: FragmentSideBinding
     private var checkedItem: Int = 0
-
+    private val sharedViewModel : OrderViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

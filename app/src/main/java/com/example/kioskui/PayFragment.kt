@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentPayBinding
+import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
 
 class PayFragment : Fragment() {
     private lateinit var binding: FragmentPayBinding
-
+    private val sharedViewModel : OrderViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

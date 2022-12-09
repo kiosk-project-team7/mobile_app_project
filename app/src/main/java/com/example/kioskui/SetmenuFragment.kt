@@ -11,18 +11,20 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
-
+import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
 class SetmenuFragment : Fragment() {
 
     private lateinit var binding: FragmentSetmenuBinding
 //    private var checkedItem: Int = 0
-
+    private val sharedViewModel : OrderViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,12 +37,17 @@ class SetmenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding?.apply{
+            lifecycleOwner =viewLifecycleOwner
+            viewModel=sharedViewModel
+            setmenuFragemnt = this@SetmenuFragment
+        }
         // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {
             dialog(binding.menu1Img.drawable, binding.menu1Txt.text)
-        }
+            sharedViewModel.set_name("햄버거")
 
+        }
         binding.menu2Img.setOnClickListener {
             dialog(binding.menu2Img.drawable, binding.menu2Txt.text)
         }
@@ -124,9 +131,27 @@ class SetmenuFragment : Fragment() {
                     .setTitle("사용자화")
                     .setIcon(logo.drawable)
             }
-
-            mBuilder2?.setPositiveButton("담기",null)
-            mBuilder2?.setNegativeButton("닫기", null)
+            val eventHandler = object : DialogInterface.OnClickListener{
+                override fun onClick(p0: DialogInterface?, p1: Int) {
+                    if(p1 == DialogInterface.BUTTON_POSITIVE)
+                    {
+                        Log.d("담기","담기버튼을 눌렀습니다")
+                        Toast.makeText(activity, "담기버튼을 눌렀습니다", Toast.LENGTH_SHORT).show()
+                       // sharedViewModel.set_image(imageView)
+                        //sharedViewModel.set_name(textView.toString())
+                        //findNavController().navigate(R.id.Fragment_Menu)
+                        //sharedViewModel.set_toping()
+                    }
+                    if( p1==DialogInterface.BUTTON_NEGATIVE)
+                    {
+                        Log.d("담기","담기버튼을 눌렀습니다")
+                        Toast.makeText(activity, "담기버튼을 눌렀습니다", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            mBuilder2?.setPositiveButton("담기",eventHandler)
+            //담기 리스너.
+            mBuilder2?.setNegativeButton("닫기", eventHandler)
             mBuilder2?.show()
         }
 
