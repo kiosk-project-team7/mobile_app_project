@@ -2,6 +2,7 @@ package com.example.kioskui
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
@@ -38,58 +39,58 @@ class SetmenuFragment : Fragment() {
 
         // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {
-            dialog(binding.menu1Img.drawable, binding.menu1Txt.text)
+            dialog(1, binding.menu1Img.drawable, binding.menu1Txt.text)
         }
 
         binding.menu2Img.setOnClickListener {
-            dialog(binding.menu2Img.drawable, binding.menu2Txt.text)
+            dialog(2, binding.menu2Img.drawable, binding.menu2Txt.text)
         }
 
         binding.menu3Img.setOnClickListener {
-            dialog(binding.menu3Img.drawable, binding.menu3Txt.text)
+            dialog(3, binding.menu3Img.drawable, binding.menu3Txt.text)
         }
 
         binding.menu4Img.setOnClickListener {
-            dialog(binding.menu4Img.drawable, binding.menu4Txt.text)
+            dialog(4, binding.menu4Img.drawable, binding.menu4Txt.text)
         }
 
         binding.menu5Img.setOnClickListener {
-            dialog(binding.menu5Img.drawable, binding.menu5Txt.text)
+            dialog(5, binding.menu5Img.drawable, binding.menu5Txt.text)
         }
 
         binding.menu6Img.setOnClickListener {
-            dialog(binding.menu6Img.drawable, binding.menu6Txt.text)
+            dialog(6, binding.menu6Img.drawable, binding.menu6Txt.text)
         }
 
         binding.menu7Img.setOnClickListener {
-            dialog(binding.menu7Img.drawable, binding.menu7Txt.text)
+            dialog(7, binding.menu7Img.drawable, binding.menu7Txt.text)
         }
 
         binding.menu8Img.setOnClickListener {
-            dialog(binding.menu8Img.drawable, binding.menu8Txt.text)
+            dialog(8, binding.menu8Img.drawable, binding.menu8Txt.text)
         }
 
         binding.menu9Img.setOnClickListener {
-            dialog(binding.menu9Img.drawable, binding.menu9Txt.text)
+            dialog(9, binding.menu9Img.drawable, binding.menu9Txt.text)
         }
 
         binding.menu10Img.setOnClickListener {
-            dialog(binding.menu10Img.drawable, binding.menu10Txt.text)
+            dialog(10, binding.menu10Img.drawable, binding.menu10Txt.text)
         }
 
         binding.menu11Img.setOnClickListener {
-            dialog(binding.menu11Img.drawable, binding.menu11Txt.text)
+            dialog(11, binding.menu11Img.drawable, binding.menu11Txt.text)
         }
 
         binding.menu12Img.setOnClickListener {
-            dialog(binding.menu12Img.drawable, binding.menu12Txt.text)
+            dialog(12, binding.menu12Img.drawable, binding.menu12Txt.text)
         }
 
 
     }
 
     // 클릭하면 화면 출력 함수
-    private fun dialog(img: Drawable, tv: CharSequence){
+    private fun dialog(menuNum: Int, img: Drawable, tv: CharSequence){
         // 메뉴 선택 다이얼로그
         val cDialogView =
             LayoutInflater.from(view?.context).inflate(R.layout.custom_dialog, null)
@@ -100,9 +101,11 @@ class SetmenuFragment : Fragment() {
 
         imageView.setImageDrawable(img)
         textView.setText(tv)
+        MainActivity.menuInit.whenSelected(menuNum)
+        textView.setText("${MainActivity.menuInit.selectedAmt[menuNum]}")
 
         val mBuilder = view?.let {
-            AlertDialog.Builder(it.context)
+            AlertDialog.Builder(it.context, R.style.Theme_KioskUI_Alert)
                 .setView(cDialogView)
                 .setTitle(tv)
                 .setIcon(logo.drawable)

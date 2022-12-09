@@ -15,7 +15,11 @@ import com.example.kioskui.databinding.FragmentMenuBinding
 data class Itemview(
     val Menu: Int,
     val Menu_name: String,
-    val number_count: String, val toping: String, val drink: String, val sidemenu: String)
+    val number_count: String,
+    val toping: String,
+    val drink: String,
+    val sidemenu: String)
+
 class MenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuBinding
@@ -75,7 +79,9 @@ class MenuFragment : Fragment() {
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
         val data = ArrayList<Itemview>()
         for(i in 1..20) {
-            data.add(Itemview(R.drawable.single_01_black_onion_chicken,"햄버거","1","피클","콜라","감자튀김"))
+            data.add(Itemview(R.drawable.single_01_black_onion_chicken,
+                "햄버거","1","피클",
+                "콜라","감자튀김"))
         }
 
 
