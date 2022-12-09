@@ -1,11 +1,8 @@
 package com.example.kioskui
 
 import android.annotation.SuppressLint
-import android.app.PendingIntent.getActivities
-import android.app.PendingIntent.getActivity
-import android.content.ClipData
-import android.content.Context
 import android.content.DialogInterface
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,32 +11,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 
-
 class SetmenuFragment : Fragment() {
-    var bundle : Bundle? = null
+
     private lateinit var binding: FragmentSetmenuBinding
-    private var checkedItem: Int = 0
+//    private var checkedItem: Int = 0
 
-    private lateinit var mainActivity : MainActivity
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        mainActivity = context as MainActivity
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,122 +33,108 @@ class SetmenuFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {
-            val data = mutableListOf<Itemview>()
-            val eventHandler = object : DialogInterface.OnClickListener {
-                override fun onClick(p0: DialogInterface?, p1: Int) {
-                    if(p1==DialogInterface.BUTTON_POSITIVE) //담기버튼
-                    {
-                        Toast.makeText(mainActivity,"담기버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show()
-                    }
-                    else //취소버튼
-                    {
-                        Toast.makeText(mainActivity,"취소버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-            }
-            val cDialogView =
-                LayoutInflater.from(view.context).inflate(R.layout.custom_dialog, null)
-
-            val drawable = getDrawable(view.context ,R.drawable.set_01_black_onion_chicken)
-            val imageView = cDialogView.findViewById<ImageView>(R.id.menu_img)
-            val textView = cDialogView.findViewById<TextView>(R.id.menu_tv)
-            imageView.setImageDrawable(drawable)
-            textView.setText("메뉴1 설명-----")
-
-            val mBuilder = AlertDialog.Builder(view.context)
-                .setView(cDialogView)
-                .setTitle("블랙어니언치킨버거 세트")
-                .setIcon(drawable)
-
-
-            mBuilder.setNegativeButton("닫기", null)
-            mBuilder.show()
-
-            val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
-            cusButton.setOnClickListener {
-                val items =
-                    arrayOf<String>("00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가")
-
-                AlertDialog.Builder(view.context).run {
-                    setTitle("Test")
-                    setIcon(R.drawable.ic_launcher_background)
-                    setSingleChoiceItems(items,
-                        checkedItem,
-                        object : DialogInterface.OnClickListener {
-                            override fun onClick(
-                                p0: DialogInterface?,
-                                which: Int,
-                            ) {
-                                Log.d("선택", "${items[which]}이 선택되었습니다.")
-                            }
-                        })
-                    setPositiveButton("담기", eventHandler) //여기서 담기 눌렀을때 추가해야함.
-                    setNegativeButton("취소", eventHandler)
-                    show()
-                }
-            }
-            val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
-            recButton.setOnClickListener {
-
-            }
+            dialog(binding.menu1Img.drawable, binding.menu1Txt.text)
         }
 
         binding.menu2Img.setOnClickListener {
-            val cDialogView =
-                LayoutInflater.from(view.context).inflate(R.layout.custom_dialog, null)
+            dialog(binding.menu2Img.drawable, binding.menu2Txt.text)
+        }
 
-            val drawable = getDrawable(view.context ,R.drawable.set_02_black_onion)
-            val imageView = cDialogView.findViewById<ImageView>(R.id.menu_img)
-            val textView = cDialogView.findViewById<TextView>(R.id.menu_tv)
-            imageView.setImageDrawable(drawable)
-            textView.setText("메뉴2 설명-----")
+        binding.menu3Img.setOnClickListener {
+            dialog(binding.menu3Img.drawable, binding.menu3Txt.text)
+        }
 
-            val mBuilder = AlertDialog.Builder(view.context)
+        binding.menu4Img.setOnClickListener {
+            dialog(binding.menu4Img.drawable, binding.menu4Txt.text)
+        }
+
+        binding.menu5Img.setOnClickListener {
+            dialog(binding.menu5Img.drawable, binding.menu5Txt.text)
+        }
+
+        binding.menu6Img.setOnClickListener {
+            dialog(binding.menu6Img.drawable, binding.menu6Txt.text)
+        }
+
+        binding.menu7Img.setOnClickListener {
+            dialog(binding.menu7Img.drawable, binding.menu7Txt.text)
+        }
+
+        binding.menu8Img.setOnClickListener {
+            dialog(binding.menu8Img.drawable, binding.menu8Txt.text)
+        }
+
+        binding.menu9Img.setOnClickListener {
+            dialog(binding.menu9Img.drawable, binding.menu9Txt.text)
+        }
+
+        binding.menu10Img.setOnClickListener {
+            dialog(binding.menu10Img.drawable, binding.menu10Txt.text)
+        }
+
+        binding.menu11Img.setOnClickListener {
+            dialog(binding.menu11Img.drawable, binding.menu11Txt.text)
+        }
+
+        binding.menu12Img.setOnClickListener {
+            dialog(binding.menu12Img.drawable, binding.menu12Txt.text)
+        }
+
+
+    }
+
+    // 클릭하면 화면 출력 함수
+    private fun dialog(img: Drawable, tv: CharSequence){
+        // 메뉴 선택 다이얼로그
+        val cDialogView =
+            LayoutInflater.from(view?.context).inflate(R.layout.custom_dialog, null)
+
+        val logo = cDialogView.findViewById<ImageView>(R.id.logo)
+        val imageView = cDialogView.findViewById<ImageView>(R.id.menu_img)
+        val textView = cDialogView.findViewById<TextView>(R.id.menu_tv)
+
+        imageView.setImageDrawable(img)
+        textView.setText(tv)
+
+        val mBuilder = view?.let {
+            AlertDialog.Builder(it.context)
                 .setView(cDialogView)
-                .setTitle("블랙어니언와퍼 세트")
-                .setIcon(drawable)
+                .setTitle(tv)
+                .setIcon(logo.drawable)
+        }
 
 
-            mBuilder.setNegativeButton("닫기", null)
-            mBuilder.show()
+        mBuilder?.setNegativeButton("닫기", null)
+        mBuilder?.show()
 
-            val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
-            cusButton.setOnClickListener {
-                val items =
-                    arrayOf<String>("00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가")
+        // 사용자화 버튼 선택 시 다이얼로그
+        val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
+        cusButton.setOnClickListener {
+            val c2DialogView =
+                LayoutInflater.from(view?.context).inflate(R.layout.custom_option, null)
 
-                AlertDialog.Builder(view.context).run {
-                    setTitle("Test")
-                    setIcon(R.drawable.ic_launcher_background)
-                    setSingleChoiceItems(items,
-                        checkedItem,
-                        object : DialogInterface.OnClickListener {
-                            override fun onClick(
-                                p0: DialogInterface?,
-                                which: Int,
-                            ) {
-                                Log.d("선택", "${items[which]}이 선택되었습니다.")
-                            }
-                        })
-                    setPositiveButton("담기", null)
-                    setNegativeButton("취소", null)
-                    show()
-                }
+            val mBuilder2 = view?.let {
+                AlertDialog.Builder(it.context)
+                    .setView(c2DialogView)
+                    .setTitle("사용자화")
+                    .setIcon(logo.drawable)
             }
 
-            val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
-            recButton.setOnClickListener {
+            mBuilder2?.setPositiveButton("담기",null)
+            mBuilder2?.setNegativeButton("닫기", null)
+            mBuilder2?.show()
+        }
 
-            }
+        // 추천 버튼 누를 시
+        val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
+        recButton.setOnClickListener {
+
         }
     }
-    override fun onDestroy() {
-        super.onDestroy()
-    }
+
 }
