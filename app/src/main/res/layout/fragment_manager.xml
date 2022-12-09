@@ -15,7 +15,8 @@
             android:id="@+id/btn_return_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="돌아가기" />
+            android:text="돌아가기"
+            android:textColor="#FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,28 +45,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="세트" />
+                    android:text="세트"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="단품" />
+                    android:text="단품"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="사이드" />
+                    android:text="사이드"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="음료" />
+                    android:text="음료"
+                    android:textColor="#FFFFFF" />
 
             </LinearLayout>
 

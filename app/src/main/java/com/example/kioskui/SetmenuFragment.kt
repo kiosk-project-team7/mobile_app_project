@@ -1,7 +1,11 @@
 package com.example.kioskui
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog.THEME_DEVICE_DEFAULT_LIGHT
+import android.app.AlertDialog.THEME_HOLO_LIGHT
+import android.app.ProgressDialog.show
 import android.content.DialogInterface
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -50,7 +54,9 @@ class SetmenuFragment : Fragment() {
                 .setView(cDialogView)
                 .setTitle("블랙어니언치킨버거 세트")
                 .setIcon(drawable)
-
+                .setPositiveButton("바로 담기", null)
+                
+            val burgerName = "블랙어니언치킨버거 세트"
 
             mBuilder.setNegativeButton("닫기", null)
             mBuilder.show()
@@ -58,12 +64,11 @@ class SetmenuFragment : Fragment() {
             val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
             cusButton.setOnClickListener {
                 val items =
-                    arrayOf<String>("너겟교환", "치즈스틱 교환", "어니언링 교환", "코카콜라 제로 교환", "스프라이트 교환", "씨그램 교환", "미닛메이드 오랜지 교환")
+                    arrayOf<String>("추가옵션 선택 안함", "치즈 추가", "패티 추가", "베이컨 추가", "양상추 추가", "00추가", "00추가", "00추가")
 
-                AlertDialog.Builder(view.context).run {
-                    setTitle("Test")
-                    setIcon(R.drawable.ic_launcher_background)
-
+                AlertDialog.Builder(view.context, R.style.Theme_KioskUI_Alert).run {
+                    setTitle("블랙어니언치킨버거 세트")
+                    setIcon(R.drawable.set_01_black_onion_chicken)
                     setSingleChoiceItems(items,
                         checkedItem,
                         object : DialogInterface.OnClickListener {
@@ -72,6 +77,8 @@ class SetmenuFragment : Fragment() {
                                 which: Int,
                             ) {
                                 Log.d("선택", "${items[which]}이 선택되었습니다.")
+                                textView.setText("${burgerName}에 ${items[which]} 옵션을 선택하셨습니다.")
+                                //textView.setText("${burgerName}")
                             }
                         })
                     setPositiveButton("담기", null)
@@ -100,6 +107,7 @@ class SetmenuFragment : Fragment() {
                 .setView(cDialogView)
                 .setTitle("블랙어니언와퍼 세트")
                 .setIcon(drawable)
+                .setPositiveButton("바로 담기", null)
 
 
             mBuilder.setNegativeButton("닫기", null)

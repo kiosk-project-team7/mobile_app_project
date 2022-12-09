@@ -29,6 +29,7 @@
             android:layout_marginTop="130dp"
             android:backgroundTint="@color/colorPrimaryVariant"
             android:text="세트"
+            android:textColor="#FFFFFF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryVariant"
             android:text="단품"
+            android:textColor="#FFFFFF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn1" />
@@ -49,6 +51,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryVariant"
             android:text="사이드"
+            android:textColor="#FFFFFF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn2" />
@@ -59,6 +62,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryVariant"
             android:text="음료"
+            android:textColor="#FFFFFF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn3" />
@@ -87,6 +91,7 @@
                 android:background="@drawable/btn_steps"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="단계1"
+                android:textColor="#000000"
                 android:textSize="15dp" />
 
             <Button
@@ -98,6 +103,7 @@
                 android:background="@drawable/btn_steps"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="단계2"
+                android:textColor="#000000"
                 android:textSize="15dp" />
 
             <Button
@@ -109,6 +115,7 @@
                 android:background="@drawable/btn_steps"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="단계3"
+                android:textColor="#000000"
                 android:textSize="15dp" />
 
             <Button
@@ -120,6 +127,7 @@
                 android:background="@drawable/btn_steps"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="단계4"
+                android:textColor="#000000"
                 android:textSize="15dp" />
 
             <Button
@@ -131,6 +139,7 @@
                 android:background="@drawable/btn_steps"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="단계5"
+                android:textColor="#000000"
                 android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>
