@@ -1,12 +1,11 @@
 package com.example.kioskui
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -17,10 +16,11 @@ import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 
 data class Itemview(
-    val Menu: ImageView,
-    val Menu_name: String,
+    val Menu: Drawable,
+    val Menu_name: CharSequence,
     val number_count: String,
     val toping: String,
     val drink: String,
@@ -89,11 +89,13 @@ class MenuFragment : Fragment() {
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
         //binding.stepRecyclerview.layoutManager = LinearLayout(this)
 
-        binding.stepRecyclerview.adapter=stepAdapter(data)
-        binding.stepRecyclerview.addItemDecoration(
-            DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL)
-        )
-
+            binding.stepRecyclerview.adapter = stepAdapter(data)
+            binding.stepRecyclerview.addItemDecoration(
+                DividerItemDecoration(mainActivity, LinearLayoutManager.VERTICAL)
+            )
+        sharedViewModel.liveData.observe(mainActivity, Observer {
+            (binding.stepRecyclerview.adapter as stepAdapter).setData(it)
+        })
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Inout)
@@ -102,4 +104,5 @@ class MenuFragment : Fragment() {
             findNavController().navigate(R.id.Fragment_Pay)
         }
     }
+
 }

@@ -1,6 +1,5 @@
 package com.example.kioskui
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
@@ -11,15 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
 
-import androidx.fragment.app.findFragment
-import androidx.navigation.fragment.findNavController
-import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 //
@@ -28,6 +21,7 @@ class SetmenuFragment : Fragment() {
     private val sharedViewModel : OrderViewModel by activityViewModels()
     private lateinit var binding: FragmentSetmenuBinding
     //    private var checkedItem: Int = 0
+
     private var menuFragment: MenuFragment? = null
 
     private lateinit var mainActivity : MainActivity
@@ -57,14 +51,10 @@ class SetmenuFragment : Fragment() {
             viewModel = sharedViewModel
             setmenuFragemnt = this@SetmenuFragment
         }
+        var dataset : ArrayList<Itemview>
         // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {
             dialog(binding.menu1Img.drawable, binding.menu1Txt.text)
-            sharedViewModel.set_name(binding.menu1Txt.toString())
-            sharedViewModel.set_image(binding.menu1Img)
-            sharedViewModel.set_toping("피클")
-            sharedViewModel.set_drink("콜라")
-            sharedViewModel.set_side("감자튀김")
         }
 
         binding.menu2Img.setOnClickListener {
@@ -117,6 +107,7 @@ class SetmenuFragment : Fragment() {
     // 클릭하면 화면 출력 함수
     private fun dialog(img: Drawable, tv: CharSequence){
         // 메뉴 선택 다이얼로그
+        val data = ArrayList<Itemview>()
         val cDialogView =
             LayoutInflater.from(view?.context).inflate(R.layout.custom_dialog, null)
 
@@ -124,10 +115,9 @@ class SetmenuFragment : Fragment() {
         val imageView = cDialogView.findViewById<ImageView>(R.id.menu_img)
         val textView = cDialogView.findViewById<TextView>(R.id.menu_tv)
 
-
-
         imageView.setImageDrawable(img)
         textView.setText(tv)
+
 
         val mBuilder = view?.let {
             AlertDialog.Builder(it.context)
@@ -149,8 +139,13 @@ class SetmenuFragment : Fragment() {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
                     if(p1 == DialogInterface.BUTTON_POSITIVE)
                     {
-                        sharedViewModel.addData()
+
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+                        //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
+                        data.add(Itemview(img,tv,"1","피클","콜라","감자튀김"))
+                        Log.d("data","${data}")
+                        sharedViewModel.addData(data)
+                        stepAdapter(data)
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){
                         Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()

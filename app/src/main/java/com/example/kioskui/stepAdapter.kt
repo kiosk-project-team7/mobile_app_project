@@ -2,13 +2,14 @@ package com.example.kioskui
 
 import android.R
 import android.graphics.drawable.BitmapDrawable
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.LayoutItemBinding
-
+import com.example.kioskui.model.OrderViewModel
 
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
     val menuImageView : ImageView = binding.bugerImage
@@ -23,13 +24,13 @@ class stepAdapter(private var dataset : List<Itemview>):RecyclerView.Adapter<Rec
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val onviewItem=dataset[position]
         val viewHolder = holder as MyViewHolder
-        val bitmapDrawable = onviewItem.Menu as BitmapDrawable
-        val bitmap = bitmapDrawable.bitmap
-        viewHolder.menuImageView.setImageBitmap(bitmap)
+       // val bitmapDrawable = onviewItem.Menu as BitmapDrawable
+        //val bitmap = bitmapDrawable.bitmap
+        //viewHolder.menuImageView.setImageBitmap(bitmap)
+        viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
         viewHolder.numbertextView.text=dataset[position].number_count
         viewHolder.topingtextView.text=dataset[position].toping
