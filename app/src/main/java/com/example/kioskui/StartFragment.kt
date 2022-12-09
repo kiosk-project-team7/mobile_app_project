@@ -29,7 +29,8 @@ class StartFragment : Fragment() {
             findNavController().navigate(R.id.Fragment_Inout)
         }
         binding.mainLogo.setOnClickListener {   //메인 로고를 누를 시
-            findNavController().navigate(R.id.Fragment_Manager)
+            findNavController().navigate(R.id.Fragment_Choice_Manager)
+
         }
     }
 

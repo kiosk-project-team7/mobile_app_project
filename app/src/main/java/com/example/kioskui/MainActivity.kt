@@ -56,9 +56,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int>(1400, 1200, 900, 700, 900, 700,
                                  800, 900, 750, 600, 900, 700))
             var selectedAmt = arrayOf(
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
             fun whenSelected(menuNum: Int) {
                 selectedAmt[menuNum] += 1

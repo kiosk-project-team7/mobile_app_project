@@ -101,7 +101,7 @@ class SetmenuFragment : Fragment() {
 
         imageView.setImageDrawable(img)
         textView.setText(tv)
-        MainActivity.menuInit.whenSelected(menuNum)
+        //MainActivity.menuInit.whenSelected(menuNum)
         textView.setText("${MainActivity.menuInit.desc[menuNum-1]}")
 
         val mBuilder = view?.let {

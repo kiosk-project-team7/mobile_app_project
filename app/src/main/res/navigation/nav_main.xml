@@ -36,4 +36,18 @@
         tools:layout="@layout/fragment_manager">
     </fragment>
 
+    <fragment
+        android:id="@+id/Fragment_Choice_Manager"
+        android:name="com.example.kioskui.ChoiceManagerFragment"
+        android:label="Choice_MANAGER"
+        tools:layout="@layout/fragment_choice_manager">
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment_Daily_Manager"
+        android:name="com.example.kioskui.dailyManagerFragment"
+        android:label="Choice_MANAGER"
+        tools:layout="@layout/fragment_daily_manager">
+    </fragment>
+
 </navigation>

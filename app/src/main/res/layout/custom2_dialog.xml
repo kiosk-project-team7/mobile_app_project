@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:text="사이드 메뉴"
+        android:text="토핑"
         android:textColor="@color/white"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
