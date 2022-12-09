@@ -20,6 +20,10 @@ class ManagerFragment : Fragment() {
         binding = FragmentManagerBinding.inflate(inflater, container, false)
         return binding.root
     }
+    
+//    이미지 클릭 불가능하게 수정, 반투명하게 보이게 수정
+//    binding.menu1Img.setClickable(false)
+//    binding.menu1Img.setAlpha(0.3f)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
