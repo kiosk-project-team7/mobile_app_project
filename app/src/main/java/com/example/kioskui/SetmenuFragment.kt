@@ -23,7 +23,8 @@ class SetmenuFragment : Fragment() {
     private val sharedViewModel : OrderViewModel by activityViewModels()
     private lateinit var binding: FragmentSetmenuBinding
     //    private var checkedItem: Int = 0
-
+    private var sidetext : String =" "
+    private var drinktext : String =" "
     private var menuFragment: MenuFragment? = null
 
     private lateinit var mainActivity : MainActivity
@@ -143,8 +144,9 @@ class SetmenuFragment : Fragment() {
                     {
 
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+
                         //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
-                        data.add(Itemview(img,tv,"1","피클","콜라","감자튀김"))
+                        data.add(Itemview(img,tv,"1","피클",drinktext,sidetext))
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
                         stepAdapter(data)
@@ -162,6 +164,104 @@ class SetmenuFragment : Fragment() {
                     .setPositiveButton("담기",eventHandler)
                     .setNegativeButton("닫기", eventHandler)
                     .show()
+                //side radiogroup
+
+                val srdg1 = c2DialogView.findViewById<RadioGroup>(R.id.srdg1)
+                val srdg2 = c2DialogView.findViewById<RadioGroup>(R.id.srdg2)
+                val drdg1 = c2DialogView.findViewById<RadioGroup>(R.id.drdg1)
+                val drdg2 = c2DialogView.findViewById<RadioGroup>(R.id.drdg2)
+                val srb1 = c2DialogView.findViewById<RadioButton>(R.id.srb1)
+                val srb2 = c2DialogView.findViewById<RadioButton>(R.id.srb2)
+                val srb3 = c2DialogView.findViewById<RadioButton>(R.id.srb3)
+                val srb4 = c2DialogView.findViewById<RadioButton>(R.id.srb4)
+                val srb5 = c2DialogView.findViewById<RadioButton>(R.id.srb5)
+                val srb6 = c2DialogView.findViewById<RadioButton>(R.id.srb6)
+                val srb7 = c2DialogView.findViewById<RadioButton>(R.id.srb7)
+                val srb8 = c2DialogView.findViewById<RadioButton>(R.id.srb8)
+                //
+                val drb1 = c2DialogView.findViewById<RadioButton>(R.id.drk1)
+                val drb2 = c2DialogView.findViewById<RadioButton>(R.id.drk2)
+                val drb3 = c2DialogView.findViewById<RadioButton>(R.id.drk3)
+                val drb4 = c2DialogView.findViewById<RadioButton>(R.id.drk4)
+                val drb5 = c2DialogView.findViewById<RadioButton>(R.id.drk5)
+                val drb6 = c2DialogView.findViewById<RadioButton>(R.id.drk6)
+                val drb7 = c2DialogView.findViewById<RadioButton>(R.id.drk7)
+                val drb8 = c2DialogView.findViewById<RadioButton>(R.id.drk8)
+                //private fun sendData(s: CharSequence, d: CharSequence)
+                srdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    Log.d("radio", "첫번째 사이드줄")
+                    if(srb1.isChecked==true || srb2.isChecked==true || srb3.isChecked==true || srb4.isChecked==true) {
+                        when(checkedId) {
+                            R.id.srb1 -> sidetext = "치즈스틱"
+                            R.id.srb2 -> sidetext = "치킨너겟"
+                            R.id.srb3 -> sidetext = "바삭킹"
+                            R.id.srb4 -> sidetext = "치즈감자"
+                        }
+                        if (srb5.isChecked)
+                            srb5.isChecked = false
+                        if (srb6.isChecked)
+                            srb6.isChecked = false
+                        if (srb7.isChecked)
+                            srb7.isChecked = false
+                        if (srb8.isChecked)
+                            srb8.isChecked = false
+                    }
+                }
+                srdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    Log.d("radio", "두번째 사이드줄")
+                    if(srb5.isChecked==true || srb6.isChecked==true || srb7.isChecked==true || srb8.isChecked==true) {
+                        when(checkedId) {
+                            R.id.srb5 -> sidetext = "코올슬로"
+                            R.id.srb6 -> sidetext = "치즈볼"
+                            R.id.srb7 -> sidetext = "감자튀김(L)"
+                            R.id.srb8 -> sidetext = "감자튀김(R)"
+                        }
+                        if (srb1.isChecked)
+                            srb1.isChecked = false
+                        if (srb2.isChecked)
+                            srb2.isChecked = false
+                        if (srb3.isChecked)
+                            srb3.isChecked = false
+                        if (srb4.isChecked)
+                            srb4.isChecked = false
+                    }
+                }
+                drdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    if(drb1.isChecked==true || drb2.isChecked==true || drb3.isChecked==true || drb4.isChecked==true) {
+                        when(checkedId) {
+                            R.id.drk1 -> drinktext = "홍차"
+                            R.id.drk2 -> drinktext = "커피"
+                            R.id.drk3 -> drinktext = "콜라(R)"
+                            R.id.drk4 -> drinktext = "콜라(L)"
+                        }
+                        if (drb5.isChecked)
+                            drb5.isChecked = false
+                        if (drb6.isChecked)
+                            drb6.isChecked = false
+                        if (drb7.isChecked)
+                            drb7.isChecked = false
+                        if (drb8.isChecked)
+                            drb8.isChecked = false
+                    }
+                }
+                drdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    if(drb5.isChecked==true || drb6.isChecked==true || drb7.isChecked==true || drb8.isChecked==true) {
+                        when(checkedId) {
+                            R.id.drk5 -> drinktext = "제로콜라(R)"
+                            R.id.drk6 -> drinktext = "제로콜라(L)"
+                            R.id.drk7 -> drinktext = "오렌지주스"
+                            R.id.drk8 -> drinktext = "시그렘"
+                        }
+                        if (drb1.isChecked)
+                            drb1.isChecked = false
+                        if (drb2.isChecked)
+                            drb2.isChecked = false
+                        if (drb3.isChecked)
+                            drb3.isChecked = false
+                        if (drb4.isChecked)
+                            drb4.isChecked = false
+                    }
+                }
             }
 
 //            mBuilder2?.setPositiveButton("담기",null)
