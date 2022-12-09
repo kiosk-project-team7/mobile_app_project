@@ -46,7 +46,7 @@ class SingleFragment : Fragment() {
                 val items =
                     arrayOf<String>("양상추 0원", "양파 0원", "토마토 0원", "마요네즈 0원", "케찹 0원", "직화특제소스", "베이컨1장", "치즈1장", "할라피뇨2조각", "피클")
 
-                AlertDialog.Builder(view.context).run {
+                AlertDialog.Builder(view.context, R.style.Theme_KioskUI_Alert).run {
                     setTitle("Test")
                     setIcon(R.drawable.ic_launcher_background)
                     setSingleChoiceItems(items,
