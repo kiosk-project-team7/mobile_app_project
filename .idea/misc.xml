@@ -21,7 +21,7 @@
         <entry key="app/src/main/res/layout/activity_manager.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/custom2_dialog.xml" value="0.37711823677104683" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.30520833333333336" />
-        <entry key="app/src/main/res/layout/custom_option.xml" value="0.2825112107623318" />
+        <entry key="app/src/main/res/layout/custom_option.xml" value="0.17584369449378331" />
         <entry key="app/src/main/res/layout/fragment_drink.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_inout.xml" value="0.30520833333333336" />
@@ -30,6 +30,8 @@
         <entry key="app/src/main/res/layout/fragment_option.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_pay.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/fragment_set1.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/fragment_set2.xml" value="0.2526785714285714" />
         <entry key="app/src/main/res/layout/fragment_setmenu.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_side.xml" value="0.30520833333333336" />
         <entry key="app/src/main/res/layout/fragment_single.xml" value="0.30520833333333336" />
@@ -41,5 +43,12 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.17584369449378331" />
+      </ProjectState>
+    </option>
   </component>
 </project>

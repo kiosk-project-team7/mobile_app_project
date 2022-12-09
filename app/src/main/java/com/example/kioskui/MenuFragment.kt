@@ -6,12 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kioskui.MainActivity.order.Companion.orderNum
 import com.example.kioskui.databinding.FragmentMenuBinding
 
 data class Itemview(
@@ -32,6 +30,7 @@ class MenuFragment : Fragment() {
     private var sideFragment: SideFragment? = null
     private var drinkFragment: DrinkFragment? = null
 
+    lateinit var recyclerView: RecyclerView
 
     private lateinit var mainActivity : MainActivity
 
@@ -49,9 +48,10 @@ class MenuFragment : Fragment() {
 
     ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
-
+        if (orderNum > 0) binding.imgOrder.setImageDrawable(MainActivity.order.selectedImg[MainActivity.order.orderNum - 1])
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -76,7 +76,8 @@ class MenuFragment : Fragment() {
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
         }
 
-        val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
+
+       /* recyclerView = mainActivity.findViewById(R.id.step_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(mainActivity)
         //위에 코드는 스크롤 방향을 나타냄.
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
@@ -87,12 +88,10 @@ class MenuFragment : Fragment() {
                 "콜라","감자튀김"))
         }
 
-
         binding.stepRecyclerview.adapter=stepAdapter(data)
         binding.stepRecyclerview.addItemDecoration(
             DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL)
-        )
-
+        )*/
 
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {

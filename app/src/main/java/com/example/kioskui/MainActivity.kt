@@ -1,5 +1,6 @@
 package com.example.kioskui
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
@@ -56,11 +57,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
 
-            fun whenSelected(menuCat: Int, menuNum: Int) {
+            fun whenSelected(menuCat: Int, menuNum: Int, menuImg: Drawable) {
                 selectedAmt[menuCat][menuNum] += 1
 
                 order.orderNum += 1
-                order.selected.add(menuName[menuCat][menuNum])
+                order.selectedName.add(menuName[menuCat][menuNum])
+                order.selectedImg.add(menuImg)
             }
             fun whenCheckout() {
                 for (i in 0 .. 3)
@@ -72,7 +74,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     class order {
         companion object {
             var orderNum = 0
-            var selected = arrayListOf<String>()
+            var selectedImg = arrayListOf<Drawable>()
+            var selectedName = arrayListOf<String>()
             var topping : ArrayList<ArrayList<String>> = arrayListOf(arrayListOf())
         }
     }

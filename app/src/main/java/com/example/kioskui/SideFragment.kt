@@ -26,17 +26,41 @@ class SideFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 메뉴 사진 누르면 담기
-        binding.menu1Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 1) }
-        binding.menu2Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 2) }
-        binding.menu3Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 3) }
-        binding.menu4Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 4) }
-        binding.menu5Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 5) }
-        binding.menu6Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 6) }
-        binding.menu7Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 7) }
-        binding.menu8Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 8) }
-        binding.menu9Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 9) }
-        binding.menu10Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 10) }
-        binding.menu11Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 11) }
-        binding.menu12Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 12) }
+        binding.menu1Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 1,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu2Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 2,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu3Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 3,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu4Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 4,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu5Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 5,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu6Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 6,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu7Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 7,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu8Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 8,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu9Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 9,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu10Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 10,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu11Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 11,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
+        binding.menu12Img.setOnClickListener { MainActivity.menuInit.whenSelected(2, 12,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
+        }
     }
 }

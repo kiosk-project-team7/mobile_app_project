@@ -36,4 +36,18 @@
         tools:layout="@layout/fragment_manager">
     </fragment>
 
+    <fragment
+        android:id="@+id/Fragment_Set1"
+        android:name="com.example.kioskui.Set1Fragment"
+        android:label="MANAGER"
+        tools:layout="@layout/fragment_set1">
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment_Set2"
+        android:name="com.example.kioskui.Set2Fragment"
+        android:label="MANAGER"
+        tools:layout="@layout/fragment_set2">
+    </fragment>
+
 </navigation>

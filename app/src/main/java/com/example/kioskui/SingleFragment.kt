@@ -94,7 +94,8 @@ class SingleFragment : Fragment() {
 
         imageView.setImageDrawable(img)
         textView.setText(tv)
-        MainActivity.menuInit.whenSelected(1, menuNum)
+        MainActivity.menuInit.whenSelected(1, menuNum,
+            resources.getDrawable(R.drawable.drink_01_americano_ice))
         textView.setText("${MainActivity.menuInit.desc[menuNum - 1]}")
 
         val mBuilder = view?.let {
