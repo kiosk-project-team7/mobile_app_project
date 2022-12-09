@@ -22,8 +22,8 @@
             <ImageView
                 android:id="@+id/buger_image"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:src="@drawable/ic_launcher_background" />
             <!--토핑 음료 사이드메뉴 카테고리 레이아웃-->
             <LinearLayout
@@ -37,6 +37,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="토핑"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
 
                 <TextView
@@ -44,6 +45,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="음료"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
 
                 <TextView
@@ -51,6 +53,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="사이드메뉴"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
             </LinearLayout>
 
@@ -67,6 +70,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="토핑 리스트"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
 
                 <TextView
@@ -75,6 +79,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="음료 리스트"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
 
                 <TextView
@@ -83,6 +88,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="사이드메뉴 리스트"
+                    android:textSize="10dp"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -91,14 +97,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="30dp"
             android:orientation="horizontal">
             <!--수량 버튼-->
 
             <ImageView
                 android:id="@+id/minus"
                 android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/btn_minus" />
 
@@ -108,16 +115,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
                 android:gravity="center_vertical"
+                android:textSize="10dp"
                 android:text="수량"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="25dp" />
+                 />
 
             <!--메뉴 이름-->
             <ImageView
                 android:id="@+id/plus"
                 android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/btn_plus" />
 
@@ -125,7 +134,8 @@
                 android:id="@+id/step_menu_name"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
+                android:layout_weight="8"
+                android:textSize="10dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:textColor="#000000" />
         </LinearLayout>

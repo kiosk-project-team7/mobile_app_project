@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.count
+
 //
 
 class SetmenuFragment : Fragment() {

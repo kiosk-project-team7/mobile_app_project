@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 stock[menuNum] -= 1
             }
             val data = ArrayList<Itemview>()
+            var count = 0
         }
     }
 

@@ -25,11 +25,8 @@ class stepAdapter(private var dataset : List<Itemview>):RecyclerView.Adapter<Rec
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val onviewItem=dataset[position]
+        //val onviewItem=dataset[position]
         val viewHolder = holder as MyViewHolder
-       // val bitmapDrawable = onviewItem.Menu as BitmapDrawable
-        //val bitmap = bitmapDrawable.bitmap
-        //viewHolder.menuImageView.setImageBitmap(bitmap)
         viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
         viewHolder.numbertextView.text=dataset[position].number_count

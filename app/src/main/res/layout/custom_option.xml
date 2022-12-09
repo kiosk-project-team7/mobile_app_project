@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FF0000">
 
     <data>
         <variable
@@ -14,7 +15,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -36,7 +37,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="60dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -45,8 +46,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_01_21cm_cheesestick"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp" />
+
+                        />
 
                     <ImageView
                         android:id="@+id/menu2img"
@@ -54,8 +55,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_02_angry_nugget_king_8"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp" />
+
+                        />
 
                     <ImageView
                         android:id="@+id/menu3img"
@@ -63,8 +64,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_03_basak_king"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp" />
+
+                         />
 
                     <ImageView
                         android:id="@+id/menu4img"
@@ -72,51 +73,56 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_04_cheese_fries"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:orientation="horizontal">
-
-                    <CheckBox
-                        android:id="@+id/cheese_stick"
+                    <RadioGroup
+                        android:id="@+id/srdg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/srb1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                        android:text="치즈스틱" />
+                        android:text="치즈스틱"
 
-                    <CheckBox
-                        android:id="@+id/nuget"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/srbw"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="@{() -> viewModel.set_side(@string/next)}"
                         android:text="치킨너겟" />
 
-                    <CheckBox
-                        android:id="@+id/chicken"
+                    <RadioButton
+                        android:id="@+id/srb3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="@{() -> viewModel.set_side(@string/next)}"
                         android:text="바삭킹" />
 
-                    <CheckBox
-                        android:id="@+id/cheese_potato"
+                    <RadioButton
+                        android:id="@+id/srb4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="@{() -> viewModel.set_side(@string/next)}"
                         android:text="치즈감자" />
+                    </RadioGroup>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="60dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -125,7 +131,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_07_corn_salad"
-                        android:layout_marginTop="40dp" />
+                         />
 
                     <ImageView
                         android:id="@+id/menu8img"
@@ -133,7 +139,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_08_creamy_mozzaball"
-                        android:layout_marginTop="40dp" />
+                         />
 
                     <ImageView
                         android:id="@+id/menu9img"
@@ -141,7 +147,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_09_french_fries_l"
-                        android:layout_marginTop="40dp" />
+                         />
 
                     <ImageView
                         android:id="@+id/menu10img"
@@ -149,48 +155,205 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/side_10_french_fries_r"
-                        android:layout_marginTop="40dp" />
+                         />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:orientation="horizontal">
-
-                    <CheckBox
-                        android:id="@+id/salad"
-                        android:layout_width="0dp"
+                    <RadioGroup
+                        android:id="@+id/srdg2"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                        android:text="코올슬로" />
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/srb5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="@{() -> viewModel.set_side(@string/next)}"
+                            android:text="코올슬로" />
 
-                    <CheckBox
-                        android:id="@+id/ball"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                        android:text="치즈볼" />
+                        <RadioButton
+                            android:id="@+id/srb6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="@{() -> viewModel.set_side(@string/next)}"
+                            android:text="치즈볼" />
 
-                    <CheckBox
-                        android:id="@+id/potato_L"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                        android:text="감자튀김(L)" />
+                        <RadioButton
+                            android:id="@+id/srb7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="@{() -> viewModel.set_side(@string/next)}"
+                            android:text="감자튀김(L)" />
 
-                    <CheckBox
-                        android:id="@+id/potato_R"
+                    <RadioButton
+                        android:id="@+id/srb8"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="@{() -> viewModel.set_side(@string/next)}"
                         android:text="감자튀김(R)" />
+                    </RadioGroup>
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/drink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:text="음료"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/drink_01_americano_ice"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/drink_02_americano"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/drink_03_coke_l"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/drink_04_coke_r"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    >
+                    <RadioGroup
+                        android:id="@+id/drdg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="홍차"
+                            android:id="@+id/drk1"
+                            android:layout_weight="1"
+                            />
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:id="@+id/drk2"
+                            android:text="커피"
+                            />
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:id="@+id/drk3"
+                            android:text="콜라(R)"
+                            />
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:id="@+id/drk4"
+                            android:text="콜라(L)"
+                        />
+                    </RadioGroup>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/drink_05_coke_zero_l"
+                            />
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/drink_06_coke_zero_r"
+                            />
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/drink_07_minutemaid_orange"
+                            />
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/drink_08_seagram_l"
+                            />
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    >
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:id="@+id/drdg2"
+                        >
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/drk5"
+                            android:layout_weight="1"
+                            android:text="제로콜라(R)"/>
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/drk6"
+                            android:layout_weight="1"
+                            android:text="제로콜라(L)"/>
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/drk7"
+                            android:layout_weight="1"
+                            android:text="오렌지주스"/>
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/drk8"
+                            android:layout_weight="1"
+                            android:text="시그램"/>
+                    </RadioGroup>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:text="토핑"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
             </LinearLayout>
+
         </ScrollView>
     </LinearLayout>
 </layout>
