@@ -101,8 +101,8 @@ class SetmenuFragment : Fragment() {
 
         imageView.setImageDrawable(img)
         textView.setText(tv)
-        MainActivity.menuInit.whenSelected(menuNum)
-        textView.setText("${MainActivity.menuInit.desc[menuNum-1]}")
+        MainActivity.menuInit.whenSelected(0, menuNum)
+        textView.setText("${MainActivity.menuInit.desc[menuNum]}")
 
         val mBuilder = view?.let {
             AlertDialog.Builder(it.context, R.style.Theme_KioskUI_Alert)

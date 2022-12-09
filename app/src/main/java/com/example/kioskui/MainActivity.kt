@@ -16,20 +16,24 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     class menuInit {
         companion object {
-            val menuName = arrayOf(arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
-                "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
-                "스태키2와퍼 세트", "스태키3와퍼 세트"),
-                arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
-                    "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
-                    "스태키2와퍼 세트", "스태키3와퍼 세트"),
-                arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
-                    "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
-                    "스태키2와퍼 세트", "스태키3와퍼 세트"),
-                arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
-                    "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
-                    "스태키2와퍼 세트", "스태키3와퍼 세트"))
-            val imgPath = "R.id.menu1Img"
-            val desc = arrayListOf<String>("200분의 기다림, 블랙어니언으로 깊어진 풍미에 바삭한 킹치킨패티까지 블랙 어니언 치킨 버거",
+            val menuName = arrayOf( //4 * 12
+                arrayListOf<String>(
+                    "블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
+                    "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트",
+                    "몬스터와퍼 세트", "콰트로치즈와퍼 세트", "스태커2와퍼 세트", "스태커3와퍼 세트"),
+                arrayListOf<String>(
+                    "블랙어니언치킨버거 단품", "블랙어니언와퍼 단품", "골든치즈렐라치킨버거 단품", "골든치즈렐라X 단품",
+                    "골든치즈렐라와퍼버거 단품", "기네스콰트로치즈와퍼 단품", "기네스와퍼 단품", "몬스터X 단품",
+                    "몬스터와퍼 단품", "콰트로치즈와퍼 단품", "스태커2와퍼 단품", "스태커3와퍼 단품"),
+                arrayListOf<String>(
+                    "21cm 치즈스틱", "앵그리너겟킹", "바삭킹", "치즈프라이", "코코넛쉬림프", "코울슬로",
+                    "콘샐러드", "크리미모짜볼", "프렌치프라이(L)", "프렌치프라이(R)", "너겟킹", "어니언링"),
+                arrayListOf<String>(
+                    "아이스아메리카노", "아메리카노", "코카콜라(L)", "코카콜라(R)", "코카콜라제로(L)", "코카콜라제로(R)",
+                    "미닛메이드오렌지", "씨그램(L)", "씨그램(R)", "순수", "스프라이트(L)", "스프라이트(R)"))
+            //val imgPath = "R.id.menu1Img"
+            val desc = arrayListOf<String>( //12
+                "200분의 기다림, 블랙어니언으로 깊어진 풍미에 바삭한 킹치킨패티까지 블랙 어니언 치킨 버거",
                 "200분의 기다림, 블랙어니언으로 깊어진 풍미에 100% 순쇠고기 패티까지 블랙 어니언 와퍼",
                 "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬! 골든치즈렐라치킨버거",
                 "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬! 골든치즈렐라X버거",
@@ -60,39 +64,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
-            fun whenSelected(menuNum: Int) {
-                selectedAmt[menuNum] += 1
-                stock[menuNum] -= 1
+            fun whenSelected(menuCat: Int, menuNum: Int) {
+                selectedAmt[menuCat][menuNum] += 1
+                stock[menuCat][menuNum] -= 1
             }
         }
     }
-
-
-
-    val menu1: menuInit = menuInit()
-
-
-    class myclass {
-       companion object {
-           var menuName : String = " "
-           var stock : Boolean = false
-           var price : Int = 6800
-        //   var isSeleced = Array<Boolean>(12,false)
-            fun onclickTest(i : Int) {
-            }
-        }
-    }
-
-    class myclass2 {
-        companion object {
-            var isSeleced : Boolean = true
-            fun onclickTest() {
-                isSeleced = !isSeleced
-                Log.d("test", isSeleced.toString())
-            }
-        }
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
