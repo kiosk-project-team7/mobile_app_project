@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <Button
         android:id="@+id/out_btn"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="@color/colorPrimary"
         android:text="포장"
+        android:textColor="#FFFFFF"
         android:textSize="50dp"
         app:icon="@drawable/logo_paperbag"
         app:iconGravity="textTop"
@@ -23,7 +26,9 @@
         android:id="@+id/in_btn"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="@color/colorPrimary"
         android:text="매장"
+        android:textColor="#FFFFFF"
         android:textSize="50dp"
         app:icon="@drawable/logo_set"
         app:iconGravity="textTop"

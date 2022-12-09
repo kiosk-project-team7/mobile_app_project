@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#FFFFFF"
     tools:context=".SideFragment">
 
     <GridLayout
@@ -29,15 +29,17 @@
                 android:id="@+id/menu1_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="21cm 치즈스틱"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu1_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="2,900원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -56,15 +58,17 @@
                 android:id="@+id/menu2_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="앵그리너겟킹"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu2_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="4,500원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -83,15 +87,17 @@
                 android:id="@+id/menu3_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="바삭킹"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu3_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="4,200원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -110,15 +116,17 @@
                 android:id="@+id/menu4_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="치즈프라이"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu4_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="3,200원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -137,15 +145,17 @@
                 android:id="@+id/menu5_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="코코넛쉬림프"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu5_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="4,000원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -164,15 +174,17 @@
                 android:id="@+id/menu6_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="코울슬로"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu6_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="1,700원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -191,15 +203,17 @@
                 android:id="@+id/menu7_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="콘샐러드"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu7_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="1,500원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -218,15 +232,17 @@
                 android:id="@+id/menu8_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="크리미모짜볼"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu8_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="2,300원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -245,15 +261,17 @@
                 android:id="@+id/menu9_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="프렌치프라이(L)"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu9_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="1,300원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -272,15 +290,17 @@
                 android:id="@+id/menu10_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="프렌치프라이(R)"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu10_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="1,000원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -299,15 +319,17 @@
                 android:id="@+id/menu11_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="너겟킹"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu11_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="3,600원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -326,15 +348,17 @@
                 android:id="@+id/menu12_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="어니언링"
-                android:layout_gravity="center"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/menu12_prc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="2,000원"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
