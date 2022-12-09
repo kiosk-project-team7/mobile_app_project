@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import com.example.kioskui.databinding.FragmentDrinkBinding
-import com.example.kioskui.databinding.FragmentSetmenuBinding
 
 class DrinkFragment : Fragment() {
     private lateinit var binding: FragmentDrinkBinding
