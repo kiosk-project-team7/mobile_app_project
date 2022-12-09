@@ -1,14 +1,9 @@
 package com.example.kioskui
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.text.Layout
-import android.util.Log
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.example.kioskui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -31,7 +26,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<String>(
                     "아이스아메리카노", "아메리카노", "코카콜라(L)", "코카콜라(R)", "코카콜라제로(L)", "코카콜라제로(R)",
                     "미닛메이드오렌지", "씨그램(L)", "씨그램(R)", "순수", "스프라이트(L)", "스프라이트(R)"))
-            //val imgPath = "R.id.menu1Img"
+            val imgPath = "R.id.menu1Img"
             val desc = arrayListOf<String>( //12
                 "200분의 기다림, 블랙어니언으로 깊어진 풍미에 바삭한 킹치킨패티까지 블랙 어니언 치킨 버거",
                 "200분의 기다림, 블랙어니언으로 깊어진 풍미에 100% 순쇠고기 패티까지 블랙 어니언 와퍼",
@@ -51,28 +46,34 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100),
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100))
             var price = arrayOf(
-                arrayListOf<Int>(6900, 7300, 6800, 6400, 6100, 7500,
-                                 7000, 6900, 6400, 6500, 5800, 6700),
-                arrayListOf<Int>(6000, 6400, 5900, 5500, 5500, 6600,
-                                 6100, 6000, 5500, 5600, 4900, 5800),
-                arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700,
-                                 1500, 2300, 1300, 1000, 3600, 2000),
-                arrayListOf<Int>(1400, 1200, 900, 700, 900, 700,
-                                 800, 900, 750, 600, 900, 700))
+                arrayListOf<Int>(6900, 7300, 6800, 6400, 6100, 7500, 7000, 6900, 6400, 6500, 5800, 6700),
+                arrayListOf<Int>(6000, 6400, 5900, 5500, 5500, 6600, 6100, 6000, 5500, 5600, 4900, 5800),
+                arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700, 1500, 2300, 1300, 1000, 3600, 2000),
+                arrayListOf<Int>(1400, 1200, 900, 700, 900, 700, 800, 900, 750, 600, 900, 700))
             var selectedAmt = arrayOf(
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
-            var orderNum = 0
 
             fun whenSelected(menuCat: Int, menuNum: Int) {
                 selectedAmt[menuCat][menuNum] += 1
+
+                order.orderNum += 1
+                order.selected.add(menuName[menuCat][menuNum])
             }
             fun whenCheckout() {
                 for (i in 0 .. 3)
                     for (j in 0 .. 11) stock[i][j] -= selectedAmt[i][j]
             }
+        }
+    }
+
+    class order {
+        companion object {
+            var orderNum = 0
+            var selected = arrayListOf<String>()
+            var topping : ArrayList<ArrayList<String>> = arrayListOf(arrayListOf())
         }
     }
 
