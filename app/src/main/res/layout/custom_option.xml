@@ -37,6 +37,7 @@
                 android:layout_marginStart="10dp" />
 
             <TextView
+                android:id="@+id/side1tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="사이드"
@@ -147,7 +148,7 @@
                 android:src="@drawable/side_07_corn_salad"
                 app:layout_constraintTop_toBottomOf="@id/side1img"
                 app:layout_constraintStart_toStartOf="@id/side1img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -165,7 +166,7 @@
                 android:src="@drawable/side_08_creamy_mozzaball"
                 app:layout_constraintTop_toBottomOf="@id/side2img"
                 app:layout_constraintStart_toStartOf="@id/side2img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -183,7 +184,7 @@
                 android:src="@drawable/side_09_french_fries_l"
                 app:layout_constraintTop_toBottomOf="@id/side3img"
                 app:layout_constraintStart_toStartOf="@id/side3img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -201,7 +202,7 @@
                 android:src="@drawable/side_10_french_fries_r"
                 app:layout_constraintTop_toBottomOf="@id/side4img"
                 app:layout_constraintStart_toStartOf="@id/side4img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -219,7 +220,7 @@
                 android:src="@drawable/side_08_creamy_mozzaball"
                 app:layout_constraintTop_toBottomOf="@id/side5img"
                 app:layout_constraintStart_toStartOf="@id/side5img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -237,7 +238,7 @@
                 android:src="@drawable/side_12_onionring"
                 app:layout_constraintTop_toBottomOf="@id/side6img"
                 app:layout_constraintStart_toStartOf="@id/side6img"
-                android:layout_marginTop="40dp" />
+                android:layout_marginTop="60dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -255,7 +256,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="토핑"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="330dp"
                 android:gravity="center"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/side"
@@ -483,7 +484,121 @@
                 app:layout_constraintStart_toStartOf="@id/toping12img"
                 app:layout_constraintTop_toBottomOf="@id/toping12img" />
 
+            <!--<RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/side1tv">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="63dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="63dp"
+                        android:text="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="130dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="63dp"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="63dp"
+                        android:text="@null" />
+
+                </LinearLayout>
+            </RadioGroup>-->
+            <RadioGroup
+                android:id="@+id/rdg1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/side1tv">
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rdg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/side1tv"
+                android:layout_marginTop="150dp">
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rb5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rb6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </ScrollView>
 

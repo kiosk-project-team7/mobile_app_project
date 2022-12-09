@@ -147,12 +147,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical">
         <!-- 주문 목록-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/step_recyclerview"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            />
+            android:layout_height="350dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/side_11_nugget_king_8"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="메뉴이름"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
         <!--버튼 -->
         <LinearLayout
             android:layout_width="match_parent"

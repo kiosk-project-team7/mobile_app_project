@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.LayoutItemBinding
 
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
+
     val menuImageView : ImageView = binding.bugerImage
     val menutextView  : TextView = binding.stepMenuName
     val numbertextView : TextView = binding.menuCount
