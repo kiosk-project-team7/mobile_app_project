@@ -1,11 +1,7 @@
 package com.example.kioskui
 
-import android.annotation.SuppressLint
-import android.content.DialogInterface
-import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 
 class SetmenuFragment : Fragment() {
@@ -102,7 +95,7 @@ class SetmenuFragment : Fragment() {
         imageView.setImageDrawable(img)
         textView.setText(tv)
         MainActivity.menuInit.whenSelected(0, menuNum)
-        textView.setText("${MainActivity.menuInit.desc[menuNum]}")
+        textView.setText("${MainActivity.menuInit.desc[menuNum - 1]}")
 
         val mBuilder = view?.let {
             AlertDialog.Builder(it.context, R.style.Theme_KioskUI_Alert)
