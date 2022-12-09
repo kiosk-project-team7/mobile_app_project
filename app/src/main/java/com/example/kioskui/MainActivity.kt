@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
-
+            var orderNum = 0
 
             fun whenSelected(menuCat: Int, menuNum: Int) {
                 selectedAmt[menuCat][menuNum] += 1
