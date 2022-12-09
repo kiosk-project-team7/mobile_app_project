@@ -1,6 +1,490 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!--한줄에 3개만 들어감 위아래로 스크롤-->
+    <!--사이드는 R,L 선택만 해서 가지수를 줄이자-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/side"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:text="사이드 메뉴"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/side1img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_01_21cm_cheesestick"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side1img"
+                app:layout_constraintStart_toStartOf="@id/side1img"
+                app:layout_constraintTop_toBottomOf="@id/side1img" />
+
+            <ImageView
+                android:id="@+id/side2img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_02_angry_nugget_king_8"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toEndOf="@id/side1img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side2img"
+                app:layout_constraintStart_toStartOf="@id/side2img"
+                app:layout_constraintTop_toBottomOf="@id/side2img" />
+
+            <ImageView
+                android:id="@+id/side3img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_03_basak_king"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toEndOf="@id/side2img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side3img"
+                app:layout_constraintStart_toStartOf="@id/side3img"
+                app:layout_constraintTop_toBottomOf="@id/side3img" />
+
+            <ImageView
+                android:id="@+id/side4img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_04_cheese_fries"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toEndOf="@id/side3img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side4img"
+                app:layout_constraintStart_toStartOf="@id/side4img"
+                app:layout_constraintTop_toBottomOf="@id/side4img" />
+
+            <ImageView
+                android:id="@+id/side5img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_05_coconut_shrimp_sweetchili"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toEndOf="@id/side4img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side5img"
+                app:layout_constraintStart_toStartOf="@id/side5img"
+                app:layout_constraintTop_toBottomOf="@id/side5img" />
+
+            <ImageView
+                android:id="@+id/side6img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_06_coleslaw"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                app:layout_constraintStart_toEndOf="@id/side5img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side6img"
+                app:layout_constraintStart_toStartOf="@id/side6img"
+                app:layout_constraintTop_toBottomOf="@id/side6img" />
+
+            <ImageView
+                android:id="@+id/side7img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_07_corn_salad"
+                app:layout_constraintTop_toBottomOf="@id/side1img"
+                app:layout_constraintStart_toStartOf="@id/side1img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side7img"
+                app:layout_constraintStart_toStartOf="@id/side7img"
+                app:layout_constraintTop_toBottomOf="@id/side7img" />
+
+            <ImageView
+                android:id="@+id/side8img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_08_creamy_mozzaball"
+                app:layout_constraintTop_toBottomOf="@id/side2img"
+                app:layout_constraintStart_toStartOf="@id/side2img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side8img"
+                app:layout_constraintStart_toStartOf="@id/side8img"
+                app:layout_constraintTop_toBottomOf="@id/side8img" />
+
+            <ImageView
+                android:id="@+id/side9img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_09_french_fries_l"
+                app:layout_constraintTop_toBottomOf="@id/side3img"
+                app:layout_constraintStart_toStartOf="@id/side3img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side9img"
+                app:layout_constraintStart_toStartOf="@id/side9img"
+                app:layout_constraintTop_toBottomOf="@id/side9img" />
+
+            <ImageView
+                android:id="@+id/side10img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_10_french_fries_r"
+                app:layout_constraintTop_toBottomOf="@id/side4img"
+                app:layout_constraintStart_toStartOf="@id/side4img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side10img"
+                app:layout_constraintStart_toStartOf="@id/side10img"
+                app:layout_constraintTop_toBottomOf="@id/side10img" />
+
+            <ImageView
+                android:id="@+id/side11img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_08_creamy_mozzaball"
+                app:layout_constraintTop_toBottomOf="@id/side5img"
+                app:layout_constraintStart_toStartOf="@id/side5img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side11img"
+                app:layout_constraintStart_toStartOf="@id/side11img"
+                app:layout_constraintTop_toBottomOf="@id/side11img" />
+
+            <ImageView
+                android:id="@+id/side12img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_12_onionring"
+                app:layout_constraintTop_toBottomOf="@id/side6img"
+                app:layout_constraintStart_toStartOf="@id/side6img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사이드"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/side12img"
+                app:layout_constraintStart_toStartOf="@id/side12img"
+                app:layout_constraintTop_toBottomOf="@id/side12img" />
+
+
+            <!--토핑 메뉴 바-->
+            <TextView
+                android:id="@+id/toping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="300dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/side"
+                android:background="@color/black"/>
+
+            <ImageView
+                android:id="@+id/toping1img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_01_21cm_cheesestick"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/toping1img"
+                app:layout_constraintStart_toStartOf="@id/toping1img"
+                app:layout_constraintTop_toBottomOf="@id/toping1img" />
+
+            <ImageView
+                android:id="@+id/toping2img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_02_angry_nugget_king_8"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toEndOf="@id/toping1img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping2img"
+                app:layout_constraintStart_toStartOf="@id/toping2img"
+                app:layout_constraintTop_toBottomOf="@id/toping2img" />
+
+            <ImageView
+                android:id="@+id/toping3img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_03_basak_king"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toEndOf="@id/toping2img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping3img"
+                app:layout_constraintStart_toStartOf="@id/toping3img"
+                app:layout_constraintTop_toBottomOf="@id/toping3img" />
+
+            <ImageView
+                android:id="@+id/toping4img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_04_cheese_fries"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toEndOf="@id/toping3img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping4img"
+                app:layout_constraintStart_toStartOf="@id/toping4img"
+                app:layout_constraintTop_toBottomOf="@id/toping4img" />
+
+            <ImageView
+                android:id="@+id/toping5img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_05_coconut_shrimp_sweetchili"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toEndOf="@id/toping4img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping5img"
+                app:layout_constraintStart_toStartOf="@id/toping5img"
+                app:layout_constraintTop_toBottomOf="@id/toping5img" />
+
+            <ImageView
+                android:id="@+id/toping6img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_06_coleslaw"
+                app:layout_constraintTop_toBottomOf="@id/toping"
+                app:layout_constraintStart_toEndOf="@id/toping5img"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping6img"
+                app:layout_constraintStart_toStartOf="@id/toping6img"
+                app:layout_constraintTop_toBottomOf="@id/toping6img" />
+
+            <ImageView
+                android:id="@+id/toping7img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_07_corn_salad"
+                app:layout_constraintTop_toBottomOf="@id/toping1img"
+                app:layout_constraintStart_toStartOf="@id/toping1img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping7img"
+                app:layout_constraintStart_toStartOf="@id/toping7img"
+                app:layout_constraintTop_toBottomOf="@id/toping7img" />
+
+            <ImageView
+                android:id="@+id/toping8img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_08_creamy_mozzaball"
+                app:layout_constraintTop_toBottomOf="@id/toping2img"
+                app:layout_constraintStart_toStartOf="@id/toping2img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping8img"
+                app:layout_constraintStart_toStartOf="@id/toping8img"
+                app:layout_constraintTop_toBottomOf="@id/toping8img" />
+
+            <ImageView
+                android:id="@+id/toping9img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_09_french_fries_l"
+                app:layout_constraintTop_toBottomOf="@id/toping3img"
+                app:layout_constraintStart_toStartOf="@id/toping3img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping9img"
+                app:layout_constraintStart_toStartOf="@id/toping9img"
+                app:layout_constraintTop_toBottomOf="@id/toping9img" />
+
+            <ImageView
+                android:id="@+id/toping10img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/side_10_french_fries_r"
+                app:layout_constraintStart_toStartOf="@id/toping4img"
+                app:layout_constraintTop_toBottomOf="@id/toping4img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping10img"
+                app:layout_constraintStart_toStartOf="@id/toping10img"
+                app:layout_constraintTop_toBottomOf="@id/toping10img" />
+
+            <ImageView
+                android:id="@+id/toping11img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_11_nugget_king_8"
+                app:layout_constraintTop_toBottomOf="@id/toping5img"
+                app:layout_constraintStart_toStartOf="@id/toping5img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping11img"
+                app:layout_constraintStart_toStartOf="@id/toping11img"
+                app:layout_constraintTop_toBottomOf="@id/toping11img" />
+
+            <ImageView
+                android:id="@+id/toping12img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/side_12_onionring"
+                app:layout_constraintTop_toBottomOf="@id/toping6img"
+                app:layout_constraintStart_toStartOf="@id/toping6img"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토핑"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/toping12img"
+                app:layout_constraintStart_toStartOf="@id/toping12img"
+                app:layout_constraintTop_toBottomOf="@id/toping12img" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
