@@ -7,7 +7,7 @@
             name="viewModel"
             type="com.example.kioskui.model.OrderViewModel" />
         <variable
-            name="menuFragemnt"
+            name="MenuFragemnt"
             type="com.example.kioskui.MenuFragment" />
     </data>
 

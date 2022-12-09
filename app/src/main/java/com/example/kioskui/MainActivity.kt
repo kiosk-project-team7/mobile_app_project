@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 selectedAmt[menuNum] += 1
                 stock[menuNum] -= 1
             }
+            val data = ArrayList<Itemview>()
         }
     }
 
