@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kioskui.MainActivity.menuInit.Companion.orderNum
 import com.example.kioskui.databinding.FragmentMenuBinding
 
 data class Itemview(
