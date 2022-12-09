@@ -2,14 +2,17 @@ package com.example.kioskui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kioskui.MainActivity.menuInit.Companion.orderNum
 import com.example.kioskui.databinding.FragmentMenuBinding
 
 data class Itemview(
@@ -35,7 +38,7 @@ class MenuFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
+        Log.d("test1", "attached")
         mainActivity = context as MainActivity
     }
 
@@ -53,6 +56,7 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
         binding.btn1.setOnClickListener {
