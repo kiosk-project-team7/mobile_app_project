@@ -63,6 +63,7 @@ class SetmenuFragment : Fragment() {
                 AlertDialog.Builder(view.context).run {
                     setTitle("Test")
                     setIcon(R.drawable.ic_launcher_background)
+
                     setSingleChoiceItems(items,
                         checkedItem,
                         object : DialogInterface.OnClickListener {
