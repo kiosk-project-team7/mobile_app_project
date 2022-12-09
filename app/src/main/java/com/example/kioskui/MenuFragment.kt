@@ -54,6 +54,7 @@ class MenuFragment : Fragment() {
         binding.btn1.setOnClickListener {
             setmenuFragment = SetmenuFragment()
             mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, setmenuFragment!!).commit()
+//            binding.btn1.setBackgroundColor()
         }
         binding.btn2.setOnClickListener {
             singleFragment = SingleFragment()
