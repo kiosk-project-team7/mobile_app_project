@@ -3,9 +3,11 @@ package com.example.kioskui
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -89,13 +91,21 @@ class MenuFragment : Fragment() {
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
         //binding.stepRecyclerview.layoutManager = LinearLayout(this)
 
-            binding.stepRecyclerview.adapter = stepAdapter(data)
+            //val clickadapter = stepAdapter(data) //이 부분 바뀜.
+            //binding.stepRecyclerview.adapter = stepAdapter(data)
+            val mAdapter = stepAdapter(data)
+            binding.stepRecyclerview.adapter=mAdapter
+
             binding.stepRecyclerview.addItemDecoration(
                 DividerItemDecoration(mainActivity, LinearLayoutManager.VERTICAL)
             )
         sharedViewModel.liveData.observe(mainActivity, Observer {
-            (binding.stepRecyclerview.adapter as stepAdapter).setData(it)
+            (binding.stepRecyclerview.adapter as stepAdapter).setData(it as MutableList<Itemview>)
         })
+
+
+
+        //
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Inout)

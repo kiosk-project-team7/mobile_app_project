@@ -1,5 +1,6 @@
 package com.example.kioskui
 
+import android.content.ClipData.Item
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 selectedAmt[menuNum] += 1
                 stock[menuNum] -= 1
             }
-            val data = ArrayList<Itemview>()
+            val data = mutableListOf <Itemview>()
             var count = 0
         }
     }
