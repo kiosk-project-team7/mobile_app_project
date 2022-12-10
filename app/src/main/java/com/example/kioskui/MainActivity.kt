@@ -3,8 +3,13 @@ package com.example.kioskui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.text.Layout
+import android.util.Log
+import android.view.View
 import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.viewModels
 import androidx.navigation.findNavController
 import com.example.kioskui.databinding.ActivityMainBinding
@@ -28,11 +33,97 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
             lateinit var menuImageView : ImageView
 
+            val data = ArrayList<Itemview>()
+            var count = 0
             fun whenSelected(menuNum: Int) {
                 selectedAmt[menuNum] += 1
                 stock[menuNum] -= 1
             }
         }
+    }
+
+
+    /*fun setOn(view: View){
+        val rdg2 = findViewById<RadioGroup>(R.id.rdg2)
+
+        if(view is RadioButton){
+            val checked = view.isChecked
+
+            when(view.getId()){
+                R.id.rb1 ->
+                    if(checked)
+                        rdg2.clearCheck()
+                R.id.rb2 ->
+                    if(checked)
+                        rdg2.clearCheck()
+                R.id.rb3 ->
+                    if(checked)
+                        rdg2.clearCheck()
+                R.id.rb4 ->
+                    if(checked)
+                        rdg2.clearCheck()
+                R.id.rb5 ->
+                    if(checked)
+                        rdg2.clearCheck()
+                R.id.rb6 ->
+                    if(checked)
+                        rdg2.clearCheck()
+            }
+        }
+    }
+
+    fun setOn2(view: View){
+        val rdg1 = findViewById<RadioGroup>(R.id.rdg1)
+
+        if(view is RadioButton){
+            val checked = view.isChecked
+
+            when(view.getId()){
+                R.id.rb7 ->
+                    if(checked)
+                        rdg1.clearCheck()
+                R.id.rb8 ->
+                    if(checked)
+                        rdg1.clearCheck()
+                R.id.rb9 ->
+                    if(checked)
+                        rdg1.clearCheck()
+                R.id.rb10 ->
+                    if(checked)
+                        rdg1.clearCheck()
+                R.id.rb11 ->
+                    if(checked)
+                        rdg1.clearCheck()
+                R.id.rb12 ->
+                    if(checked)
+                        rdg1.clearCheck()
+            }
+        }
+    }*/
+
+    class myclass {
+        companion object {
+            var menuName : String = " "
+            var stock : Boolean = false
+            var price : Int = 6800
+            //   var isSeleced = Array<Boolean>(12,false)
+            fun onclickTest(i : Int) {
+            }
+        }
+    }
+
+    class myclass2 {
+        companion object {
+            var isSeleced : Boolean = true
+            fun onclickTest() {
+                isSeleced = !isSeleced
+                Log.d("test", isSeleced.toString())
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
     }
 
     override fun onSupportNavigateUp(): Boolean {
