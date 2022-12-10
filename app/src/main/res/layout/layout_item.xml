@@ -130,8 +130,7 @@
                 android:textSize="10dp"
                 android:text="수량"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                />
+                android:textColor="#000000" />
 
             <!--메뉴 이름-->
             <ImageView
