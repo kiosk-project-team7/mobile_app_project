@@ -31,5 +31,9 @@ class ManagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnReturnMain.setOnClickListener {
+            findNavController().navigate(R.id.Fragment_Choice_Manager)
+        }
+
     }
 }

@@ -20,9 +20,9 @@
 
     <ImageView
         android:id="@+id/menu1img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_01_21cm_cheesestick"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_bacon"
         app:layout_constraintTop_toBottomOf="@id/side"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="10dp"
@@ -39,9 +39,9 @@
 
     <ImageView
         android:id="@+id/menu2img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_02_angry_nugget_king_8"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_cheese"
         app:layout_constraintTop_toBottomOf="@id/side"
         app:layout_constraintStart_toEndOf="@id/menu1img"
         android:layout_marginTop="10dp"
@@ -58,9 +58,9 @@
 
     <ImageView
         android:id="@+id/menu3img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_03_basak_king"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_pickle2"
         app:layout_constraintTop_toBottomOf="@id/side"
         app:layout_constraintStart_toEndOf="@id/menu2img"
         android:layout_marginTop="10dp"
@@ -77,9 +77,9 @@
 
     <ImageView
         android:id="@+id/menu4img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_04_cheese_fries"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_bacon"
         app:layout_constraintTop_toBottomOf="@id/side"
         app:layout_constraintStart_toEndOf="@id/menu3img"
         android:layout_marginTop="10dp"
@@ -134,9 +134,9 @@
 
     <ImageView
         android:id="@+id/menu7img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_07_corn_salad"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_lettuce"
         app:layout_constraintTop_toBottomOf="@id/menu1img"
         app:layout_constraintStart_toStartOf="@id/menu1img"
         android:layout_marginTop="40dp" />
@@ -152,9 +152,9 @@
 
     <ImageView
         android:id="@+id/menu8img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_08_creamy_mozzaball"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_cheese"
         app:layout_constraintTop_toBottomOf="@id/menu2img"
         app:layout_constraintStart_toStartOf="@id/menu2img"
         android:layout_marginTop="40dp" />
@@ -170,9 +170,9 @@
 
     <ImageView
         android:id="@+id/menu9img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/side_09_french_fries_l"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/topping_tomato"
         app:layout_constraintTop_toBottomOf="@id/menu3img"
         app:layout_constraintStart_toStartOf="@id/menu3img"
         android:layout_marginTop="40dp" />
@@ -188,8 +188,8 @@
 
     <ImageView
         android:id="@+id/menu10img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/side_10_french_fries_r"
         app:layout_constraintTop_toBottomOf="@id/menu4img"
         app:layout_constraintStart_toStartOf="@id/menu4img"

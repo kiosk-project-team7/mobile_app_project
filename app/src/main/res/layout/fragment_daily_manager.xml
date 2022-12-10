@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="1일판매물량"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/dailySelling"
@@ -43,7 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="판매수량"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/salesNumber"
@@ -63,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="총판매금액"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/totalSelling"
