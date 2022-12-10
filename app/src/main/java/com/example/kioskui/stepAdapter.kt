@@ -16,7 +16,7 @@ import com.example.kioskui.model.OrderViewModel
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
     val menuImageView : ImageView = binding.bugerImage
     val menutextView  : TextView = binding.stepMenuName
-    val numbertextView : TextView = binding.menuCount
+    var numbertextView : TextView = binding.menuCount
     val topingtextView : TextView = binding.topingList
     val drinktextView : TextView = binding.drinkList
     val sidemenutextView : TextView = binding.sidemenuList
@@ -29,9 +29,9 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
     var mposition = 0
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         //val onviewItem=dataset[position]
-        Log.d("위치","${position}")
+        //Log.d("위치","${position}")
         val listposition = dataset[position]
-        setPosition(position)
+
         val viewHolder = holder as MyViewHolder
         viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
@@ -40,29 +40,48 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
         viewHolder.drinktextView.text=dataset[position].drink
         viewHolder.sidemenutextView.text=dataset[position].sidemenu
 
-        viewHolder.binding.plus.setOnClickListener{ // + 버튼
+        if(viewHolder.numbertextView.text=="1")
+        {
+            viewHolder.binding.minus.alpha = 0.3f
+        }
+        else
+            viewHolder.binding.minus.alpha= 1f
 
+        viewHolder.binding.plus.setOnClickListener{ // + 버튼
+            Log.d("button","${position} 번째 +버튼 눌렀슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            var num = dataset[position].number_count.toInt()
+            num++
+            Log.d("num", "${num}")
+            dataset[position].number_count=num.toString()
+            notifyDataSetChanged()
+            Log.d("업데이트 후 data","${dataset[position]}")
         }
         viewHolder.binding.minus.setOnClickListener{
-
+            Log.d("button","${position} 번째 -버튼 눌렀슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            var num = dataset[position].number_count.toInt()
+            if(num>1) {
+                num--
+                Log.d("num", "${num}")
+                dataset[position].number_count = num.toString()
+                notifyDataSetChanged()
+                Log.d("업데이트 후 data","${dataset[position]}")
+            }
         }
         viewHolder.binding.allDelete.setOnClickListener {
             //delete button 눌렀을때 현재
-            Log.d("button","x버튼 눌려슴")
+            Log.d("button","${position} 번째 x버튼 눌려슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            setPosition(position)
             removeItem(getPosition())
+            //Log.d("업데이트 후 data","${dataset[position]}")
         }
+    }
 
-    }
-    interface onItemClickListner{
-        fun onClick(v: View, position:Int)
-    }
-    private  lateinit var itemClickListner : onItemClickListner
 
     override fun getItemCount(): Int {
         return dataset.size
-    }
-    fun setItemClickListener(itemClickListner: onItemClickListner){
-        this.itemClickListner=itemClickListner
     }
     fun setData(newData:MutableList<Itemview>)
     {

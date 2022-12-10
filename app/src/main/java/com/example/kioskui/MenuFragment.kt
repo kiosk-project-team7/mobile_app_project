@@ -23,10 +23,10 @@ import androidx.lifecycle.Observer
 data class Itemview(
     val Menu: Drawable,
     val Menu_name: CharSequence,
-    val number_count: String,
-    val toping: String,
-    val drink: String,
-    val sidemenu: String)
+    var number_count: String,
+    var toping: String,
+    var drink: String,
+    var sidemenu: String)
 
 class MenuFragment : Fragment() {
     private val sharedViewModel: OrderViewModel by activityViewModels()
@@ -102,6 +102,8 @@ class MenuFragment : Fragment() {
         sharedViewModel.liveData.observe(mainActivity, Observer {
             (binding.stepRecyclerview.adapter as stepAdapter).setData(it as MutableList<Itemview>)
         })
+
+            //val delete_ = binding.stepRecyclerview.findViewById<ImageView>(R.id.all_delete)
 
 
 
