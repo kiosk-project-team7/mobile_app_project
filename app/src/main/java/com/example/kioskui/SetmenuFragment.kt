@@ -1,5 +1,6 @@
 package com.example.kioskui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
@@ -10,23 +11,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
-
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.findFragment
+import androidx.navigation.fragment.findNavController
+import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
-import com.example.kioskui.MainActivity.menuInit.Companion.count
-//
 
 class SetmenuFragment : Fragment() {
-    private val sharedViewModel : OrderViewModel by activityViewModels()
+
     private lateinit var binding: FragmentSetmenuBinding
-    //    private var checkedItem: Int = 0
-    private var sidetext : String =" "
-    private var drinktext : String =" "
-    private var menuFragment: MenuFragment? = null
+    private val sharedViewModel : OrderViewModel by activityViewModels()
+//    private var checkedItem: Int = 0
 
     private lateinit var mainActivity : MainActivity
+    private var toppingtext : String = " "
+    private var sidetext : String = " "
+    private var drinktext : String = " "
+    private var menuFragment: MenuFragment? = null
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,66 +53,67 @@ class SetmenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        // 메뉴 사진 누르면 다이얼로그
         binding.apply{
-            lifecycleOwner =viewLifecycleOwner
+            lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
             setmenuFragemnt = this@SetmenuFragment
         }
 
         var dataset : ArrayList<Itemview>
-        // 메뉴 사진 누르면 다이얼로그
+
         binding.menu1Img.setOnClickListener {
-            dialog(binding.menu1Img.drawable, binding.menu1Txt.text)
+            dialog(binding.menu1Img.drawable, binding.menu1Txt.text, R.string.setmenu1_txt)
         }
 
         binding.menu2Img.setOnClickListener {
-            dialog(binding.menu2Img.drawable, binding.menu2Txt.text)
+            dialog(binding.menu2Img.drawable, binding.menu2Txt.text, R.string.setmenu2_txt)
         }
 
         binding.menu3Img.setOnClickListener {
-            dialog(binding.menu3Img.drawable, binding.menu3Txt.text)
+            dialog(binding.menu3Img.drawable, binding.menu3Txt.text, R.string.setmenu3_txt)
         }
 
         binding.menu4Img.setOnClickListener {
-            dialog(binding.menu4Img.drawable, binding.menu4Txt.text)
+            dialog(binding.menu4Img.drawable, binding.menu4Txt.text, R.string.setmenu4_txt)
         }
 
         binding.menu5Img.setOnClickListener {
-            dialog(binding.menu5Img.drawable, binding.menu5Txt.text)
+            dialog(binding.menu5Img.drawable, binding.menu5Txt.text, R.string.setmenu5_txt)
         }
 
         binding.menu6Img.setOnClickListener {
-            dialog(binding.menu6Img.drawable, binding.menu6Txt.text)
+            dialog(binding.menu6Img.drawable, binding.menu6Txt.text, R.string.setmenu6_txt)
         }
 
         binding.menu7Img.setOnClickListener {
-            dialog(binding.menu7Img.drawable, binding.menu7Txt.text)
+            dialog(binding.menu7Img.drawable, binding.menu7Txt.text, R.string.setmenu7_txt)
         }
 
         binding.menu8Img.setOnClickListener {
-            dialog(binding.menu8Img.drawable, binding.menu8Txt.text)
+            dialog(binding.menu8Img.drawable, binding.menu8Txt.text, R.string.setmenu8_txt)
         }
 
         binding.menu9Img.setOnClickListener {
-            dialog(binding.menu9Img.drawable, binding.menu9Txt.text)
+            dialog(binding.menu9Img.drawable, binding.menu9Txt.text, R.string.setmenu9_txt)
         }
 
         binding.menu10Img.setOnClickListener {
-            dialog(binding.menu10Img.drawable, binding.menu10Txt.text)
+            dialog(binding.menu10Img.drawable, binding.menu10Txt.text, R.string.setmenu10_txt)
         }
 
         binding.menu11Img.setOnClickListener {
-            dialog(binding.menu11Img.drawable, binding.menu11Txt.text)
+            dialog(binding.menu11Img.drawable, binding.menu11Txt.text, R.string.setmenu11_txt)
         }
 
         binding.menu12Img.setOnClickListener {
-            dialog(binding.menu12Img.drawable, binding.menu12Txt.text)
+            dialog(binding.menu12Img.drawable, binding.menu12Txt.text, R.string.setmenu12_txt)
         }
     }
 
     // 클릭하면 화면 출력 함수
-    private fun dialog(img: Drawable, tv: CharSequence){
+    @SuppressLint("ResourceType")
+    private fun dialog(img: Drawable, tv: CharSequence, exp: Int){
         // 메뉴 선택 다이얼로그
         val data = ArrayList<Itemview>()
         val cDialogView =
@@ -115,10 +122,13 @@ class SetmenuFragment : Fragment() {
         val logo = cDialogView.findViewById<ImageView>(R.id.logo)
         val imageView = cDialogView.findViewById<ImageView>(R.id.menu_img)
         val textView = cDialogView.findViewById<TextView>(R.id.menu_tv)
+        val menuName = cDialogView.findViewById<TextView>(R.id.menuname)
+
+        val string = getString(exp)
 
         imageView.setImageDrawable(img)
-        textView.setText(tv)
-
+        menuName.setText(tv)
+        textView.setText(string)
 
         val mBuilder = view?.let {
             AlertDialog.Builder(it.context)
@@ -140,9 +150,11 @@ class SetmenuFragment : Fragment() {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
                     if(p1 == DialogInterface.BUTTON_POSITIVE)
                     {
+
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+
                         //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
-                        data.add(Itemview(img,tv,"1","피클",drinktext,sidetext))
+                        data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext))
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
                         stepAdapter(data)
@@ -152,6 +164,7 @@ class SetmenuFragment : Fragment() {
                     }
                 }
             }
+
             val mBuilder2 = view?.let {
                 AlertDialog.Builder(it.context)
                     .setView(c2DialogView)
@@ -162,36 +175,76 @@ class SetmenuFragment : Fragment() {
                     .show()
                 //side radiogroup
 
-                val srdg1 = c2DialogView.findViewById<RadioGroup>(R.id.srdg1)
-                val srdg2 = c2DialogView.findViewById<RadioGroup>(R.id.srdg2)
-                val drdg1 = c2DialogView.findViewById<RadioGroup>(R.id.drdg1)
-                val drdg2 = c2DialogView.findViewById<RadioGroup>(R.id.drdg2)
-                val srb1 = c2DialogView.findViewById<RadioButton>(R.id.srb1)
-                val srb2 = c2DialogView.findViewById<RadioButton>(R.id.srb2)
-                val srb3 = c2DialogView.findViewById<RadioButton>(R.id.srb3)
-                val srb4 = c2DialogView.findViewById<RadioButton>(R.id.srb4)
-                val srb5 = c2DialogView.findViewById<RadioButton>(R.id.srb5)
-                val srb6 = c2DialogView.findViewById<RadioButton>(R.id.srb6)
-                val srb7 = c2DialogView.findViewById<RadioButton>(R.id.srb7)
-                val srb8 = c2DialogView.findViewById<RadioButton>(R.id.srb8)
-                //
-                val drb1 = c2DialogView.findViewById<RadioButton>(R.id.drk1)
-                val drb2 = c2DialogView.findViewById<RadioButton>(R.id.drk2)
-                val drb3 = c2DialogView.findViewById<RadioButton>(R.id.drk3)
-                val drb4 = c2DialogView.findViewById<RadioButton>(R.id.drk4)
-                val drb5 = c2DialogView.findViewById<RadioButton>(R.id.drk5)
-                val drb6 = c2DialogView.findViewById<RadioButton>(R.id.drk6)
-                val drb7 = c2DialogView.findViewById<RadioButton>(R.id.drk7)
-                val drb8 = c2DialogView.findViewById<RadioButton>(R.id.drk8)
+                val trdg1 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg1)
+                val trdg2 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg2)
+                val srdg1 = c2DialogView.findViewById<RadioGroup>(R.id.siderg1)
+                val srdg2 = c2DialogView.findViewById<RadioGroup>(R.id.siderg2)
+                val drdg1 = c2DialogView.findViewById<RadioGroup>(R.id.drinkrg1)
+                val drdg2 = c2DialogView.findViewById<RadioGroup>(R.id.drinkrg2)
+
+                val trb1 = c2DialogView.findViewById<RadioButton>(R.id.topping1rb)
+                val trb2 = c2DialogView.findViewById<RadioButton>(R.id.topping2rb)
+                val trb3 = c2DialogView.findViewById<RadioButton>(R.id.topping3rb)
+                val trb4 = c2DialogView.findViewById<RadioButton>(R.id.topping4rb)
+                val trb5 = c2DialogView.findViewById<RadioButton>(R.id.topping5rb)
+
+                val srb1 = c2DialogView.findViewById<RadioButton>(R.id.side1rb)
+                val srb2 = c2DialogView.findViewById<RadioButton>(R.id.side2rb)
+                val srb3 = c2DialogView.findViewById<RadioButton>(R.id.side3rb)
+                val srb4 = c2DialogView.findViewById<RadioButton>(R.id.side4rb)
+                val srb5 = c2DialogView.findViewById<RadioButton>(R.id.side5rb)
+                val srb6 = c2DialogView.findViewById<RadioButton>(R.id.side6rb)
+                val srb7 = c2DialogView.findViewById<RadioButton>(R.id.side7rb)
+                val srb8 = c2DialogView.findViewById<RadioButton>(R.id.side8rb)
+
+                val drb1 = c2DialogView.findViewById<RadioButton>(R.id.drink1rb)
+                val drb2 = c2DialogView.findViewById<RadioButton>(R.id.drink2rb)
+                val drb3 = c2DialogView.findViewById<RadioButton>(R.id.drink3rb)
+                val drb4 = c2DialogView.findViewById<RadioButton>(R.id.drink4rb)
+                val drb5 = c2DialogView.findViewById<RadioButton>(R.id.drink5rb)
+                val drb6 = c2DialogView.findViewById<RadioButton>(R.id.drink6rb)
+                val drb7 = c2DialogView.findViewById<RadioButton>(R.id.drink7rb)
+                val drb8 = c2DialogView.findViewById<RadioButton>(R.id.drink8rb)
                 //private fun sendData(s: CharSequence, d: CharSequence)
+
+                trdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    Log.d("radio", "첫번째 사이드줄")
+                    if(trb1.isChecked==true || trb2.isChecked==true || trb3.isChecked==true || trb4.isChecked==true) {
+                        when(checkedId) {
+                            R.id.topping1rb -> toppingtext = "베이컨"
+                            R.id.topping2rb -> toppingtext = "치즈"
+                            R.id.topping3rb -> toppingtext = "양상추"
+                            R.id.topping4rb -> toppingtext = "토마토"
+                        }
+                        if (trb5.isChecked)
+                            trb5.isChecked = false
+                    }
+                }
+                trdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
+                    Log.d("radio", "두번째 사이드줄")
+                    if(trb5.isChecked) {
+                        when(checkedId) {
+                            R.id.topping5rb -> toppingtext = "피클"
+                        }
+                        if (trb1.isChecked)
+                            trb1.isChecked = false
+                        if (trb2.isChecked)
+                            trb2.isChecked = false
+                        if (trb3.isChecked)
+                            trb3.isChecked = false
+                        if (trb4.isChecked)
+                            trb4.isChecked = false
+                    }
+                }
+
                 srdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
                     Log.d("radio", "첫번째 사이드줄")
                     if(srb1.isChecked==true || srb2.isChecked==true || srb3.isChecked==true || srb4.isChecked==true) {
                         when(checkedId) {
-                            R.id.srb1 -> sidetext = "치즈스틱"
-                            R.id.srb2 -> sidetext = "치킨너겟"
-                            R.id.srb3 -> sidetext = "바삭킹"
-                            R.id.srb4 -> sidetext = "치즈감자"
+                            R.id.side1rb -> sidetext = "치즈스틱"
+                            R.id.side2rb -> sidetext = "치킨너겟"
+                            R.id.side3rb -> sidetext = "바삭킹"
+                            R.id.side4rb -> sidetext = "치즈감자"
                         }
                         if (srb5.isChecked)
                             srb5.isChecked = false
@@ -207,10 +260,10 @@ class SetmenuFragment : Fragment() {
                     Log.d("radio", "두번째 사이드줄")
                     if(srb5.isChecked==true || srb6.isChecked==true || srb7.isChecked==true || srb8.isChecked==true) {
                         when(checkedId) {
-                            R.id.srb5 -> sidetext = "코올슬로"
-                            R.id.srb6 -> sidetext = "치즈볼"
-                            R.id.srb7 -> sidetext = "감자튀김(L)"
-                            R.id.srb8 -> sidetext = "감자튀김(R)"
+                            R.id.side5rb -> sidetext = "코올슬로"
+                            R.id.side6rb -> sidetext = "치즈볼"
+                            R.id.side7rb -> sidetext = "감자튀김(L)"
+                            R.id.side8rb -> sidetext = "감자튀김(R)"
                         }
                         if (srb1.isChecked)
                             srb1.isChecked = false
@@ -225,10 +278,10 @@ class SetmenuFragment : Fragment() {
                 drdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
                     if(drb1.isChecked==true || drb2.isChecked==true || drb3.isChecked==true || drb4.isChecked==true) {
                         when(checkedId) {
-                            R.id.drk1 -> drinktext = "홍차"
-                            R.id.drk2 -> drinktext = "커피"
-                            R.id.drk3 -> drinktext = "콜라(R)"
-                            R.id.drk4 -> drinktext = "콜라(L)"
+                            R.id.drink1rb -> drinktext = "홍차"
+                            R.id.drink2rb -> drinktext = "커피"
+                            R.id.drink3rb -> drinktext = "콜라(R)"
+                            R.id.drink4rb -> drinktext = "콜라(L)"
                         }
                         if (drb5.isChecked)
                             drb5.isChecked = false
@@ -243,10 +296,10 @@ class SetmenuFragment : Fragment() {
                 drdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
                     if(drb5.isChecked==true || drb6.isChecked==true || drb7.isChecked==true || drb8.isChecked==true) {
                         when(checkedId) {
-                            R.id.drk5 -> drinktext = "제로콜라(R)"
-                            R.id.drk6 -> drinktext = "제로콜라(L)"
-                            R.id.drk7 -> drinktext = "오렌지주스"
-                            R.id.drk8 -> drinktext = "시그렘"
+                            R.id.drink5rb -> drinktext = "제로콜라(R)"
+                            R.id.drink6rb -> drinktext = "제로콜라(L)"
+                            R.id.drink7rb -> drinktext = "오렌지주스"
+                            R.id.drink8rb -> drinktext = "시그렘"
                         }
                         if (drb1.isChecked)
                             drb1.isChecked = false
@@ -271,5 +324,4 @@ class SetmenuFragment : Fragment() {
 
         }
     }
-
 }
