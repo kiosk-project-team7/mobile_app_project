@@ -54,6 +54,7 @@ class SetmenuFragment : Fragment() {
             viewModel = sharedViewModel
             setmenuFragemnt = this@SetmenuFragment
         }
+
         var dataset : ArrayList<Itemview>
         // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {

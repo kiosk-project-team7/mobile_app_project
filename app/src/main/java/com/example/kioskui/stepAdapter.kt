@@ -19,6 +19,7 @@ class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(bindi
     val drinktextView : TextView = binding.drinkList
     val sidemenutextView : TextView = binding.sidemenuList
     val imageView : ImageView = binding.bugerImage
+    val deleteClick : (d : Itemview) -> Unit
  }
 class stepAdapter(private var dataset : List<Itemview>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -26,6 +27,7 @@ class stepAdapter(private var dataset : List<Itemview>):RecyclerView.Adapter<Rec
     }
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         //val onviewItem=dataset[position]
+        val listposition = dataset[position]
         val viewHolder = holder as MyViewHolder
         viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
@@ -33,6 +35,16 @@ class stepAdapter(private var dataset : List<Itemview>):RecyclerView.Adapter<Rec
         viewHolder.topingtextView.text=dataset[position].toping
         viewHolder.drinktextView.text=dataset[position].drink
         viewHolder.sidemenutextView.text=dataset[position].sidemenu
+
+        viewHolder.binding.plus.setOnClickListener{ // + 버튼
+
+        }
+        viewHolder.binding.minus.setOnClickListener{
+
+        }
+        viewHolder.binding.allDelete.setOnClickListener{
+                deleteClick.invoke(listposition)
+        }
     }
 
     override fun getItemCount(): Int {
