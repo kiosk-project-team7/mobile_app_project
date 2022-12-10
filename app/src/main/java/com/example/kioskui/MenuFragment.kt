@@ -26,7 +26,9 @@ data class Itemview(
     var number_count: String,
     var toping: String,
     var drink: String,
-    var sidemenu: String)
+    var sidemenu: String,
+    var price : String
+    )
 
 class MenuFragment : Fragment() {
     private val sharedViewModel: OrderViewModel by activityViewModels()
@@ -116,5 +118,10 @@ class MenuFragment : Fragment() {
             findNavController().navigate(R.id.Fragment_Pay)
         }
     }
-
+    fun set_Price(Price : String)
+    {
+        var money = Price.toInt()
+        var now_Price = binding.priceText.text.toString().toInt()
+        binding.priceText.text=(money+now_Price).toString()
+    }
 }

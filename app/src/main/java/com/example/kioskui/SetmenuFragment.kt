@@ -154,7 +154,7 @@ class SetmenuFragment : Fragment() {
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
 
                         //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
-                        data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext))
+                        data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,"1000"))
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
                         stepAdapter(data)
