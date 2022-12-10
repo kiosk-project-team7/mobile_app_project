@@ -16,7 +16,6 @@ import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import com.example.kioskui.MainActivity.menuInit.Companion.count
-
 //
 
 class SetmenuFragment : Fragment() {
@@ -104,8 +103,6 @@ class SetmenuFragment : Fragment() {
         binding.menu12Img.setOnClickListener {
             dialog(binding.menu12Img.drawable, binding.menu12Txt.text)
         }
-
-
     }
 
     // 클릭하면 화면 출력 함수
@@ -143,9 +140,7 @@ class SetmenuFragment : Fragment() {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
                     if(p1 == DialogInterface.BUTTON_POSITIVE)
                     {
-
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
-
                         //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
                         data.add(Itemview(img,tv,"1","피클",drinktext,sidetext))
                         Log.d("data","${data}")
