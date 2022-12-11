@@ -20,6 +20,7 @@ import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
 class SetmenuFragment : Fragment() {
 
@@ -115,7 +116,8 @@ class SetmenuFragment : Fragment() {
     @SuppressLint("ResourceType")
     private fun dialog(img: Drawable, tv: CharSequence, exp: Int){
         // 메뉴 선택 다이얼로그
-        val data = ArrayList<Itemview>()
+        val data = mutableListOf<Itemview>()
+        val pdata = mutableListOf<PriceView>()
         val cDialogView =
             LayoutInflater.from(view?.context).inflate(R.layout.custom_dialog, null)
 
@@ -154,10 +156,12 @@ class SetmenuFragment : Fragment() {
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
 
                         //data.add(Itemview(R.drawable.side_01_21cm_cheesestick,textView.toString(),"1","피클","콜라","감자튀김"))
-                        data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,"1000"))
+                        data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,10000.0,10000.0))
+                        //pdata.add(PriceView(1000.0))
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
-                        sharedViewModel.set_price("10000")
+                        total_price += 10000.0
+                        sharedViewModel.setPrice(total_price.toString())
                         stepAdapter(data)
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){

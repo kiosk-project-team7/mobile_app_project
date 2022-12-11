@@ -8,6 +8,7 @@ import android.os.PersistableBundle
 import android.text.Layout
 import android.util.Log
 import android.widget.ImageView
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.kioskui.databinding.ActivityMainBinding
 import com.example.kioskui.databinding.FragmentMenuBinding
@@ -43,9 +44,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 stock[menuNum] -= 1
             }
             val data = mutableListOf <Itemview>()
+            val pdata = mutableListOf<PriceView>()
             var count = 0
-            var total_price =0 //총 가격
+            var total_price =0.0 //총 가격
             var now_step_price =0  //현재 주문 가격
+            var check = false
         }
     }
 
@@ -81,8 +84,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
-    }
-    fun setText(text: String){
-        binding.priceText.text=text
     }
 }

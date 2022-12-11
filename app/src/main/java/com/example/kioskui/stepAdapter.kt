@@ -20,10 +20,12 @@ import androidx.fragment.app.activityViewModels
 import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.MainActivity.menuInit.Companion.now_step_price
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
+import com.example.kioskui.MainActivity.menuInit.Companion.check
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.kioskui.MainActivity.menuInit.Companion.pdata
 
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
 
@@ -34,20 +36,17 @@ class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(bindi
     val drinktextView : TextView = binding.drinkList
     val sidemenutextView : TextView = binding.sidemenuList
     val imageView : ImageView = binding.bugerImage
-
- }
+    var pricetextView : TextView = binding.recyclerPrice
+}
 class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
     var mposition = 0
-    private lateinit var sharedViewModel: OrderViewModel
-    //var fragment2 = MenuFragment()
+    lateinit var sharedViewModel : OrderViewModel
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        //val onviewItem=dataset[position]
-        //Log.d("위치","${position}")
-        var bundle = Bundle()
-        //sharedViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
+
         val viewHolder = holder as MyViewHolder
         viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
@@ -55,6 +54,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
         viewHolder.topingtextView.text=dataset[position].toping
         viewHolder.drinktextView.text=dataset[position].drink
         viewHolder.sidemenutextView.text=dataset[position].sidemenu
+        viewHolder.pricetextView.text=dataset[position].total_price.toString()
         now_step_price += dataset[position].price.toInt()
         if(viewHolder.numbertextView.text=="1")
         {
@@ -65,24 +65,20 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
 
         viewHolder.binding.plus.setOnClickListener{ // + 버튼
             Log.d("button","${position} 번째 +버튼 눌렀슴")
-            //여기 눌렀을 때 price_text에서 dataset[price] 올리기.
-            //Log.d("업데이트 전 data","${dataset[position]}")
             var num = dataset[position].number_count.toInt()
             num++
           //  Log.d("num", "${num}")
             dataset[position].number_count=num.toString()
             var bug_Price = dataset[position].price.toInt()
-            now_step_price += bug_Price
+            dataset[position].total_price+=bug_Price
+            total_price += bug_Price
+                // dataset[position].price.toDouble()=dataset[position].price.toDouble()*2.0
+//            sharedViewModel.setPrice(total_price.toString())
             Log.d("+버튼 누른 뒤 가격","${now_step_price}")
-            //setPrice()
-            bundle.putInt("현재가격",now_step_price) //
-            //fragment2.arguments=bundle
-            //Log.d("price", "+버튼 누르기전 ${fbinding?.priceText?.text}")
-
-            //fbinding?.priceText?.text=nowPrice
-            //Log.d("price", "+버튼 누르기전 ${fbinding?.priceText?.text}")
-            //여기서 nowPrice를 textView로 넘겨줘야함.
+           // pdata.add(PriceView(total_price))
+            //PriceAdapter(pdata)
             notifyDataSetChanged()
+            check=true
             Log.d("업데이트 후 data","${dataset[position]}")
         }
         viewHolder.binding.minus.setOnClickListener{
@@ -97,13 +93,13 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
                 num--
                // Log.d("num", "${num}")
                 dataset[position].number_count = num.toString()
-                now_step_price -= bug_Price
+                total_price-=bug_Price
+                dataset[position].total_price-=bug_Price
+                //sharedViewModel.setPrice(total_price.toString())
                 Log.d("-버튼 누른 뒤 가격","${now_step_price}")
-                //setPrice()
-                bundle.putInt("현재가격", now_step_price)
-                //fragment2.arguments=bundle
-                //여기서 total_price를 textView로 넘겨줘야함.
+                //PriceAdapter(pdata)
                 notifyDataSetChanged()
+                check=true
                 Log.d("업데이트 후 data","${dataset[position]}")
             }
         }
@@ -115,15 +111,19 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
             //Log.d("price","x 누르기전 가격 : ${fbinding?.priceText?.text}")
             Log.d("price","x 누르기 전  가격 : ${now_step_price}")
             var bug_Price = dataset[position].price.toInt() * dataset[position].number_count.toInt()
-            now_step_price -= bug_Price
-            bundle.putInt("현재가격", now_step_price)
+            total_price -= bug_Price
+            dataset[position].total_price-=bug_Price
+            //sharedViewModel.setPrice(total_price.toString())
             Log.d("price","x 누른 후  가격 : ${now_step_price}")
+            pdata.add(PriceView(total_price))
             setPosition(position)
             removeItem(getPosition())
+            check=true
             //Log.d("업데이트 후 data","${dataset[position]}")
         }
 
     }
+
 
     override fun getItemCount(): Int {
         return dataset.size

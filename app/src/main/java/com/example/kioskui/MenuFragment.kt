@@ -19,6 +19,9 @@ import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.kioskui.MainActivity.menuInit.Companion.check
+import com.example.kioskui.MainActivity.menuInit.Companion.pdata
+import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
 data class Itemview(
     val Menu: Drawable,
@@ -27,9 +30,12 @@ data class Itemview(
     var toping: String,
     var drink: String,
     var sidemenu: String,
-    var price : String
+    var price : Double,
+    var total_price : Double,
     )
-
+data class PriceView(
+    var tPrice : Double
+)
 class MenuFragment : Fragment() {
     private val sharedViewModel: OrderViewModel by activityViewModels()
     lateinit var binding: FragmentMenuBinding
@@ -103,12 +109,25 @@ class MenuFragment : Fragment() {
             )
         sharedViewModel.liveData.observe(mainActivity, Observer {
             (binding.stepRecyclerview.adapter as stepAdapter).setData(it as MutableList<Itemview>)
+
         })
 
-            //val delete_ = binding.stepRecyclerview.findViewById<ImageView>(R.id.all_delete)
-        val price=arguments?.getInt("현재가격")
-        Log.d("menufragment","${price}")
-//set_Price(price.toString())
+        binding.priceBtn.setOnClickListener {
+            sharedViewModel.setPrice(total_price.toString())
+        }
+
+        /*
+            val pAdapter = PriceAdapter(pdata)
+
+            binding.priceRecyclerview.adapter=pAdapter
+
+        binding.priceRecyclerview.addItemDecoration(
+            DividerItemDecoration(mainActivity,LinearLayoutManager.VERTICAL)
+        )
+        sharedViewModel.liveData.observe(mainActivity,Observer{
+            (binding.priceRecyclerview.adapter as PriceAdapter).setPrice(it as MutableList<PriceView>)
+        })
+            */
         //
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
