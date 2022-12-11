@@ -157,6 +157,7 @@ class SetmenuFragment : Fragment() {
                         data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,"1000"))
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
+                        sharedViewModel.set_price("10000")
                         stepAdapter(data)
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){

@@ -10,11 +10,12 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.navigation.findNavController
 import com.example.kioskui.databinding.ActivityMainBinding
+import com.example.kioskui.databinding.FragmentMenuBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     val fragmentManager = supportFragmentManager
-
+    lateinit var binding: FragmentMenuBinding
     class menuInit {
         companion object {
             val menuName = arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
@@ -43,6 +44,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
             val data = mutableListOf <Itemview>()
             var count = 0
+            var total_price =0 //총 가격
+            var now_step_price =0  //현재 주문 가격
         }
     }
 
@@ -78,5 +81,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
+    }
+    fun setText(text: String){
+        binding.priceText.text=text
     }
 }

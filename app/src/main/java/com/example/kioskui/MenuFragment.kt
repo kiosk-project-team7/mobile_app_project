@@ -106,9 +106,9 @@ class MenuFragment : Fragment() {
         })
 
             //val delete_ = binding.stepRecyclerview.findViewById<ImageView>(R.id.all_delete)
-
-
-
+        val price=arguments?.getInt("현재가격")
+        Log.d("menufragment","${price}")
+//set_Price(price.toString())
         //
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
@@ -118,10 +118,12 @@ class MenuFragment : Fragment() {
             findNavController().navigate(R.id.Fragment_Pay)
         }
     }
+    /*
     fun set_Price(Price : String)
     {
         var money = Price.toInt()
         var now_Price = binding.priceText.text.toString().toInt()
         binding.priceText.text=(money+now_Price).toString()
     }
+    */
 }

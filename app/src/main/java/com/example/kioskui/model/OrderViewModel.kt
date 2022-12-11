@@ -1,9 +1,11 @@
 package com.example.kioskui.model
+import android.icu.text.NumberFormat
 import android.util.Log
 import android.widget.ImageView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.example.kioskui.Itemview
 import com.example.kioskui.MenuFragment
 class OrderViewModel : ViewModel() {
@@ -21,6 +23,16 @@ class OrderViewModel : ViewModel() {
     val side : LiveData<String> = h_side
     private val h_name = MutableLiveData<String>("")
     val bugname : LiveData<String> = h_name
+    private val _price = MutableLiveData<Double>()
+    val price_ : LiveData<String> = Transformations.map(_price) {
+            _price.value.toString() + "원"
+    }
+    var np : Double=0.0
+    private var total = MutableLiveData<Double>()
+    val total_ : LiveData<String> = Transformations.map(total)
+    {
+        total.value.toString() + "원"
+    }
     fun set_image(img : ImageView)
     {
         h_image.value=img
@@ -40,6 +52,14 @@ class OrderViewModel : ViewModel() {
     fun set_name(name : String)
     {
         h_name.value=name
+    }
+    fun set_price(p:String){
+       _price.value=p.toDouble()
+        np = p.toDouble()
+        updatePrice()
+    }
+    private fun updatePrice(){
+        total.value=np
     }
     fun todotodo(todo : Itemview)
     {

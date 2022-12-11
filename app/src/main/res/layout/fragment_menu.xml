@@ -185,7 +185,7 @@
                     android:layout_weight="5"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="1000원"
+                    android:text="@{viewModel.total_}"
                     />
             </LinearLayout>
 
