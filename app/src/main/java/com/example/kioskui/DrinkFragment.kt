@@ -1,17 +1,22 @@
 package com.example.kioskui
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import com.example.kioskui.databinding.FragmentDrinkBinding
-
+import com.example.kioskui.databinding.FragmentSetmenuBinding
+import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
 class DrinkFragment : Fragment() {
-
     private lateinit var binding: FragmentDrinkBinding
-//    private var checkedItem: Int = 0
-
+    private var checkedItem: Int = 0
+    private val sharedViewModel : OrderViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,54 +30,68 @@ class DrinkFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 메뉴 사진 누르면 담기
+        // 메뉴 사진 누르면 다이얼로그
         binding.menu1Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 1,
-                resources.getDrawable(R.drawable.drink_01_americano_ice))
+            val cDialogView =
+                LayoutInflater.from(view.context).inflate(R.layout.custom_dialog, null)
+            val mBuilder = AlertDialog.Builder(view.context)
+                .setView(cDialogView)
+                .setTitle("옵션 선택")
+
+
+            mBuilder.setNegativeButton("닫기", null)
+            mBuilder.show()
+
+            val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
+            cusButton.setOnClickListener {
+                val items =
+                    arrayOf<String>("00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가", "00추가")
+
+                AlertDialog.Builder(view.context).run {
+                    setTitle("Test")
+                    setIcon(R.drawable.ic_launcher_background)
+                    setSingleChoiceItems(items,
+                        checkedItem,
+                        object : DialogInterface.OnClickListener {
+                            override fun onClick(
+                                p0: DialogInterface?,
+                                which: Int,
+                            ) {
+                                Log.d("선택", "${items[which]}이 선택되었습니다.")
+                            }
+                        })
+                    setPositiveButton("담기", null)
+                    setNegativeButton("취소", null)
+                    show()
+                }
+            }
+
+            val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
+            recButton.setOnClickListener {
+
+            }
         }
-        binding.menu2Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 2,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu3Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 3,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu4Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 4,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu5Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 5,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu6Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 6,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu7Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 7,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu8Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 8,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu9Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 9,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu10Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 10,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu11Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 11,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
-        binding.menu12Img.setOnClickListener {
-            MainActivity.menuInit.whenSelected(3, 12,
-            resources.getDrawable(R.drawable.drink_01_americano_ice))
-        }
+
+
+        /*val items = arrayOf<String>("00추가","00추가","00추가","00추가","00추가","00추가","00추가","00추가")
+
+            AlertDialog.Builder(view.context).run {
+                setTitle("Test")
+                setIcon(R.drawable.ic_launcher_background)
+                setSingleChoiceItems(items,
+                checkedItem,
+                object : DialogInterface.OnClickListener{
+                    override fun onClick(
+                        p0: DialogInterface?,
+                        which: Int,
+                    ){
+                        Log.d("선택", "${items[which]}이 선택되었습니다." )
+                    }
+                })
+                setPositiveButton("담기", null)
+                setNegativeButton("취소", null)
+                show()
+            }
+        }*/
     }
 }

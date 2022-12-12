@@ -1,44 +1,105 @@
 package com.example.kioskui
 
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.R
+import android.graphics.drawable.BitmapDrawable
+import android.provider.ContactsContract.CommonDataKinds.Im
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kioskui.databinding.LayoutItemBinding
+import com.example.kioskui.model.OrderViewModel
 
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
-
     val menuImageView : ImageView = binding.bugerImage
     val menutextView  : TextView = binding.stepMenuName
-    val numbertextView : TextView = binding.menuCount
+    var numbertextView : TextView = binding.menuCount
     val topingtextView : TextView = binding.topingList
     val drinktextView : TextView = binding.drinkList
     val sidemenutextView : TextView = binding.sidemenuList
     val imageView : ImageView = binding.bugerImage
  }
-class stepAdapter(val dataset : MutableList<Itemview>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
-
+    var mposition = 0
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val onviewItem=dataset[position]
+        //val onviewItem=dataset[position]
+        //Log.d("위치","${position}")
+        val listposition = dataset[position]
+
         val viewHolder = holder as MyViewHolder
-        viewHolder.menuImageView.setImageResource(onviewItem.Menu)
+        viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
         viewHolder.menutextView.text=dataset[position].Menu_name
         viewHolder.numbertextView.text=dataset[position].number_count
         viewHolder.topingtextView.text=dataset[position].toping
         viewHolder.drinktextView.text=dataset[position].drink
         viewHolder.sidemenutextView.text=dataset[position].sidemenu
+
+        if(viewHolder.numbertextView.text=="1")
+        {
+            viewHolder.binding.minus.alpha = 0.3f
+        }
+        else
+            viewHolder.binding.minus.alpha= 1f
+
+        viewHolder.binding.plus.setOnClickListener{ // + 버튼
+            Log.d("button","${position} 번째 +버튼 눌렀슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            var num = dataset[position].number_count.toInt()
+            num++
+            Log.d("num", "${num}")
+            dataset[position].number_count=num.toString()
+            notifyDataSetChanged()
+            Log.d("업데이트 후 data","${dataset[position]}")
+        }
+        viewHolder.binding.minus.setOnClickListener{
+            Log.d("button","${position} 번째 -버튼 눌렀슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            var num = dataset[position].number_count.toInt()
+            if(num>1) {
+                num--
+                Log.d("num", "${num}")
+                dataset[position].number_count = num.toString()
+                notifyDataSetChanged()
+                Log.d("업데이트 후 data","${dataset[position]}")
+            }
+        }
+        viewHolder.binding.allDelete.setOnClickListener {
+            //delete button 눌렀을때 현재
+            Log.d("button","${position} 번째 x버튼 눌려슴")
+            Log.d("업데이트 전 data","${dataset[position]}")
+            setPosition(position)
+            removeItem(getPosition())
+            //Log.d("업데이트 후 data","${dataset[position]}")
+        }
     }
+
 
     override fun getItemCount(): Int {
         return dataset.size
+    }
+    fun setData(newData:MutableList<Itemview>)
+    {
+        dataset=newData
+        notifyDataSetChanged()
+    }
+    fun removeItem(position: Int)
+    {
+        Log.d("positon","${position}")
+        if(position>=0){
+            dataset.removeAt(position)
+            notifyDataSetChanged()
+        }
+    }
+    fun setPosition(position: Int){
+        mposition=position
+    }
+    fun getPosition() : Int{
+        return mposition
     }
 }
