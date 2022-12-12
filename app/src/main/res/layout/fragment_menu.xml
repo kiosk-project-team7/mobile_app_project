@@ -186,6 +186,7 @@
                     android:layout_weight="5"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:visibility="invisible"
                     android:text="@{viewModel.total}"/>
                     <!--android:text="1"-->
 

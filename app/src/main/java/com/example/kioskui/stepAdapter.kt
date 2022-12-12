@@ -18,14 +18,20 @@ import com.example.kioskui.databinding.LayoutItemBinding
 import com.example.kioskui.MenuFragment
 import androidx.fragment.app.activityViewModels
 import com.example.kioskui.databinding.FragmentMenuBinding
-import com.example.kioskui.MainActivity.menuInit.Companion.now_step_price
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.check
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProvider
+import com.example.kioskui.MainActivity.menuInit.Companion.menu_num
+import com.example.kioskui.MainActivity.menuInit.Companion.menu_opt
 import com.example.kioskui.MainActivity.menuInit.Companion.pdata
+import com.example.kioskui.MainActivity.menuInit.Companion.selectedAmt
+import com.example.kioskui.MainActivity.menuInit.Companion.whenAllDelected
+import com.example.kioskui.MainActivity.menuInit.Companion.whenDelected
+import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
 
 class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
 
@@ -43,7 +49,6 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
     var mposition = 0
-    lateinit var sharedViewModel : OrderViewModel
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
@@ -54,8 +59,8 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
         viewHolder.topingtextView.text=dataset[position].toping
         viewHolder.drinktextView.text=dataset[position].drink
         viewHolder.sidemenutextView.text=dataset[position].sidemenu
-        viewHolder.pricetextView.text=dataset[position].total_price.toString()
-        now_step_price += dataset[position].price.toInt()
+        viewHolder.pricetextView.text=dataset[position].total_price.toString()+"원"
+
         if(viewHolder.numbertextView.text=="1")
         {
             viewHolder.binding.minus.alpha = 0.3f
@@ -67,61 +72,37 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
             Log.d("button","${position} 번째 +버튼 눌렀슴")
             var num = dataset[position].number_count.toInt()
             num++
-          //  Log.d("num", "${num}")
             dataset[position].number_count=num.toString()
             var bug_Price = dataset[position].price.toInt()
             dataset[position].total_price+=bug_Price
             total_price += bug_Price
-                // dataset[position].price.toDouble()=dataset[position].price.toDouble()*2.0
-//            sharedViewModel.setPrice(total_price.toString())
-            Log.d("+버튼 누른 뒤 가격","${now_step_price}")
-           // pdata.add(PriceView(total_price))
-            //PriceAdapter(pdata)
+            whenSelected(menu_opt, menu_num)
             notifyDataSetChanged()
-            check=true
             Log.d("업데이트 후 data","${dataset[position]}")
         }
         viewHolder.binding.minus.setOnClickListener{
-            //여기 눌렀을 때 price_text에서 dataset[position]에 count깎고 price 업데이트하기.
-           // Log.d("button","${position} 번째 -버튼 눌렀슴")
-           // Log.d("업데이트 전 data","${dataset[position]}")
             var num = dataset[position].number_count.toInt()
             var bug_Price = dataset[position].price.toInt()
-
-            //Log.d("price","-누르기전 가격 : ${fbinding?.priceText?.text}")
             if(num>1) {
                 num--
-               // Log.d("num", "${num}")
                 dataset[position].number_count = num.toString()
                 total_price-=bug_Price
+                whenDelected(menu_opt, menu_num)
                 dataset[position].total_price-=bug_Price
-                //sharedViewModel.setPrice(total_price.toString())
-                Log.d("-버튼 누른 뒤 가격","${now_step_price}")
-                //PriceAdapter(pdata)
                 notifyDataSetChanged()
-                check=true
                 Log.d("업데이트 후 data","${dataset[position]}")
             }
         }
         viewHolder.binding.allDelete.setOnClickListener {
-            //여기 눌렀을 때 price_text에서 dataset[price] 전체를 없애기.
-            //delete button 눌렀을때 현재
-          //  Log.d("button","${position} 번째 x버튼 눌려슴")
-          //  Log.d("업데이트 전 data","${dataset[position]}")
-            //Log.d("price","x 누르기전 가격 : ${fbinding?.priceText?.text}")
-            Log.d("price","x 누르기 전  가격 : ${now_step_price}")
             var bug_Price = dataset[position].price.toInt() * dataset[position].number_count.toInt()
             total_price -= bug_Price
             dataset[position].total_price-=bug_Price
-            //sharedViewModel.setPrice(total_price.toString())
-            Log.d("price","x 누른 후  가격 : ${now_step_price}")
-            pdata.add(PriceView(total_price))
+            whenAllDelected(menu_opt, menu_num,dataset[position].number_count.toInt())
             setPosition(position)
             removeItem(getPosition())
-            check=true
-            //Log.d("업데이트 후 data","${dataset[position]}")
+            notifyDataSetChanged()
         }
-
+        Log.d("dataset","${dataset[position]}")
     }
 
 

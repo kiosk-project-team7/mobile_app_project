@@ -27,13 +27,13 @@ class OrderViewModel : ViewModel() {
     val side : LiveData<String> = h_side
     private val h_name = MutableLiveData<String>("")
     val bugname : LiveData<String> = h_name
-    private val _price = MutableLiveData<Double>()
+    private val _price = MutableLiveData<Int>()
     val price_ : LiveData<String> = Transformations.map(_price) {
             _price.value.toString() + "원"
     }
-    var np : Double=0.0
-    var now_price :Double? =0.0
-    private var _total = MutableLiveData<Double>()
+    var np : Int=0
+    var now_price :Int =0
+    private var _total = MutableLiveData<Int>()
     val total : LiveData<String> = Transformations.map(_total)
     {
         _total.value.toString() + "원"
@@ -62,11 +62,14 @@ class OrderViewModel : ViewModel() {
         h_name.value=name
     }
      fun setPrice(p : String){
-        _price.value=p.toDouble()
+         Log.d("setPrice","버튼을 눌렸슴, ${p}")
+        _price.value=p.toInt()
          updatePrice()
     }
     fun updatePrice(){
+
         _total.value=_price.value
+        Log.d("uppdatePrice","버튼을 눌렸슴, ${_total.value}")
     }
     fun todotodo(todo : Itemview)
     {
@@ -87,5 +90,8 @@ class OrderViewModel : ViewModel() {
     {
         data.remove(todo[0])
         liveData.value=data
+    }
+    fun get_price(p:String){
+        setPrice(p)
     }
 }
