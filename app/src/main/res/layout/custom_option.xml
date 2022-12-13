@@ -44,7 +44,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/topping_cheese" />
+                        android:src="@drawable/topping_bacon" />
 
                     <ImageView
                         android:id="@+id/topping2img"
@@ -77,25 +77,25 @@
                         android:id="@+id/topping1tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="500원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="500원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="300원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="300원"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -163,7 +163,7 @@
                         android:id="@+id/topping5tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="300원"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -236,25 +236,25 @@
                         android:id="@+id/side1tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side1_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side2_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side3_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side4_txt"
                         android:layout_weight="1" />
 
                 </LinearLayout>
@@ -344,25 +344,25 @@
                         android:id="@+id/side5tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side5_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side6tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side6_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side7tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side7_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/side8tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/side8_txt"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -454,25 +454,25 @@
                         android:id="@+id/drink1tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink1_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink2_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink3_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink4_txt"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout
@@ -547,25 +547,25 @@
                         android:id="@+id/drink5tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink5_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink6tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink6_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink7tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink7_txt"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/drink8tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="1000원"
+                        android:text="@string/drink8_txt"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout

@@ -166,6 +166,31 @@
                 android:layout_height="0dp"
                 android:layout_weight="5"
                 android:background="#FFF6F6" />
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                    android:layout_weight="0.5"
+                    >
+                <TextView
+                    android:id="@+id/price_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="합계"
+                    android:gravity="center"
+                    android:background="@color/teal_200" />
+                <TextView
+                    android:id="@+id/price_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:text="@{viewModel.total}"/>
+                    <!--android:text="1"-->
+
+                </LinearLayout>
             <!--버튼 -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,6 +203,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:text="이전" />
 
                 <Button
@@ -185,6 +211,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:backgroundTint="#FF8787"
                     android:text="주문" />
             </LinearLayout>

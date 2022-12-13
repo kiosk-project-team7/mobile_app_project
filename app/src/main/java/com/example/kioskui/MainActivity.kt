@@ -8,13 +8,29 @@ import android.os.PersistableBundle
 import android.text.Layout
 import android.util.Log
 import android.widget.ImageView
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.kioskui.databinding.ActivityMainBinding
+import com.example.kioskui.databinding.FragmentMenuBinding
+import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+open class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     val fragmentManager = supportFragmentManager
+    lateinit var  viewModel : OrderViewModel
+    lateinit var binding: FragmentMenuBinding
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        viewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp()
+    }
     class menuInit {
         companion object {
             val menuName = arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
@@ -33,19 +49,51 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 "네가지 고품격 치즈와 100% 순쇠고기 패티로 탄생한 버거킹의 스테디셀러, 콰트로치즈와퍼",
                 "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 2장으로 더 크게 도전하세요! 스태키2와퍼",
                 "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태키3와퍼")
-            var stock = arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100)
-            var price = arrayListOf<Int>(1000, 2000, 3000, 4000, 5000, 6000, 7000,
-                8000, 9000, 10000, 11000, 12000)
-            var selectedAmt = arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-            fun whenSelected(menuNum: Int) {
-                selectedAmt[menuNum] += 1
-                stock[menuNum] -= 1
+            var stock = arrayOf( // 48
+                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
+                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //단품
+                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //사이드
+                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100)) //드링크
+            var mprice = arrayOf(
+                arrayListOf<Int>(6900, 7300, 6800, 6400, 6100, 7500, 7000, 6900, 6400, 6500, 5800, 6700),
+                arrayListOf<Int>(6000, 6400, 5900, 5500, 5500, 6600, 6100, 6000, 5500, 5600, 4900, 5800),
+                arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700, 1500, 2300, 1300, 1000, 3600, 2000),
+                arrayListOf<Int>(1400, 1200, 900, 700, 900, 700, 800, 900, 750, 600, 900, 700))
+            var selectedAmt = arrayOf(
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+            fun whenSelected(menuOpt : Int,menuNum: Int) {
+                selectedAmt[menuOpt][menuNum] += 1
+                stock[menuOpt][menuNum] -= 1
+                Log.d("선택관리","${selectedAmt[menuOpt][menuNum]}")
+                Log.d("재고관리","${stock[menuOpt][menuNum]}")
+            }
+            fun whenDelected(menuOpt: Int,menuNum: Int){
+                selectedAmt[menuOpt][menuNum] -= 1
+                stock[menuOpt][menuNum] += 1
+                Log.d("선택관리","${selectedAmt[menuOpt][menuNum]}")
+                Log.d("재고관리","${stock[menuOpt][menuNum]}")
+            }
+            fun whenAllDelected(menuOpt: Int,menuNum: Int,num:Int)
+            {
+                selectedAmt[menuOpt][menuNum] -= num
+                stock[menuOpt][menuNum] += num
+                Log.d("선택관리","${selectedAmt[menuOpt][menuNum]}")
+                Log.d("재고관리","${stock[menuOpt][menuNum]}")
             }
             val data = mutableListOf <Itemview>()
+            val pdata = mutableListOf<PriceView>()
             var count = 0
+            var total_price =0 //총 가격
+            var today_total_price =0
+            var check = false
+            var menu_opt = 0
+            var menu_num =0
+
         }
     }
-
     val menu1: menuInit = menuInit()
 
 
@@ -71,12 +119,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp()
-    }
+
 }
