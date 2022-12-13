@@ -84,7 +84,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 Log.d("재고관리","${stock[menuOpt][menuNum]}")
             }
             val data = mutableListOf <Itemview>()
-            val pdata = mutableListOf<PriceView>()
+            val pdata = mutableListOf<String>()
             var count = 0
             var total_price =0 //총 가격
             var today_total_price =0
@@ -97,16 +97,6 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
     val menu1: menuInit = menuInit()
 
 
-    class myclass {
-       companion object {
-           var menuName : String = " "
-           var stock : Boolean = false
-           var price : Int = 6800
-        //   var isSeleced = Array<Boolean>(12,false)
-            fun onclickTest(i : Int) {
-            }
-        }
-    }
 
     class myclass2 {
         companion object {

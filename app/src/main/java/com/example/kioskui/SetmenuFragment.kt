@@ -18,8 +18,10 @@ import com.example.kioskui.MainActivity.menuInit.Companion.menu_opt
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import com.example.kioskui.MainActivity.menuInit.Companion.mprice
+import com.example.kioskui.MainActivity.menuInit.Companion.pdata
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
+import com.example.kioskui.databinding.FragmentMenuBinding
 
 class SetmenuFragment : Fragment() {
 
@@ -155,7 +157,6 @@ class SetmenuFragment : Fragment() {
     private fun dialog(img: Drawable, tv: CharSequence, exp: Int){
         // 메뉴 선택 다이얼로그
         val data = mutableListOf<Itemview>()
-        val pdata = mutableListOf<PriceView>()
         val cDialogView =
             LayoutInflater.from(view?.context).inflate(R.layout.custom_dialog, null)
 
@@ -211,7 +212,9 @@ class SetmenuFragment : Fragment() {
                         Log.d("data","${data}")
                         sharedViewModel.addData(data)
                         sharedViewModel.setPrice(total_price.toString())
-                        stepAdapter(data)
+                        pdata.add(total_price.toString()+"원")
+                        stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
+
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){
                         Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
