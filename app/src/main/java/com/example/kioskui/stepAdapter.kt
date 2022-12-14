@@ -61,7 +61,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
         viewHolder.drinktextView.text = dataset[position].drink
         viewHolder.sidemenutextView.text = dataset[position].sidemenu
         viewHolder.priceView.text=dataset[position].total_price.toString()+"원"
-        binding2.priceText.text = dataset[position].total_price.toString()+"원"
+        binding2.priceText.text = total_price.toString()+"원"
         //binding2.priceRecyclerview.adapter=pAdapter(list)
         if(viewHolder.numbertextView.text=="1")
         {
@@ -78,7 +78,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
             var bug_Price = dataset[position].price
             dataset[position].total_price+=bug_Price
             total_price += bug_Price
-            binding2.priceText.text= total_price.toString()+"원"
+            binding2.priceText.text = total_price.toString()+"원"
             whenSelected(menu_opt, menu_num)
             notifyDataSetChanged()
 
@@ -95,7 +95,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
                 whenDelected(menu_opt, menu_num)
                 dataset[position].total_price-=bug_Price
                 notifyDataSetChanged()
-                binding2.priceText.text= total_price.toString()+"원"
+                binding2.priceText.text = total_price.toString()+"원"
                 Log.d("업데이트 후 data","${dataset[position]}")
             }
         }
@@ -106,7 +106,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
             whenAllDelected(menu_opt, menu_num,dataset[position].number_count.toInt())
             setPosition(position)
             removeItem(getPosition())
-            binding2.priceText.text= total_price.toString()+"원"
+            binding2.priceText.text = total_price.toString()+"원"
             notifyDataSetChanged()
         }
 

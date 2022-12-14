@@ -65,11 +65,11 @@ class SetmenuFragment : Fragment() {
             setmenuFragemnt = this@SetmenuFragment
         }
 
-        fun onclick(img : Drawable, ptext : TextView)
+        /*fun onclick(img : Drawable, ptext : TextView)
         {
             dialog(img,ptext.text)
             price = binding.menu1Prc.text.toString().toInt()
-        }
+        }*/
         binding.menu1Img.setOnClickListener {
             price = binding.menu1Prc.text.toString().toInt()
             menu_num=0
@@ -152,7 +152,6 @@ class SetmenuFragment : Fragment() {
             price = binding.menu12Prc.text.toString().toInt()
             menu_num=11
             dialog(binding.menu12Img.drawable, binding.menu12Txt.text, R.string.menu12_txt)
-
         }
     }
 

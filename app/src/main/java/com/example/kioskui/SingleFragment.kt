@@ -66,7 +66,7 @@ class SingleFragment : Fragment() {
             singlemenuFragemnt= this@SingleFragment
         }
 
-        fun onclick(img : Drawable, ptext : TextView)
+       /* fun onclick(img : Drawable, ptext : TextView)
         {
            when(img){
                binding.menu1Img ->{
@@ -80,7 +80,7 @@ class SingleFragment : Fragment() {
             price = binding.menu1Prc.text.toString().toInt()
             dialog(img,ptext.text,R.string.menu1_txt)
 
-        }
+        }*/
         binding.menu1Img.setOnClickListener {
             price = binding.menu1Prc.text.toString().toInt()
             menu_num=0

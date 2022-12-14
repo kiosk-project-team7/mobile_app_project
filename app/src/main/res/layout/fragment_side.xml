@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="2,900원"
+                    android:text="2900원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="4,500원"
+                    android:text="4500원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="4,200원"
+                    android:text="4200원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="3,200원"
+                    android:text="3200원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -165,7 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="4,000원"
+                    android:text="4000원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -194,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="1,700원"
+                    android:text="1700원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="1,500원"
+                    android:text="1500원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -252,7 +252,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="2,300원"
+                    android:text="2300원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -281,7 +281,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="1,300원"
+                    android:text="1300원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -310,7 +310,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="1,000원"
+                    android:text="1000원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -339,7 +339,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="3,600원"
+                    android:text="3600원"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -368,7 +368,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="2,000원"
+                    android:text="2000원"
                     android:textColor="#000000" />
 
             </LinearLayout>
