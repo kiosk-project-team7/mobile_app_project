@@ -65,8 +65,11 @@ class SetmenuFragment : Fragment() {
             setmenuFragemnt = this@SetmenuFragment
         }
 
-        var dataset : ArrayList<Itemview>
-
+        fun onclick(img : Drawable, ptext : TextView)
+        {
+            dialog(img,ptext.text)
+            price = binding.menu1Prc.text.toString().toInt()
+        }
         binding.menu1Img.setOnClickListener {
             price = binding.menu1Prc.text.toString().toInt()
             menu_num=0
@@ -145,6 +148,7 @@ class SetmenuFragment : Fragment() {
         }
 
         binding.menu12Img.setOnClickListener {
+            var string = binding.menu12Prc.text.toString().substring(0 until 3)
             price = binding.menu12Prc.text.toString().toInt()
             menu_num=11
             dialog(binding.menu12Img.drawable, binding.menu12Txt.text, R.string.menu12_txt)

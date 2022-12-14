@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -73,6 +74,7 @@ class MenuFragment : Fragment() {
             viewModel = sharedViewModel
             menuFragemnt = this@MenuFragment
         }
+
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
         binding.btn1.setOnClickListener {
             setmenuFragment = SetmenuFragment()
