@@ -75,11 +75,13 @@ class OrderViewModel : ViewModel() {
     {
         liveData.value=data
     }
+    /*
     fun addPrice(todo : MutableList<PriceView>)
     {
         Log.d("addprice","${todo[0]}")
         pdata.add(todo[0])
     }
+    */
     fun addData(todo: MutableList<Itemview>)
     {
         Log.d("data","${todo[0]}")

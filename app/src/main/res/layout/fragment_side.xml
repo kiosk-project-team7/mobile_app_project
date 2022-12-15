@@ -1,366 +1,378 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".SideFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <GridLayout
-        android:id="@+id/menu_grid_layout"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.kioskui.model.OrderViewModel" />
+        <variable
+            name="sidemenuFragemnt"
+            type="com.example.kioskui.SideFragment" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="6"
-        android:rowCount="2">
+        android:background="#FFFFFF"
+        tools:context=".SideFragment">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <GridLayout
+            android:id="@+id/menu_grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="6"
+            android:rowCount="2">
 
-            <ImageView
-                android:id="@+id/menu1_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_01_21cm_cheesestick" />
-
-
-            <TextView
-                android:id="@+id/menu1_txt"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="21cm 치즈스틱"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu1_prc"
+                <ImageView
+                    android:id="@+id/menu1_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_01_21cm_cheesestick" />
+
+
+                <TextView
+                    android:id="@+id/menu1_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="21cm 치즈스틱"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu1_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2900원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="2,900원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu2_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_02_angry_nugget_king_8" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu2_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="앵그리너겟킹"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu2_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_02_angry_nugget_king_8" />
+                <TextView
+                    android:id="@+id/menu2_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="4500원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu2_txt"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="앵그리너겟킹"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu2_prc"
+                <ImageView
+                    android:id="@+id/menu3_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_03_basak_king" />
+
+                <TextView
+                    android:id="@+id/menu3_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="바삭킹"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu3_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="4200원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="4,500원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu4_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_04_cheese_fries" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu4_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="치즈프라이"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu3_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_03_basak_king" />
+                <TextView
+                    android:id="@+id/menu4_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3200원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu3_txt"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="바삭킹"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu3_prc"
+                <ImageView
+                    android:id="@+id/menu5_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_05_coconut_shrimp_sweetchili" />
+
+                <TextView
+                    android:id="@+id/menu5_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="코코넛쉬림프"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu5_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="4000원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="4,200원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu6_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_06_coleslaw" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu6_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="코울슬로"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu4_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_04_cheese_fries" />
+                <TextView
+                    android:id="@+id/menu6_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1700원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu4_txt"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="치즈프라이"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu4_prc"
+                <ImageView
+                    android:id="@+id/menu7_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_07_corn_salad" />
+
+                <TextView
+                    android:id="@+id/menu7_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="콘샐러드"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu7_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1500원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="3,200원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu8_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_08_creamy_mozzaball" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu8_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="크리미모짜볼"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu5_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_05_coconut_shrimp_sweetchili" />
+                <TextView
+                    android:id="@+id/menu8_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2300원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu5_txt"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="코코넛쉬림프"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu5_prc"
+                <ImageView
+                    android:id="@+id/menu9_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_09_french_fries_l" />
+
+                <TextView
+                    android:id="@+id/menu9_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="프렌치프라이(L)"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu9_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1300원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="4,000원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu10_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_10_french_fries_r" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu10_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="프렌치프라이(R)"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu6_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_06_coleslaw" />
+                <TextView
+                    android:id="@+id/menu10_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1000원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu6_txt"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="코울슬로"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu6_prc"
+                <ImageView
+                    android:id="@+id/menu11_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_11_nugget_king_8" />
+
+                <TextView
+                    android:id="@+id/menu11_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="너겟킹"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/menu11_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3600원"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="1,700원"
-                android:textColor="#000000" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/menu12_img"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:src="@drawable/side_12_onionring" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/menu12_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="어니언링"
+                    android:textColor="#000000" />
 
-            <ImageView
-                android:id="@+id/menu7_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_07_corn_salad" />
+                <TextView
+                    android:id="@+id/menu12_prc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2000원"
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/menu7_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="콘샐러드"
-                android:textColor="#000000" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/menu7_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="1,500원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/menu8_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_08_creamy_mozzaball" />
-
-            <TextView
-                android:id="@+id/menu8_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="크리미모짜볼"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/menu8_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="2,300원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/menu9_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_09_french_fries_l" />
-
-            <TextView
-                android:id="@+id/menu9_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="프렌치프라이(L)"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/menu9_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="1,300원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/menu10_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_10_french_fries_r" />
-
-            <TextView
-                android:id="@+id/menu10_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="프렌치프라이(R)"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/menu10_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="1,000원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/menu11_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_11_nugget_king_8" />
-
-            <TextView
-                android:id="@+id/menu11_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="너겟킹"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/menu11_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="3,600원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/menu12_img"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:src="@drawable/side_12_onionring" />
-
-            <TextView
-                android:id="@+id/menu12_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="어니언링"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/menu12_prc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="2,000원"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-    </GridLayout>
-</FrameLayout>
+        </GridLayout>
+    </FrameLayout>
+</layout>

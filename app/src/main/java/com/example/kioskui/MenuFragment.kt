@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -19,6 +20,8 @@ import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.kioskui.MainActivity.menuInit.Companion.mprice
+import com.example.kioskui.MainActivity.menuInit.Companion.pdata
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
 data class Itemview(
@@ -39,7 +42,6 @@ class MenuFragment : Fragment() {
     private val sharedViewModel: OrderViewModel by activityViewModels()
     lateinit var binding: FragmentMenuBinding
     private var checkedItem: Int = 0
-    lateinit var fbinding : FragmentSetmenuBinding
     private var setmenuFragment: SetmenuFragment? = null
     private var singleFragment: SingleFragment? = null
     private var sideFragment: SideFragment? = null
@@ -72,6 +74,7 @@ class MenuFragment : Fragment() {
             viewModel = sharedViewModel
             menuFragemnt = this@MenuFragment
         }
+
         // 세트, 단품, 사이드, 음료 누르면 음식 종류 변경
         binding.btn1.setOnClickListener {
             setmenuFragment = SetmenuFragment()
@@ -93,13 +96,15 @@ class MenuFragment : Fragment() {
 
         val recyclerView : RecyclerView = mainActivity.findViewById(R.id.step_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(mainActivity)
+
         //위에 코드는 스크롤 방향을 나타냄.
         //binding.stepRecyclerview.layoutManager=recyclerView.layoutManager
         //binding.stepRecyclerview.layoutManager = LinearLayout(this)
 
             //val clickadapter = stepAdapter(data) //이 부분 바뀜.
             //binding.stepRecyclerview.adapter = stepAdapter(data)
-            val mAdapter = stepAdapter(data)
+
+            val mAdapter = stepAdapter(data,binding)
             binding.stepRecyclerview.adapter=mAdapter
 
             binding.stepRecyclerview.addItemDecoration(
@@ -109,7 +114,10 @@ class MenuFragment : Fragment() {
             (binding.stepRecyclerview.adapter as stepAdapter).setData(it as MutableList<Itemview>)
 
         })
+
+
         //합계 버튼을 누르면 계산 총 금액을 해줌.
+        /*
         binding.priceBtn.setOnClickListener {
             sharedViewModel.setPrice(total_price.toString())
             binding.priceText.visibility=(View.VISIBLE)
@@ -117,6 +125,8 @@ class MenuFragment : Fragment() {
                 binding.priceText.visibility=(View.INVISIBLE)
             }
         }
+
+         */
         // 돌아가기, 완료 버튼 누르면 넘어가기
         binding.backBtn.setOnClickListener {
             Toast.makeText(activity,"이전버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()

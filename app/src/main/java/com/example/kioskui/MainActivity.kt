@@ -1,13 +1,21 @@
 package com.example.kioskui
 
+import android.content.ClipData.Item
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.text.Layout
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.ImageView
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.kioskui.databinding.ActivityMainBinding
 import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.model.OrderViewModel
+import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
 open class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -27,7 +35,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
         companion object {
             val menuName = arrayListOf<String>("블랙어니언치킨버거 세트", "블랙어니언와퍼 세트", "골든치즈렐라치킨버거 세트", "골든치즈렐라X 세트",
                 "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
-                "스태커2와퍼 세트", "스태커3와퍼 세트")
+                "스태키2와퍼 세트", "스태키3와퍼 세트")
             val imgPath = "R.id.menu1Img"
             val desc = arrayListOf<String>("200분의 기다림, 블랙어니언으로 깊어진 풍미에 바삭한 킹치킨패티까지 블랙 어니언 치킨 버거",
                 "200분의 기다림, 블랙어니언으로 깊어진 풍미에 100% 순쇠고기 패티까지 블랙 어니언 와퍼",
@@ -39,8 +47,8 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 "강렬한 디아블로소스의 매콤함, 두툼한 프리미엄 패티를 부드러운 브리오슈 번으로 만난 몬스터X",
                 "디아블로 소스의 매콤함, 불에 직접 구운 100% 순쇠고기 패티와 치킨패티까지 압도적 크기의 몬스터와퍼",
                 "네가지 고품격 치즈와 100% 순쇠고기 패티로 탄생한 버거킹의 스테디셀러, 콰트로치즈와퍼",
-                "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 2장으로 더 크게 도전하세요! 스태커2와퍼",
-                "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태커3와퍼")
+                "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 2장으로 더 크게 도전하세요! 스태키2와퍼",
+                "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태키3와퍼")
             var stock = arrayOf( // 48
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //단품
@@ -76,7 +84,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 Log.d("재고관리","${stock[menuOpt][menuNum]}")
             }
             val data = mutableListOf <Itemview>()
-            val pdata = mutableListOf<PriceView>()
+            val pdata = mutableListOf<String>()
             var count = 0
             var total_price =0 //총 가격
             var today_total_price =0
@@ -86,6 +94,20 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         }
     }
+    val menu1: menuInit = menuInit()
+
+
+
+    class myclass2 {
+        companion object {
+            var isSeleced : Boolean = true
+            fun onclickTest() {
+                isSeleced = !isSeleced
+                Log.d("test", isSeleced.toString())
+            }
+        }
+    }
+
 
 
 

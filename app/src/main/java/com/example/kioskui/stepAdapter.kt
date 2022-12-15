@@ -1,6 +1,5 @@
 package com.example.kioskui
 
-import android.R
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
@@ -25,6 +24,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.kioskui.MainActivity.menuInit.Companion.menu_num
 import com.example.kioskui.MainActivity.menuInit.Companion.menu_opt
 import com.example.kioskui.MainActivity.menuInit.Companion.pdata
@@ -33,7 +33,7 @@ import com.example.kioskui.MainActivity.menuInit.Companion.whenAllDelected
 import com.example.kioskui.MainActivity.menuInit.Companion.whenDelected
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
 
-class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(binding.root){
+class MyViewHolder(val binding :LayoutItemBinding): ViewHolder(binding.root){
 
     val menuImageView : ImageView = binding.bugerImage
     val menutextView  : TextView = binding.stepMenuName
@@ -42,25 +42,27 @@ class MyViewHolder(val binding :LayoutItemBinding):RecyclerView.ViewHolder(bindi
     val drinktextView : TextView = binding.drinkList
     val sidemenutextView : TextView = binding.sidemenuList
     val imageView : ImageView = binding.bugerImage
-    var pricetextView : TextView = binding.recyclerPrice
+    val priceView : TextView = binding.recyclerPrice
 }
-class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : FragmentMenuBinding):RecyclerView.Adapter<ViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         return MyViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
     var mposition = 0
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val viewHolder = holder as MyViewHolder
         viewHolder.menuImageView.setImageDrawable(dataset[position].Menu)
-        viewHolder.menutextView.text=dataset[position].Menu_name
-        viewHolder.numbertextView.text=dataset[position].number_count
-        viewHolder.topingtextView.text=dataset[position].toping
-        viewHolder.drinktextView.text=dataset[position].drink
-        viewHolder.sidemenutextView.text=dataset[position].sidemenu
-        viewHolder.pricetextView.text=dataset[position].total_price.toString()+"원"
-
+        viewHolder.menutextView.text = dataset[position].Menu_name
+        viewHolder.numbertextView.text = dataset[position].number_count
+        viewHolder.topingtextView.text = dataset[position].toping
+        viewHolder.drinktextView.text = dataset[position].drink
+        viewHolder.sidemenutextView.text = dataset[position].sidemenu
+        viewHolder.priceView.text=dataset[position].total_price.toString()+"원"
+        binding2.priceText.text = total_price.toString()+"원"
+        //binding2.priceRecyclerview.adapter=pAdapter(list)
         if(viewHolder.numbertextView.text=="1")
         {
             viewHolder.binding.minus.alpha = 0.3f
@@ -73,16 +75,19 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
             var num = dataset[position].number_count.toInt()
             num++
             dataset[position].number_count=num.toString()
-            var bug_Price = dataset[position].price.toInt()
+            var bug_Price = dataset[position].price
             dataset[position].total_price+=bug_Price
             total_price += bug_Price
+            binding2.priceText.text = total_price.toString()+"원"
             whenSelected(menu_opt, menu_num)
             notifyDataSetChanged()
+
+
             Log.d("업데이트 후 data","${dataset[position]}")
         }
         viewHolder.binding.minus.setOnClickListener{
             var num = dataset[position].number_count.toInt()
-            var bug_Price = dataset[position].price.toInt()
+            var bug_Price = dataset[position].price
             if(num>1) {
                 num--
                 dataset[position].number_count = num.toString()
@@ -90,18 +95,21 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
                 whenDelected(menu_opt, menu_num)
                 dataset[position].total_price-=bug_Price
                 notifyDataSetChanged()
+                binding2.priceText.text = total_price.toString()+"원"
                 Log.d("업데이트 후 data","${dataset[position]}")
             }
         }
         viewHolder.binding.allDelete.setOnClickListener {
-            var bug_Price = dataset[position].price.toInt() * dataset[position].number_count.toInt()
+            var bug_Price = dataset[position].price * dataset[position].number_count.toInt()
             total_price -= bug_Price
             dataset[position].total_price-=bug_Price
             whenAllDelected(menu_opt, menu_num,dataset[position].number_count.toInt())
             setPosition(position)
             removeItem(getPosition())
+            binding2.priceText.text = total_price.toString()+"원"
             notifyDataSetChanged()
         }
+
         Log.d("dataset","${dataset[position]}")
     }
 
@@ -119,7 +127,7 @@ class stepAdapter(private var dataset : MutableList<Itemview>):RecyclerView.Adap
         Log.d("positon","${position}")
         if(position>=0){
             dataset.removeAt(position)
-            notifyDataSetChanged()
+            //notifyDataSetChanged()
         }
     }
     fun setPosition(position: Int){
