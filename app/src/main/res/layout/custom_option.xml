@@ -77,25 +77,25 @@
                         android:id="@+id/topping1tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="500원"
+                        android:text="+500원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="500원"
+                        android:text="+500원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="300원"
+                        android:text="+300원"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="300원"
+                        android:text="+300원"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -163,7 +163,7 @@
                         android:id="@+id/topping5tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:text="300원"
+                        android:text="+300원"
                         android:layout_weight="1" />
                 </LinearLayout>
 
