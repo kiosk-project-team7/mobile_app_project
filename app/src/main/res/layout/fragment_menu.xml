@@ -20,56 +20,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/menubar_layout"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_marginTop="10dp"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/logo_burgerking"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="130dp"
-                android:text="세트"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btn2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="단품"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn1" />
-
-            <Button
-                android:id="@+id/btn3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="사이드"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn2" />
-
-            <Button
-                android:id="@+id/btn4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="음료"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -77,9 +39,9 @@
             android:id="@+id/step_layout"
             android:layout_width="400dp"
             android:layout_height="80dp"
+            app:layout_constraintBottom_toTopOf="@id/menu_layout"
             app:layout_constraintStart_toEndOf="@id/menubar_layout"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/menu_layout">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,44 +49,53 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="단계1"
-                    android:textSize="10sp" />
+                    android:background="@drawable/btn_steps"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="세트"
+                    android:textSize="15dp" />
 
                 <Button
+                    android:id="@+id/btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="단계2"
-                    android:textSize="10sp" />
+                    android:background="@drawable/btn_steps"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="단품"
+                    android:textSize="15dp" />
 
                 <Button
+                    android:id="@+id/btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="단계3"
-                    android:textSize="10sp" />
+                    android:background="@drawable/btn_steps"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="사이드"
+                    android:textSize="15dp" />
 
                 <Button
+                    android:id="@+id/btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:text="단계4"
-                    android:textSize="10sp" />
+                    android:background="@drawable/btn_steps"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="음료"
+                    android:textSize="15dp" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="단계5"
-                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
 

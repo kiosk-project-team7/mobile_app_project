@@ -441,6 +441,7 @@ class SetmenuFragment : Fragment() {
         recButton.setOnClickListener {
             Toast.makeText(mainActivity,"추천버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
 
+
         }
     }
 
