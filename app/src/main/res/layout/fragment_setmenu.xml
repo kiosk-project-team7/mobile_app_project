@@ -26,14 +26,14 @@
             tools:layout_editor_absoluteY="31dp">
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu1_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_01_black_onion_chicken" />
 
 
@@ -56,14 +56,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu2_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_02_black_onion" />
 
                 <TextView
@@ -85,14 +85,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu3_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_03_golden_cheeserela_chicken" />
 
                 <TextView
@@ -114,14 +114,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu4_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_04_golden_cheeserela_x" />
 
                 <TextView
@@ -143,14 +143,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu5_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_05_golden_cheeserela" />
 
                 <TextView
@@ -172,14 +172,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu6_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_06_guinness_quattrocheese" />
 
                 <TextView
@@ -201,14 +201,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu7_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_07_guinness" />
 
                 <TextView
@@ -230,14 +230,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu8_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_08_monster_x" />
 
                 <TextView
@@ -259,14 +259,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu9_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_09_monster" />
 
                 <TextView
@@ -288,14 +288,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu10_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_10_quattro_cheese" />
 
                 <TextView
@@ -317,14 +317,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu11_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_11_stacker_2" />
 
                 <TextView
@@ -346,14 +346,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu12_img"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_12_stacker_3" />
 
                 <TextView
