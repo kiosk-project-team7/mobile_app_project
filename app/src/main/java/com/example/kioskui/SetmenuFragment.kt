@@ -235,7 +235,6 @@ class SetmenuFragment : Fragment() {
                     .show()
                 //토핑
                 val trdg1 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg1)
-                val trdg2 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg2)
                 val srdg1 = c2DialogView.findViewById<RadioGroup>(R.id.siderg1)
                 val srdg2 = c2DialogView.findViewById<RadioGroup>(R.id.siderg2)
                 val drdg1 = c2DialogView.findViewById<RadioGroup>(R.id.drinkrg1)
@@ -268,7 +267,7 @@ class SetmenuFragment : Fragment() {
 
                 trdg1.setOnCheckedChangeListener { radioGroup, checkedId ->
                     Log.d("radio", "첫번째 사이드줄")
-                    if(trb1.isChecked==true || trb2.isChecked==true || trb3.isChecked==true || trb4.isChecked==true) {
+                    if(trb1.isChecked==true || trb2.isChecked==true || trb3.isChecked==true || trb4.isChecked==true || trb4.isChecked==true || trb5.isChecked==true) {
                         when(checkedId) {
                             R.id.topping1rb -> {
                                 toppingtext = "베이컨"
@@ -286,28 +285,13 @@ class SetmenuFragment : Fragment() {
                                 toppingtext = "토마토"
                                 tprice=300
                             }
-                        }
-                        if (trb5.isChecked)
-                            trb5.isChecked = false
-                    }
-                }
-                trdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
-                    Log.d("radio", "두번째 사이드줄")
-                    if(trb5.isChecked) {
-                        when(checkedId) {
                             R.id.topping5rb -> {
                                 toppingtext = "피클"
                                 tprice=300
                             }
                         }
-                        if (trb1.isChecked)
-                            trb1.isChecked = false
-                        if (trb2.isChecked)
-                            trb2.isChecked = false
-                        if (trb3.isChecked)
-                            trb3.isChecked = false
-                        if (trb4.isChecked)
-                            trb4.isChecked = false
+                        if (trb5.isChecked)
+                            trb5.isChecked = false
                     }
                 }
 

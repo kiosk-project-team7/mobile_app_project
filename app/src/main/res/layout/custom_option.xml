@@ -29,8 +29,9 @@
                     android:id="@+id/topping"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/black"
+                    android:background="@color/colorPrimaryVariant"
                     android:text="토핑"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:gravity="center"/>
 
@@ -66,6 +67,13 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/topping_tomato" />
+
+                    <ImageView
+                        android:id="@+id/topping5img"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/topping_pickle" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,24 +86,46 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="500원"
-                        android:layout_weight="1" />
+                        android:textSize="17dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/topping2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="500원"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="300원"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
                         android:layout_weight="1" />
                     <TextView
                         android:id="@+id/topping4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="300원"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/topping5tv"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="300원"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -107,14 +137,18 @@
                         android:id="@+id/toppingrg1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
                         <RadioButton
                             android:id="@+id/topping1rb"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:drawablePadding="20dp"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="베이컨" />
+                            android:text="베이컨"
+                            android:textSize="18dp" />
 
                         <RadioButton
                             android:id="@+id/topping2rb"
@@ -122,7 +156,9 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="치즈" />
+                            android:text="치즈"
+                            android:textSize="18dp"
+                           />
 
                         <RadioButton
                             android:id="@+id/topping3rb"
@@ -130,7 +166,9 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="양상추" />
+                            android:text="양상추"
+                            android:textSize="18dp"
+                            />
 
                         <RadioButton
                             android:id="@+id/topping4rb"
@@ -138,51 +176,19 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="토마토" />
-                    </RadioGroup>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal">
+                            android:text="토마토"
+                            android:textSize="18dp"
+                            />
 
-                    <ImageView
-                        android:id="@+id/topping5img"
-                        android:layout_width="171dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/topping_pickle" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/topping5tv"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:text="300원"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:orientation="horizontal">
-                    <RadioGroup
-                        android:id="@+id/toppingrg2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
                         <RadioButton
                             android:id="@+id/topping5rb"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="피클" />
+                            android:text="피클"
+                            android:textSize="18dp"
+                            />
                     </RadioGroup>
                 </LinearLayout>
 
@@ -190,8 +196,9 @@
                     android:id="@+id/side"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/black"
                     android:text="사이드 메뉴"
+                    android:background="@color/colorPrimaryVariant"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:gravity="center" />
 
@@ -237,25 +244,37 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side1_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side2_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side3_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side4_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
                 </LinearLayout>
 
@@ -274,7 +293,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="치즈스틱" />
+                            android:text="치즈스틱"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side2rb"
@@ -282,7 +302,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="치킨너겟" />
+                            android:text="치킨너겟"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side3rb"
@@ -290,7 +311,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="바삭킹" />
+                            android:text="바삭킹"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side4rb"
@@ -298,7 +320,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="치즈감자" />
+                            android:text="치즈감자"
+                            android:textSize="18dp"/>
                     </RadioGroup>
                 </LinearLayout>
                 <LinearLayout
@@ -345,25 +368,37 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side5_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side6tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side6_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side7tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side7_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/side8tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/side8_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -381,7 +416,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="코올슬로" />
+                            android:text="코올슬로"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side6rb"
@@ -389,7 +425,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="치즈볼" />
+                            android:text="치즈볼"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side7rb"
@@ -397,7 +434,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="감자튀김(L)" />
+                            android:text="감자튀김(L)"
+                            android:textSize="18dp"/>
 
                         <RadioButton
                             android:id="@+id/side8rb"
@@ -405,7 +443,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="@{() -> viewModel.set_side(@string/next)}"
-                            android:text="감자튀김(R)" />
+                            android:text="감자튀김(R)"
+                            android:textSize="18dp"/>
                     </RadioGroup>
                 </LinearLayout>
                 <!--음료-->
@@ -413,7 +452,8 @@
                     android:id="@+id/drink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/black"
+                    android:background="@color/colorPrimaryVariant"
+                    android:textSize="30dp"
                     android:text="음료"
                     android:textColor="@color/white"
                     android:gravity="center" />
@@ -455,25 +495,37 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink1_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink2tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink2_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink3tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink3_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink4tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink4_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -489,25 +541,29 @@
                             android:layout_height="match_parent"
                             android:text="홍차"
                             android:id="@+id/drink1rb"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:textSize="18dp"/>
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/drink2rb"
-                            android:text="커피" />
+                            android:text="커피"
+                            android:textSize="18dp"/>
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/drink3rb"
-                            android:text="콜라(R)" />
+                            android:text="콜라(R)"
+                            android:textSize="18dp"/>
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/drink4rb"
-                            android:text="콜라(L)" />
+                            android:text="콜라(L)"
+                            android:textSize="18dp"/>
                     </RadioGroup>
                 </LinearLayout>
                 <LinearLayout
@@ -548,25 +604,37 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink5_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink6tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink6_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink7tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink7_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                     <TextView
                         android:id="@+id/drink8tv"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="@string/drink8_txt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -582,25 +650,29 @@
                             android:layout_height="match_parent"
                             android:id="@+id/drink5rb"
                             android:layout_weight="1"
-                            android:text="제로콜라(R)"/>
+                            android:text="제로콜라(R)"
+                            android:textSize="18dp"/>
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:id="@+id/drink6rb"
                             android:layout_weight="1"
-                            android:text="제로콜라(L)"/>
+                            android:text="제로콜라(L)"
+                            android:textSize="18dp" />
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:id="@+id/drink7rb"
                             android:layout_weight="1"
-                            android:text="오렌지주스"/>
+                            android:text="오렌지주스"
+                            android:textSize="18dp"/>
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:id="@+id/drink8rb"
                             android:layout_weight="1"
-                            android:text="시그램"/>
+                            android:text="시그램"
+                            android:textSize="18dp"/>
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
