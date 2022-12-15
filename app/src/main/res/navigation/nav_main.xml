@@ -37,17 +37,17 @@
     </fragment>
 
     <fragment
-        android:id="@+id/Fragment_Set1"
-        android:name="com.example.kioskui.Set1Fragment"
-        android:label="MANAGER"
-        tools:layout="@layout/fragment_set1">
+        android:id="@+id/Fragment_Choice_Manager"
+        android:name="com.example.kioskui.ChoiceManagerFragment"
+        android:label="Choice_MANAGER"
+        tools:layout="@layout/fragment_choice_manager">
     </fragment>
 
     <fragment
-        android:id="@+id/Fragment_Set2"
-        android:name="com.example.kioskui.Set2Fragment"
-        android:label="MANAGER"
-        tools:layout="@layout/fragment_set2">
+        android:id="@+id/Fragment_Daily_Manager"
+        android:name="com.example.kioskui.dailyManagerFragment"
+        android:label="Choice_MANAGER"
+        tools:layout="@layout/fragment_daily_manager">
     </fragment>
 
 </navigation>

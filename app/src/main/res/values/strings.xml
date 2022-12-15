@@ -23,6 +23,34 @@
     <string name="menu11_txt">믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 2장으로 더 크게 도전하세요! 스태키2와퍼</string>
     <string name="menu12_txt">믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태키3와퍼</string>
 
+    <string name="sidemenu1_txt">21cm의 역대급 사이즈! 진하고 고소한 자연 모짜렐라가 가득한 21치즈스틱</string>
+    <string name="sidemenu2_txt">바삭한 너겟킹에 청양고추가 콕콕!</string>
+    <string name="sidemenu3_txt">매콤하게! 바삭하게 튀긴 치킨윙</string>
+    <string name="sidemenu4_txt">바삭한 프렌치프라이에 고소한 치즈가 듬뿍!</string>
+    <string name="sidemenu5_txt">바삭한 코코넛 옷을 입은 탱글한 통새우와 새콤달콤 칠리소스</string>
+    <string name="sidemenu6_txt">아삭아삭한 양배추와 상큼한 드레싱의 코울슬로</string>
+    <string name="sidemenu7_txt">달콤한 옥수수와 싱싱한 야채의 어울림</string>
+    <string name="sidemenu8_txt">겉은 바삭~ 속은 부드러운 크림치즈가 쏘옥, 크리미모짜볼!</string>
+    <string name="sidemenu9_txt">세계최고의 감자만 엄선해서 버거킹만의 비법으로 바삭하게! (L)</string>
+    <string name="sidemenu10_txt">세계최고의 감자만 엄선해서 버거킹만의 비법으로 바삭하게! (R)</string>
+    <string name="sidemenu11_txt">바삭~ 촉촉~ 한입에 쏙 부드러운 너겟킹!</string>
+    <string name="sidemenu12_txt">크기도 UP! 맛도 UP!</string>
+
+    <string name="drinkmenu1_txt">자연을 담은 버거킹 RA인증커피</string>
+    <string name="drinkmenu2_txt">자연을 담은 버거킹 RA인증커피</string>
+    <string name="drinkmenu3_txt">코카-콜라로 더 짜릿하게! (L)</string>
+    <string name="drinkmenu4_txt">코카-콜라로 더 짜릿하게! (R)</string>
+    <string name="drinkmenu5_txt">100% 짜릿함, 칼로리는 제로! (L)</string>
+    <string name="drinkmenu6_txt">100% 짜릿함, 칼로리는 제로! (R)</string>
+    <string name="drinkmenu7_txt">오렌지의 신선함이 가득~</string>
+    <string name="drinkmenu8_txt">씨그램 (L)</string>
+    <string name="drinkmenu9_txt">씨그램 (R)</string>
+    <string name="drinkmenu10_txt">깨끗하고 순수한 물</string>
+    <string name="drinkmenu11_txt">나를 깨우는 상쾌함! (L)</string>
+    <string name="drinkmenu12_txt">나를 깨우는 상쾌함! (R)</string>
+
+
+
     <string name ="side1_txt">2900원</string>
     <string name ="side2_txt">4500원</string>
     <string name ="side3_txt">4200원</string>

@@ -15,6 +15,7 @@ import com.example.kioskui.databinding.ActivityMainBinding
 import com.example.kioskui.databinding.FragmentMenuBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation.findNavController
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 
 open class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -51,7 +52,6 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태키3와퍼")
             var stock = arrayOf( // 48
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
-                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //단품
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //사이드
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100)) //드링크
             var mprice = arrayOf(
@@ -60,7 +60,6 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700, 1500, 2300, 1300, 1000, 3600, 2000),
                 arrayListOf<Int>(1400, 1200, 900, 700, 900, 700, 800, 900, 750, 600, 900, 700))
             var selectedAmt = arrayOf(
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
@@ -91,6 +90,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             var check = false
             var menu_opt = 0
             var menu_num =0
+
 
         }
     }

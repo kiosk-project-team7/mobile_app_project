@@ -22,6 +22,7 @@ import com.example.kioskui.MainActivity.menuInit.Companion.pdata
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
 import com.example.kioskui.databinding.FragmentMenuBinding
+import com.example.kioskui.databinding.FragmentSingleBinding
 
 class SetmenuFragment : Fragment() {
 
@@ -39,6 +40,7 @@ class SetmenuFragment : Fragment() {
     var sprice =0
     var dprice=0
     var now_step_price=0
+    var string =""
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -62,93 +64,101 @@ class SetmenuFragment : Fragment() {
         binding.apply{
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            setmenuFragemnt = this@SetmenuFragment
+            setmenuFragemnt= this@SetmenuFragment
         }
 
-        fun onclick(img : Drawable, ptext : TextView)
-        {
-            dialog(img,ptext.text)
-            price = binding.menu1Prc.text.toString().toInt()
-        }
+
         binding.menu1Img.setOnClickListener {
-            price = binding.menu1Prc.text.toString().toInt()
+            string = binding.menu1Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
+            Log.d("price ", "${price}")
             menu_num=0
             dialog(binding.menu1Img.drawable, binding.menu1Txt.text, R.string.menu1_txt)
 
         }
 
         binding.menu2Img.setOnClickListener {
-            price = binding.menu2Prc.text.toString().toInt()
+            string = binding.menu2Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=1
             dialog(binding.menu2Img.drawable, binding.menu2Txt.text, R.string.menu2_txt)
 
         }
 
         binding.menu3Img.setOnClickListener {
-            price = binding.menu3Prc.text.toString().toInt()
+            string = binding.menu3Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=2
             dialog(binding.menu3Img.drawable, binding.menu3Txt.text, R.string.menu3_txt)
 
         }
 
         binding.menu4Img.setOnClickListener {
-            price = binding.menu4Prc.text.toString().toInt()
+            string = binding.menu4Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=3
             dialog(binding.menu4Img.drawable, binding.menu4Txt.text, R.string.menu4_txt)
 
         }
 
         binding.menu5Img.setOnClickListener {
-            price = binding.menu5Prc.text.toString().toInt()
+            string = binding.menu5Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=4
             dialog(binding.menu5Img.drawable, binding.menu5Txt.text, R.string.menu5_txt)
 
         }
 
         binding.menu6Img.setOnClickListener {
-            price = binding.menu6Prc.text.toString().toInt()
+            string = binding.menu6Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=5
             dialog(binding.menu6Img.drawable, binding.menu6Txt.text, R.string.menu6_txt)
 
         }
 
         binding.menu7Img.setOnClickListener {
-            price = binding.menu7Prc.text.toString().toInt()
+            string = binding.menu7Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=6
             dialog(binding.menu7Img.drawable, binding.menu7Txt.text, R.string.menu7_txt)
 
         }
 
         binding.menu8Img.setOnClickListener {
-            price = binding.menu8Prc.text.toString().toInt()
+            string = binding.menu8Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=7
             dialog(binding.menu8Img.drawable, binding.menu8Txt.text, R.string.menu8_txt)
 
         }
 
         binding.menu9Img.setOnClickListener {
-            price = binding.menu9Prc.text.toString().toInt()
+            string = binding.menu9Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=8
             dialog(binding.menu9Img.drawable, binding.menu9Txt.text, R.string.menu9_txt)
 
         }
 
         binding.menu10Img.setOnClickListener {
-            price = binding.menu10Prc.text.toString().toInt()
+            string = binding.menu10Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=9
             dialog(binding.menu10Img.drawable, binding.menu10Txt.text, R.string.menu10_txt)
 
         }
 
         binding.menu11Img.setOnClickListener {
-            price = binding.menu11Prc.text.toString().toInt()
+            string = binding.menu11Prc.text.toString().substring(0 until 4)
+            price = string.toInt()
             menu_num=10
             dialog(binding.menu11Img.drawable, binding.menu11Txt.text, R.string.menu11_txt)
 
         }
 
         binding.menu12Img.setOnClickListener {
-            var string = binding.menu12Prc.text.toString().substring(0 until 3)
+            string = binding.menu12Prc.text.toString().substring(0 until 4)
             price = binding.menu12Prc.text.toString().toInt()
             menu_num=11
             dialog(binding.menu12Img.drawable, binding.menu12Txt.text, R.string.menu12_txt)
@@ -218,7 +228,6 @@ class SetmenuFragment : Fragment() {
                         sharedViewModel.setPrice(total_price.toString())
                         pdata.add(total_price.toString()+"원")
                         stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
-
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){
                         Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()

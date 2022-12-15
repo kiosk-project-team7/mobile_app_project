@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentPayBinding
 import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.check
 import com.example.kioskui.MainActivity.menuInit.Companion.today_total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 

@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6900" />
+                    android:text="6900원" />
 
             </LinearLayout>
 
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7300" />
+                    android:text="7300원" />
 
             </LinearLayout>
 
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6800" />
+                    android:text="6800원" />
 
             </LinearLayout>
 
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6400" />
+                    android:text="6400원" />
 
             </LinearLayout>
 
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6100" />
+                    android:text="6100원" />
 
             </LinearLayout>
 
@@ -190,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7500" />
+                    android:text="7500원" />
 
             </LinearLayout>
 
@@ -218,7 +218,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7000" />
+                    android:text="7000원" />
 
             </LinearLayout>
 
@@ -246,7 +246,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6900" />
+                    android:text="6900원" />
 
             </LinearLayout>
 
@@ -274,7 +274,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6400" />
+                    android:text="6400원" />
 
             </LinearLayout>
 
@@ -302,7 +302,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6500" />
+                    android:text="6500원" />
 
             </LinearLayout>
 
@@ -330,7 +330,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="5800" />
+                    android:text="5800원" />
 
             </LinearLayout>
 
@@ -358,7 +358,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6700" />
+                    android:text="6700원" />
 
             </LinearLayout>
 

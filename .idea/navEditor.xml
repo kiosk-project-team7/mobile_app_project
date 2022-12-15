@@ -60,6 +60,30 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="Fragment_Choice_Manager">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="Fragment_Daily_Manager">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="Fragment_Inout">
                     <value>
                       <LayoutPositions>
@@ -103,18 +127,6 @@
                           <Point>
                             <option name="x" value="256" />
                             <option name="y" value="368" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="Fragment_Set1">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
