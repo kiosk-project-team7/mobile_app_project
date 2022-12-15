@@ -27,7 +27,7 @@
 
             <ImageView
                 android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/logo_burgerking"
                 app:layout_constraintEnd_toEndOf="parent"
