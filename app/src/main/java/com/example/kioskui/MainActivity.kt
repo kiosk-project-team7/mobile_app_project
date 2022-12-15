@@ -76,6 +76,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //토핑
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //햄거버 (단품)
             )
+            ///
             var hotlist = arrayListOf<Int>(9,3) //사이드 , 콜라
        
             fun set_image(binding2 :  FragmentSetmenuBinding){
