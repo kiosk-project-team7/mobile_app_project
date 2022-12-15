@@ -19,6 +19,7 @@ import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import com.example.kioskui.MainActivity.menuInit.Companion.mprice
 import com.example.kioskui.MainActivity.menuInit.Companion.pdata
+import com.example.kioskui.MainActivity.menuInit.Companion.total_num
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
 import com.example.kioskui.databinding.FragmentMenuBinding
@@ -165,7 +166,15 @@ class SetmenuFragment : Fragment() {
 
         }
     }
-
+    fun init(){
+        price=0
+        tprice=0
+        dprice=0
+        sprice=0
+        toppingtext=""
+        drinktext=""
+        sidetext=""
+    }
     // 클릭하면 화면 출력 함수
     @SuppressLint("ResourceType")
     private fun dialog(img: Drawable, tv: CharSequence, exp: Int){
@@ -191,22 +200,38 @@ class SetmenuFragment : Fragment() {
                 .setTitle(tv)
                 .setIcon(logo.drawable)
         }
+        val eventHandler2 = object : DialogInterface.OnClickListener{
+            override fun onClick(p0: DialogInterface?, p1: Int) {
 
-
+                if(p1 == DialogInterface.BUTTON_POSITIVE)
+                {
+                    Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+                    now_step_price=dprice+sprice+tprice+price
+                    total_price+=now_step_price
+                    menu_opt=0
+                    total_num++
+                    whenSelected(menu_opt, menu_num)
+                    data.add(Itemview(img,tv,"1",toppingtext,"코카콜라(R)","프렌치프라이(R)",now_step_price,now_step_price))
+                    init()
+                    Log.d("data","${data}")
+                    total_num++
+                    sharedViewModel.addData(data)
+                    sharedViewModel.setPrice(total_price.toString())
+                    pdata.add(total_price.toString()+"원")
+                    stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
+                }
+                else if(p1==DialogInterface.BUTTON_NEGATIVE){
+                    Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        mBuilder?.setPositiveButton("바로 담기",eventHandler2)
         mBuilder?.setNegativeButton("닫기", null)
         mBuilder?.show()
 
         // 사용자화 버튼 선택 시 다이얼로그
         val cusButton = cDialogView.findViewById<Button>(R.id.cus_btn)
-        fun init(){
-            price=0
-            tprice=0
-            dprice=0
-            sprice=0
-            toppingtext=""
-            drinktext=""
-            sidetext=""
-        }
+
         cusButton.setOnClickListener {
             val c2DialogView =
                 LayoutInflater.from(view?.context).inflate(R.layout.custom_option, null)
@@ -220,6 +245,7 @@ class SetmenuFragment : Fragment() {
                         now_step_price=dprice+sprice+tprice+price
                         total_price+=now_step_price
                         menu_opt=0
+                        total_num++
                         whenSelected(menu_opt, menu_num)
                         data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,now_step_price,now_step_price))
                         init()
@@ -245,7 +271,6 @@ class SetmenuFragment : Fragment() {
                     .show()
                 //토핑
                 val trdg1 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg1)
-                val trdg2 = c2DialogView.findViewById<RadioGroup>(R.id.toppingrg2)
                 val srdg1 = c2DialogView.findViewById<RadioGroup>(R.id.siderg1)
                 val srdg2 = c2DialogView.findViewById<RadioGroup>(R.id.siderg2)
                 val drdg1 = c2DialogView.findViewById<RadioGroup>(R.id.drinkrg1)
@@ -296,28 +321,11 @@ class SetmenuFragment : Fragment() {
                                 toppingtext = "토마토"
                                 tprice=300
                             }
-                        }
-                        if (trb5.isChecked)
-                            trb5.isChecked = false
-                    }
-                }
-                trdg2.setOnCheckedChangeListener { radioGroup, checkedId ->
-                    Log.d("radio", "두번째 사이드줄")
-                    if(trb5.isChecked) {
-                        when(checkedId) {
-                            R.id.topping5rb -> {
-                                toppingtext = "피클"
+                            R.id.topping5rb ->{
+                                toppingtext ="피클"
                                 tprice=300
                             }
                         }
-                        if (trb1.isChecked)
-                            trb1.isChecked = false
-                        if (trb2.isChecked)
-                            trb2.isChecked = false
-                        if (trb3.isChecked)
-                            trb3.isChecked = false
-                        if (trb4.isChecked)
-                            trb4.isChecked = false
                     }
                 }
 

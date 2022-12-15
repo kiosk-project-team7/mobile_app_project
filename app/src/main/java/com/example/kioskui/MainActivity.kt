@@ -60,14 +60,26 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700, 1500, 2300, 1300, 1000, 3600, 2000),
                 arrayListOf<Int>(1400, 1200, 900, 700, 900, 700, 800, 900, 750, 600, 900, 700))
             var selectedAmt = arrayOf(
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //햄버거
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //드링크
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //사이드
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))  //토핑
             fun whenSelected(menuOpt : Int,menuNum: Int) {
-                selectedAmt[menuOpt][menuNum] += 1
-                stock[menuOpt][menuNum] -= 1
+                Log.d("option","${menuOpt}, ${menuNum}")
+                selectedAmt[menuOpt][menuNum]++
+                stock[menuOpt][menuNum]--
                 Log.d("선택관리","${selectedAmt[menuOpt][menuNum]}")
                 Log.d("재고관리","${stock[menuOpt][menuNum]}")
+            }
+            fun detail(top : Int, dop : Int, sop: Int){
+                selectedAmt[1][dop]++
+                selectedAmt[2][sop]++
+                selectedAmt[3][top]++
+            }
+            fun detail_delete(top : Int, dop : Int, sop: Int){
+                selectedAmt[1][dop]--
+                selectedAmt[2][sop]--
+                selectedAmt[3][top]--
             }
             fun whenDelected(menuOpt: Int,menuNum: Int){
                 selectedAmt[menuOpt][menuNum] -= 1
@@ -82,6 +94,26 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 Log.d("선택관리","${selectedAmt[menuOpt][menuNum]}")
                 Log.d("재고관리","${stock[menuOpt][menuNum]}")
             }
+            var tmax=0
+            var dmax=0
+            var smax=0
+            var hmax=0
+            var total_num = 0
+            fun calculate()
+            {
+
+                Log.d("test","${selectedAmt[0][1]}")
+                Log.d("test","${selectedAmt[0][2]}")
+                for( i in 0 .. 3){
+                    for( j in 0 .. 11)
+                    {
+                        dmax= kotlin.math.max(dmax, selectedAmt[0][j])
+                        tmax=kotlin.math.max(tmax, selectedAmt[3][j])
+                        dmax=kotlin.math.max(dmax, selectedAmt[1][j])
+                        smax=kotlin.math.max(smax, selectedAmt[2][j])
+                    }
+                }
+            }
             val data = mutableListOf <Itemview>()
             val pdata = mutableListOf<String>()
             var count = 0
@@ -90,7 +122,9 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             var check = false
             var menu_opt = 0
             var menu_num =0
-
+            var top=0
+            var dop=0
+            var sop=0
 
         }
     }
@@ -107,6 +141,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
         }
     }
+
 
 
 

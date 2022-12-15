@@ -37,6 +37,11 @@ import com.example.kioskui.MainActivity.menuInit.Companion.selectedAmt
 import com.example.kioskui.MainActivity.menuInit.Companion.whenAllDelected
 import com.example.kioskui.MainActivity.menuInit.Companion.whenDelected
 import androidx.navigation.fragment.findNavController
+import com.example.kioskui.MainActivity.menuInit.Companion.detail_delete
+import com.example.kioskui.MainActivity.menuInit.Companion.dop
+import com.example.kioskui.MainActivity.menuInit.Companion.sop
+import com.example.kioskui.MainActivity.menuInit.Companion.top
+import com.example.kioskui.MainActivity.menuInit.Companion.total_num
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
 
 class MyViewHolder(val binding :LayoutItemBinding): ViewHolder(binding.root){
@@ -90,12 +95,13 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
                 Log.d("button","${position} 번째 +버튼 눌렀슴")
                 var num = dataset[position].number_count.toInt()
                 num++
+                total_num++
                 dataset[position].number_count=num.toString()
                 var bug_Price = dataset[position].price
                 dataset[position].total_price+=bug_Price
                 total_price += bug_Price
                 binding2.priceText.text = total_price.toString()+"원"
-                whenSelected(menu_opt, menu_num)
+                //
                 notifyDataSetChanged()
 
 
@@ -108,10 +114,12 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
                     num--
                     dataset[position].number_count = num.toString()
                     total_price-=bug_Price
+                    total_num--
                     whenDelected(menu_opt, menu_num)
                     dataset[position].total_price-=bug_Price
                     notifyDataSetChanged()
                     binding2.priceText.text = total_price.toString()+"원"
+                    detail_delete(top,dop,sop)
                     Log.d("업데이트 후 data","${dataset[position]}")
                 }
             }
@@ -119,6 +127,11 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
                 var bug_Price = dataset[position].price * dataset[position].number_count.toInt()
                 total_price -= bug_Price
                 dataset[position].total_price-=bug_Price
+                for(i in 0 until dataset[position].number_count.toInt())
+                {
+                    total_num--
+                    detail_delete(top, dop, sop)
+                }
                 whenAllDelected(menu_opt, menu_num,dataset[position].number_count.toInt())
                 setPosition(position)
                 removeItem(getPosition())

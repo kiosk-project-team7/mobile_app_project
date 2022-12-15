@@ -50,22 +50,23 @@
     <string name="drinkmenu12_txt">나를 깨우는 상쾌함! (R)</string>
 
 
+    <string name="side1_txt">2900원</string>
+    <string name="side2_txt">4500원</string>
+    <string name="side3_txt">4200원</string>
+    <string name="side4_txt">3200원</string>
+    <string name="side5_txt">4000원</string>
+    <string name="side6_txt">1700원</string>
+    <string name="side7_txt">1500원</string>
+    <string name="side8_txt">2300원</string>
 
-    <string name ="side1_txt">2900원</string>
-    <string name ="side2_txt">4500원</string>
-    <string name ="side3_txt">4200원</string>
-    <string name ="side4_txt">3200원</string>
-    <string name ="side5_txt">4000원</string>
-    <string name ="side6_txt">1700원</string>
-    <string name ="side7_txt">1500원</string>
-    <string name ="side8_txt">2300원</string>
-
-    <string name ="drink1_txt">1400원</string>
-    <string name ="drink2_txt">1200원</string>
-    <string name ="drink3_txt">900원</string>
-    <string name ="drink4_txt">700원</string>
-    <string name ="drink5_txt">900원</string>
-    <string name ="drink6_txt">700원</string>
-    <string name ="drink7_txt">800원</string>
-    <string name ="drink8_txt">900원</string>
+    <string name="drink1_txt">1400원</string>
+    <string name="drink2_txt">1200원</string>
+    <string name="drink3_txt">900원</string>
+    <string name="drink4_txt">700원</string>
+    <string name="drink5_txt">900원</string>
+    <string name="drink6_txt">700원</string>
+    <string name="drink7_txt">800원</string>
+    <string name="drink8_txt">900원</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

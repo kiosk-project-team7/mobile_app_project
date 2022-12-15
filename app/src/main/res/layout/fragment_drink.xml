@@ -20,18 +20,18 @@
             android:id="@+id/menu_grid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:columnCount="6"
-            android:rowCount="2">
+            android:columnCount="4"
+            android:rowCount="3">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu1_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_01_americano_ice" />
 
 
@@ -41,7 +41,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="아이스아메리카노"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu1_prc"
@@ -49,19 +50,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="1400원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu2_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_02_americano" />
 
                 <TextView
@@ -70,7 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="아메리카노"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu2_prc"
@@ -78,19 +81,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="1200원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu3_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_03_coke_l" />
 
                 <TextView
@@ -99,7 +103,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="코카콜라(L)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu3_prc"
@@ -107,19 +112,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="900원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu4_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_04_coke_r" />
 
                 <TextView
@@ -128,7 +134,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="코카콜라(R)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu4_prc"
@@ -136,19 +143,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="700원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu5_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_05_coke_zero_l" />
 
                 <TextView
@@ -157,7 +165,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="코카콜라제로(L)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu5_prc"
@@ -165,19 +174,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="900원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu6_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_06_coke_zero_r" />
 
                 <TextView
@@ -186,7 +196,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="코카콜라제로(R)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu6_prc"
@@ -194,19 +205,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="700원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu7_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_07_minutemaid_orange" />
 
                 <TextView
@@ -215,7 +227,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="미닛메이드오렌지"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu7_prc"
@@ -223,19 +236,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="800원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu8_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_08_seagram_l" />
 
                 <TextView
@@ -244,7 +258,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="씨그램(L)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu8_prc"
@@ -252,19 +267,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="900원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu9_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_09_seagram" />
 
                 <TextView
@@ -273,7 +289,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="씨그램(R)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu9_prc"
@@ -281,19 +298,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="750원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu10_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_10_soonsoo" />
 
                 <TextView
@@ -302,7 +320,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="순수"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu10_prc"
@@ -310,19 +329,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="600원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu11_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_11_sprite_l" />
 
                 <TextView
@@ -331,7 +351,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="스프라이트(L)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu11_prc"
@@ -339,19 +360,20 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="900원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu12_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/drink_12_sprite" />
 
                 <TextView
@@ -360,7 +382,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="스프라이트(R)"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu12_prc"
@@ -368,10 +391,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="700원"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
         </GridLayout>
     </FrameLayout>
 </layout>
+    

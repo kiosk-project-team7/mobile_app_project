@@ -9,16 +9,17 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.databinding.FragmentManagerBinding
 
 class ManagerFragment : Fragment() {
 
     private lateinit var binding: FragmentManagerBinding
-    private var setmenuFragment: SetmenuFragment? = null
-    private var singleFragment: SingleFragment? = null
-    private var sideFragment: SideFragment? = null
-    private var drinkFragment: DrinkFragment? = null
+    private var setmenuFragment : Manager_set?=null
+    private var singleFragment : Manager_single?=null
+    private var sideFragment: Manager_side? = null
+    private var drinkFragment:Manager_drink? = null
     private lateinit var mainActivity : MainActivity
 
     override fun onAttach(context: Context) {
@@ -46,22 +47,23 @@ class ManagerFragment : Fragment() {
         binding.btnReturnMain.setOnClickListener {
             findNavController().navigate(R.id.Fragment_Choice_Manager)
         }
+
         binding.setButton.setOnClickListener {
-            setmenuFragment = SetmenuFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, setmenuFragment!!).commit()
+            setmenuFragment = Manager_set()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment2,setmenuFragment!!).commit()
 //            binding.btn1.setBackgroundColor()
         }
         binding.singleBtn.setOnClickListener {
-            singleFragment = SingleFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, singleFragment!!).commit()
+            singleFragment = Manager_single()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment2,singleFragment!!).commit()
         }
         binding.sideBtn.setOnClickListener {
-            sideFragment = SideFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, sideFragment!!).commit()
+            sideFragment = Manager_side()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment2,sideFragment!!).commit()
         }
         binding.drinkBtn.setOnClickListener {
-            drinkFragment = DrinkFragment()
-            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment1, drinkFragment!!).commit()
+            drinkFragment = Manager_drink()
+            mainActivity.fragmentManager.beginTransaction().replace(R.id.nav_host_fragment2,drinkFragment!!).commit()
         }
 
     }

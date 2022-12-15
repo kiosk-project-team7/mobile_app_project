@@ -20,20 +20,20 @@
             android:id="@+id/menu_grid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:columnCount="6"
-            android:rowCount="2"
+            android:columnCount="4"
+            android:rowCount="3"
             tools:layout_editor_absoluteX="73dp"
             tools:layout_editor_absoluteY="31dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu1_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_01_black_onion_chicken" />
 
 
@@ -43,26 +43,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="블랙어니언치킨버거 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu1_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6900원" />
+                    android:text="6900원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu2_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_02_black_onion" />
 
                 <TextView
@@ -71,26 +72,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="블랙어니언와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu2_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7300원" />
+                    android:text="7300원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu3_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_03_golden_cheeserela_chicken" />
 
                 <TextView
@@ -99,26 +101,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="골든치즈렐라치킨버거 세트"
-                    android:textSize="8sp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/menu3_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6800원" />
+                    android:text="6800원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu4_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_04_golden_cheeserela_x" />
 
                 <TextView
@@ -127,26 +130,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="골든치즈렐라X 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu4_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6400원" />
+                    android:text="6400원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu5_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_05_golden_cheeserela" />
 
                 <TextView
@@ -155,26 +159,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="골든치즈렐라와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu5_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6100원" />
+                    android:text="6100원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu6_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_06_guinness_quattrocheese" />
 
                 <TextView
@@ -183,26 +188,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="기네스콰트로치즈와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/menu6_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7500원" />
+                    android:text="7500원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu7_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_07_guinness" />
 
                 <TextView
@@ -211,26 +217,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="기네스와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu7_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="7000원" />
+                    android:text="7000원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu8_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_08_monster_x" />
 
                 <TextView
@@ -239,26 +246,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="몬스터X 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu8_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6900원" />
+                    android:text="6900원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu9_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_09_monster" />
 
                 <TextView
@@ -267,26 +275,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="몬스터와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu9_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6400원" />
+                    android:text="6400원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu10_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_10_quattro_cheese" />
 
                 <TextView
@@ -295,26 +304,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="콰트로치즈와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu10_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6500원" />
+                    android:text="6500원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu11_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_11_stacker_2" />
 
                 <TextView
@@ -323,26 +333,27 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="스태커2와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu11_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="5800원" />
+                    android:text="5800원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/menu12_img"
-                    android:layout_width="108dp"
-                    android:layout_height="108dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
                     android:src="@drawable/set_12_stacker_3" />
 
                 <TextView
@@ -351,14 +362,15 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="스태커3와퍼 세트"
-                    android:textSize="8sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/menu12_prc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="6700원" />
+                    android:text="6700원"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 

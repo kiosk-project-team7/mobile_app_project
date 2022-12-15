@@ -29,7 +29,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="vertical">
 
                 <TextView
@@ -37,31 +37,46 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="토핑"
-                    android:textSize="10dp"
-                    android:textColor="#000000" />
+                    android:textColor="#946E83"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="90dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="음료"
-                    android:textSize="10dp"
-                    android:textColor="#000000" />
+                    android:textColor="#946E83"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="90dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="사이드메뉴"
-                    android:textSize="10dp"
-                    android:textColor="#000000" />
+                    android:text="사이드"
+                    android:textColor="#946E83"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="90dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
             </LinearLayout>
 
             <!-- 상세 리스트 레이아웃 -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5"
+                android:layout_weight="0.8"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -73,17 +88,25 @@
                         android:id="@+id/toping_list"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
+                        android:layout_weight="5"
                         android:text="토핑 리스트"
-                        android:textSize="10dp"
+                        android:textSize="18dp"
                         android:textColor="#000000" />
+
                     <ImageView
                         android:id="@+id/all_delete"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/x"
-                        android:layout_gravity="end"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="4"
+                        android:layout_gravity="right|end"
+                        android:src="@drawable/x" />
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
 
                 <TextView
                     android:id="@+id/drink_list"
@@ -91,8 +114,13 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="음료 리스트"
-                    android:textSize="10dp"
+                    android:textSize="18dp"
                     android:textColor="#000000" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
 
                 <TextView
                     android:id="@+id/sidemenu_list"
@@ -100,8 +128,13 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="사이드메뉴 리스트"
-                    android:textSize="10dp"
+                    android:textSize="18dp"
                     android:textColor="#000000" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2px"
+                    android:background="@color/black"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -115,8 +148,8 @@
 
             <ImageView
                 android:id="@+id/minus"
-                android:layout_width="10dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/btn_minus" />
@@ -127,17 +160,17 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
                 android:gravity="center_vertical"
-                android:textSize="10dp"
+                android:textSize="20dp"
                 android:text="수량"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                 />
+                />
 
             <!--메뉴 이름-->
             <ImageView
                 android:id="@+id/plus"
-                android:layout_width="10dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/btn_plus" />
@@ -147,7 +180,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
-                android:textSize="10dp"
+                android:textSize="15dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:textColor="#000000" />
         </LinearLayout>
