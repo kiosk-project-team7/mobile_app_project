@@ -2,6 +2,7 @@ package com.example.kioskui
 
 import android.content.ClipData.Item
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -50,8 +51,10 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 "네가지 고품격 치즈와 100% 순쇠고기 패티로 탄생한 버거킹의 스테디셀러, 콰트로치즈와퍼",
                 "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 2장으로 더 크게 도전하세요! 스태키2와퍼",
                 "믿고 먹을 수 있는 와퍼, 불에 직접 구운 100% 순쇠고기 패티 3장으로 더 크게 도전하세요! 스태키3와퍼")
+            var d_name = arrayListOf<String>("아이스아메리카노","아메리카노","코카콜라(L)","코카콜라(R)","코카콜라제로(L)","코카콜라제로(R)","미닛메이드오렌지","씨그램(L)","씨그램(R)","순수","스프라이트(L)","스프라이트(R)")
+            var s_name = arrayListOf<String>("21cm 치즈스틱","앵그리너겟킹","바삭킹","치즈프라이","코코넛쉬럼프","코올슬로","콘샐러드","크리미모짜볼","프렌치프라이(L)","프렌치프라이(R)","너겟킹","어니언링")
             var stock = arrayOf( // 48
-                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
+                arrayListOf<Int>(3, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //사이드
                 arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100)) //드링크
             var mprice = arrayOf(
@@ -64,6 +67,8 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //드링크
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //사이드
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))  //토핑
+            var hotlist = arrayListOf<Int>(8,4) //사이드 , 콜라
+
             fun whenSelected(menuOpt : Int,menuNum: Int) {
                 Log.d("option","${menuOpt}, ${menuNum}")
                 selectedAmt[menuOpt][menuNum]++
@@ -125,10 +130,14 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             var top=0
             var dop=0
             var sop=0
-
+            fun set_btn(img : ImageView){
+                img.alpha=1f
+                img.isClickable=true
+                }
+            }
         }
     }
-    val menu1: menuInit = menuInit()
+
 
 
 
@@ -141,9 +150,3 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
         }
     }
-
-
-
-
-
-}

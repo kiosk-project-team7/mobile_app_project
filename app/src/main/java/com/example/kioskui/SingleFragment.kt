@@ -317,8 +317,22 @@ class SingleFragment : Fragment() {
 
         // 추천 버튼 누를 시
         val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
+
         recButton.setOnClickListener {
             Toast.makeText(mainActivity,"추천버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+            tprice=500
+            now_step_price=dprice+sprice+tprice+price
+            total_price+=now_step_price
+            menu_opt=0
+            total_num++
+            whenSelected(menu_opt, menu_num)
+            data.add(Itemview(img,tv,"1","베이컨","","",now_step_price,now_step_price))
+            init()
+            Log.d("data","${data}")
+            sharedViewModel.addData(data)
+            sharedViewModel.setPrice(total_price.toString())
+            pdata.add(total_price.toString()+"원")
+            stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
 
         }
     }
