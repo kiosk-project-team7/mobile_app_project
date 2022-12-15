@@ -16,7 +16,7 @@
         <!--위쪽레이아웃-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -189,7 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:text="0원"
-            android:gravity="center"
+            android:gravity="end"
             />
     </LinearLayout>
 

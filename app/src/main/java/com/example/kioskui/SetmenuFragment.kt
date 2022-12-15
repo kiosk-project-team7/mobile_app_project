@@ -13,12 +13,19 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.kioskui.MainActivity.menuInit.Companion.d_name
+import com.example.kioskui.MainActivity.menuInit.Companion.dop
+import com.example.kioskui.MainActivity.menuInit.Companion.hotlist
 import com.example.kioskui.MainActivity.menuInit.Companion.menu_num
 import com.example.kioskui.MainActivity.menuInit.Companion.menu_opt
 import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import com.example.kioskui.MainActivity.menuInit.Companion.mprice
 import com.example.kioskui.MainActivity.menuInit.Companion.pdata
+import com.example.kioskui.MainActivity.menuInit.Companion.s_name
+import com.example.kioskui.MainActivity.menuInit.Companion.sop
+import com.example.kioskui.MainActivity.menuInit.Companion.stock
+import com.example.kioskui.MainActivity.menuInit.Companion.top
 import com.example.kioskui.MainActivity.menuInit.Companion.total_num
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
@@ -33,8 +40,8 @@ class SetmenuFragment : Fragment() {
 
     private lateinit var mainActivity : MainActivity
     private var toppingtext : String = " "
-    private var sidetext : String = " "
-    private var drinktext : String = " "
+    private var sidetext : String = "프렌치프라이(R)"
+    private var drinktext : String = "코카콜라(R)"
     private var menuFragment: MenuFragment? = null
     var price =0
     var tprice=0
@@ -68,13 +75,12 @@ class SetmenuFragment : Fragment() {
             setmenuFragemnt= this@SetmenuFragment
         }
 
-
         binding.menu1Img.setOnClickListener {
-            string = binding.menu1Prc.text.toString().substring(0 until 4)
-            price = string.toInt()
-            Log.d("price ", "${price}")
-            menu_num=0
-            dialog(binding.menu1Img.drawable, binding.menu1Txt.text, R.string.menu1_txt)
+                menu_num=0
+                string = binding.menu1Prc.text.toString().substring(0 until 4)
+                price = string.toInt()
+                Log.d("price ", "${price}")
+                dialog(binding.menu1Img.drawable, binding.menu1Txt.text,R.string.menu1_txt)
 
         }
 
@@ -172,8 +178,8 @@ class SetmenuFragment : Fragment() {
         dprice=0
         sprice=0
         toppingtext=""
-        drinktext=""
-        sidetext=""
+        drinktext="코카콜라(R)"
+        sidetext="프렌치프라이(R)"
     }
     // 클릭하면 화면 출력 함수
     @SuppressLint("ResourceType")
@@ -211,6 +217,69 @@ class SetmenuFragment : Fragment() {
                     menu_opt=0
                     total_num++
                     whenSelected(menu_opt, menu_num)
+                    for(i in 0 until 12){
+                        Log.d("test","${i}")
+                        if(stock[0][i]==0){
+                            when(i){
+                                0 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu1Img.alpha = 0.3f
+                                    binding.menu1Img.isClickable=false
+                                }
+                                1 ->{
+                                    binding.menu2Img.alpha=0.3f
+                                    binding.menu2Img.isClickable=false
+                                }
+                                2 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu3Img.alpha = 0.3f
+                                    binding.menu3Img.isClickable=false
+                                }
+                                3 ->{
+                                    binding.menu4Img.alpha=0.3f
+                                    binding.menu4Img.isClickable=false
+                                }
+                                4 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu5Img.alpha = 0.3f
+                                    binding.menu5Img.isClickable=false
+                                }
+                                5 ->{
+                                    binding.menu6Img.alpha=0.3f
+                                    binding.menu6Img.isClickable=false
+                                }
+                                6 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu7Img.alpha = 0.3f
+                                    binding.menu7Img.isClickable=false
+                                }
+                                7 ->{
+                                    binding.menu8Img.alpha=0.3f
+                                    binding.menu8Img.isClickable=false
+                                }
+                                8 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu9Img.alpha = 0.3f
+                                    binding.menu9Img.isClickable=false
+                                }
+                                9 ->{
+                                    binding.menu10Img.alpha=0.3f
+                                    binding.menu10Img.isClickable=false
+                                }
+                                10 -> {
+                                    Log.d("test","재고가 떨어졋습니다:")
+                                    binding.menu11Img.alpha = 0.3f
+                                    binding.menu11Img.isClickable=false
+                                }
+                                11 ->{
+                                    binding.menu12Img.alpha=0.3f
+                                    binding.menu12Img.isClickable=false
+                                }
+                            }
+                        }
+                    }
+                    drinktext = d_name[hotlist[1]]
+                    sidetext = s_name[hotlist[0]]
                     data.add(Itemview(img,tv,"1",toppingtext,"코카콜라(R)","프렌치프라이(R)",now_step_price,now_step_price))
                     init()
                     Log.d("data","${data}")
@@ -219,6 +288,7 @@ class SetmenuFragment : Fragment() {
                     sharedViewModel.setPrice(total_price.toString())
                     pdata.add(total_price.toString()+"원")
                     stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
+
                 }
                 else if(p1==DialogInterface.BUTTON_NEGATIVE){
                     Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
@@ -242,6 +312,18 @@ class SetmenuFragment : Fragment() {
                     if(p1 == DialogInterface.BUTTON_POSITIVE)
                     {
                         Toast.makeText(activity,"담기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+                        for(i in 0 until 12){
+                            Log.d("test","${i}")
+                            if(stock[0][i]==0){
+                                when(i){
+                                    0 -> {
+                                        Log.d("test","재고가 떨어졋습니다:")
+                                        binding.menu1Img.alpha = 0.3f
+                                        binding.menu1Img.isClickable=false
+                                    }
+                                }
+                            }
+                        }
                         now_step_price=dprice+sprice+tprice+price
                         total_price+=now_step_price
                         menu_opt=0
@@ -250,10 +332,13 @@ class SetmenuFragment : Fragment() {
                         data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,now_step_price,now_step_price))
                         init()
                         Log.d("data","${data}")
+
                         sharedViewModel.addData(data)
                         sharedViewModel.setPrice(total_price.toString())
                         pdata.add(total_price.toString()+"원")
                         stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
+
+
                     }
                     else if(p1==DialogInterface.BUTTON_NEGATIVE){
                         Toast.makeText(activity,"닫기버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
@@ -458,6 +543,19 @@ class SetmenuFragment : Fragment() {
         val recButton = cDialogView.findViewById<Button>(R.id.rec_btn)
         recButton.setOnClickListener {
             Toast.makeText(mainActivity,"추천버튼을 눌렀습니다",Toast.LENGTH_SHORT).show()
+            tprice=500
+            now_step_price=dprice+sprice+tprice+price
+            total_price+=now_step_price
+            menu_opt=0
+            total_num++
+            whenSelected(menu_opt, menu_num)
+            data.add(Itemview(img,tv,"1","베이컨","코카콜라(R)","프렌치프라이(L)",now_step_price,now_step_price))
+            init()
+            Log.d("data","${data}")
+            sharedViewModel.addData(data)
+            sharedViewModel.setPrice(total_price.toString())
+            pdata.add(total_price.toString()+"원")
+            stepAdapter(data, FragmentMenuBinding.inflate(layoutInflater))
 
         }
     }

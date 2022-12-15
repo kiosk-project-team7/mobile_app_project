@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_detail"
+    app:startDestination="@id/Fragment_Setmenu">
+
+    <fragment android:id="@+id/Fragment_Setmenu"
+        android:name="com.example.kioskui.Manager_set"
+        android:label="Set"
+        tools:layout="@layout/fragment_manager_set">
+    </fragment>
+
+
+    <fragment android:id="@+id/Fragment_Single"
+        android:name="com.example.kioskui.Manager_single"
+        android:label="INOUT"
+        tools:layout="@layout/fragment_manager_single">
+    </fragment>
+
+    <fragment android:id="@+id/Fragment_side"
+        android:name="com.example.kioskui.Manager_side"
+        android:label="Side"
+        tools:layout="@layout/fragment_manager_side">
+    </fragment>
+
+    <fragment android:id="@+id/Fragment_drink"
+        android:name="com.example.kioskui.Manager_drink"
+        android:label="PAY"
+        tools:layout="@layout/fragment_manager_drink">
+    </fragment>
+
+</navigation>
