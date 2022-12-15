@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="150dp"
+                android:layout_width="125dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/logo_burgerking"
@@ -38,8 +38,9 @@
 
         <LinearLayout
             android:id="@+id/step_layout"
-            android:layout_width="800dp"
-            android:layout_height="200dp"
+            android:layout_width="700dp"
+            android:layout_height="170dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
             app:layout_constraintStart_toEndOf="@+id/menubar_layout"
             app:layout_constraintTop_toTopOf="parent">
@@ -56,8 +57,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="50dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_steps"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:backgroundTint="@color/teal_700"
                     android:text="세트"
                     android:textSize="25dp" />
 
@@ -68,8 +68,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="50dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_steps"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:backgroundTint="@color/teal_700"
                     android:text="단품"
                     android:textSize="25dp" />
 
@@ -80,8 +79,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="50dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_steps"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:backgroundTint="@color/teal_700"
                     android:text="사이드"
                     android:textSize="25dp" />
 
@@ -92,8 +90,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="50dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_steps"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:backgroundTint="@color/teal_700"
                     android:text="음료"
                     android:textSize="25dp" />
 
@@ -102,9 +99,10 @@
 
         <HorizontalScrollView
             android:id="@+id/menu_layout"
-            android:layout_width="800dp"
-            android:layout_height="450dp"
-            android:layout_marginBottom="30dp"
+            android:layout_width="900dp"
+            android:layout_height="600dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +126,7 @@
         <!-- 주문 목록-->
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -156,6 +154,7 @@
                     android:background="@color/teal_200"
                     android:gravity="center"
                     android:text="합계"
+                    android:textAlignment="center"
                     android:textSize="20dp" />
 
                 <TextView
@@ -164,7 +163,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:gravity="center"
+                    android:paddingEnd="40dp"
                     android:text="원"
+                    android:textAlignment="textEnd"
                     android:textSize="25dp"
                     android:visibility="visible" />
                 <!--android:text="@{viewModel.total}"-->

@@ -50,7 +50,7 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:text="사용자화"
+        android:text="토핑선택  추가변경"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rec_btn"
