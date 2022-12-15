@@ -21,7 +21,9 @@ import com.example.kioskui.databinding.FragmentSetmenuBinding
 import com.example.kioskui.model.OrderViewModel
 import com.example.kioskui.MainActivity.menuInit.Companion.mprice
 import com.example.kioskui.MainActivity.menuInit.Companion.pdata
+import com.example.kioskui.MainActivity.menuInit.Companion.selectedAmt
 import com.example.kioskui.MainActivity.menuInit.Companion.sop
+import com.example.kioskui.MainActivity.menuInit.Companion.stock
 import com.example.kioskui.MainActivity.menuInit.Companion.top
 import com.example.kioskui.MainActivity.menuInit.Companion.total_num
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
@@ -72,6 +74,66 @@ class SingleFragment : Fragment() {
             singlemenuFragemnt= this@SingleFragment
         }
 
+        for(i in 0 until 12){
+            Log.d("test","${i}")
+            if(stock[0][i]==0){
+                when(i){
+                    0 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu1Img.alpha = 0.3f
+
+                    }
+                    1 ->{
+                        binding.menu2Img.alpha=0.3f
+
+                    }
+                    2 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu3Img.alpha = 0.3f
+
+                    }
+                    3 ->{
+                        binding.menu4Img.alpha=0.3f
+
+                    }
+                    4 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu5Img.alpha = 0.3f
+
+                    }
+                    5 ->{
+                        binding.menu6Img.alpha=0.3f
+
+                    }
+                    6 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu7Img.alpha = 0.3f
+
+                    }
+                    7 ->{
+                        binding.menu8Img.alpha=0.3f
+
+                    }
+                    8 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu9Img.alpha = 0.3f
+
+                    }
+                    9 ->{
+                        binding.menu10Img.alpha=0.3f
+
+                    }
+                    10 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu11Img.alpha = 0.3f
+
+                    }
+                    11 ->{
+                        binding.menu12Img.alpha=0.3f
+                    }
+                }
+            }
+        }
 
         binding.menu1Img.setOnClickListener {
             string = binding.menu1Prc.text.toString().substring(0 until 4)
@@ -172,7 +234,6 @@ class SingleFragment : Fragment() {
     }
 
     fun init(){
-        price=0
         tprice=0
         dprice=0
         sprice=0
@@ -217,8 +278,9 @@ class SingleFragment : Fragment() {
                     total_price+=now_step_price
                     menu_opt=0
 //                    total_num++
-                    whenSelected(menu_opt, menu_num)
-                    data.add(Itemview(img,tv,"1",toppingtext,"코카콜라(R)","프렌치프라이(R)",now_step_price,now_step_price))
+                    stock[menu_opt][menu_num]--
+                    selectedAmt[4][menu_num]++
+                    data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,now_step_price,now_step_price))
                     init()
                     total_num++
                     Log.d("data","${data}")
@@ -252,7 +314,10 @@ class SingleFragment : Fragment() {
                         total_price+=now_step_price
                         menu_opt=0
                         total_num++
-                        whenSelected(menu_opt, menu_num)
+                        //whenSelected(menu_opt, menu_num)
+                        stock[menu_opt][menu_num]--
+                        selectedAmt[4][menu_num]++
+                        selectedAmt[3][top]++
                         data.add(Itemview(img,tv,"1",toppingtext,drinktext,sidetext,now_step_price,now_step_price))
                         init()
                         Log.d("data","${data}")
@@ -292,22 +357,27 @@ class SingleFragment : Fragment() {
                             R.id.topping1rb -> {
                                 toppingtext = "베이컨"
                                 tprice = 500
+                                top=1
                             }
                             R.id.topping2rb -> {
                                 toppingtext = "치즈"
                                 tprice = 500
+                                top=2
                             }
                             R.id.topping3rb -> {
                                 toppingtext = "양상추"
                                 tprice = 300
+                                top=3
                             }
                             R.id.topping4rb -> {
                                 toppingtext = "토마토"
                                 tprice = 300
+                                top=4
                             }
                             R.id.topping5rb -> {
                                 toppingtext = "피클"
                                 tprice = 300
+                                top=5
                             }
                         }
                     }
@@ -325,9 +395,10 @@ class SingleFragment : Fragment() {
             total_price+=now_step_price
             menu_opt=0
             total_num++
-            whenSelected(menu_opt, menu_num)
-            data.add(Itemview(img,tv,"1","베이컨","","",now_step_price,now_step_price))
             init()
+            stock[menu_opt][menu_num]--
+            selectedAmt[4][menu_num]++
+            data.add(Itemview(img,tv,"1","베이컨","","",now_step_price,now_step_price))
             Log.d("data","${data}")
             sharedViewModel.addData(data)
             sharedViewModel.setPrice(total_price.toString())

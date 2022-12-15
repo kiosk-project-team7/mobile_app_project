@@ -1,6 +1,7 @@
 package com.example.kioskui
 
 import android.content.ClipData.Item
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Layout
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
@@ -18,17 +20,21 @@ import com.example.kioskui.model.OrderViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation.findNavController
 import com.example.kioskui.MainActivity.menuInit.Companion.total_price
+import com.example.kioskui.databinding.FragmentSetmenuBinding
 
 open class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     val fragmentManager = supportFragmentManager
     lateinit var  viewModel : OrderViewModel
     lateinit var binding: FragmentMenuBinding
+    lateinit var binding2: FragmentSetmenuBinding
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         viewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
+        binding2 = FragmentSetmenuBinding.inflate(layoutInflater)
     }
-
+    private lateinit var mainActivity : MainActivity
+    
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
@@ -39,6 +45,7 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 "골든치즈렐라와퍼버거 세트", "기네스콰트로치즈와퍼 세트", "기네스와퍼 세트", "몬스터X 세트", "몬스터와퍼 세트", "콰트로치즈와퍼 세트",
                 "스태키2와퍼 세트", "스태키3와퍼 세트")
             val imgPath = "R.id.menu1Img"
+
             val desc = arrayListOf<String>("200분의 기다림, 블랙어니언으로 깊어진 풍미에 바삭한 킹치킨패티까지 블랙 어니언 치킨 버거",
                 "200분의 기다림, 블랙어니언으로 깊어진 풍미에 100% 순쇠고기 패티까지 블랙 어니언 와퍼",
                 "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬! 골든치즈렐라치킨버거",
@@ -54,21 +61,80 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             var d_name = arrayListOf<String>("아이스아메리카노","아메리카노","코카콜라(L)","코카콜라(R)","코카콜라제로(L)","코카콜라제로(R)","미닛메이드오렌지","씨그램(L)","씨그램(R)","순수","스프라이트(L)","스프라이트(R)")
             var s_name = arrayListOf<String>("21cm 치즈스틱","앵그리너겟킹","바삭킹","치즈프라이","코코넛쉬럼프","코올슬로","콘샐러드","크리미모짜볼","프렌치프라이(L)","프렌치프라이(R)","너겟킹","어니언링")
             var stock = arrayOf( // 48
-                arrayListOf<Int>(3, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //세트
-                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100), //사이드
-                arrayListOf<Int>(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100)) //드링크
+                arrayListOf<Int>(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3), //세트
+                arrayListOf<Int>(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10), //사이드
+                arrayListOf<Int>(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10)) //드링크
             var mprice = arrayOf(
                 arrayListOf<Int>(6900, 7300, 6800, 6400, 6100, 7500, 7000, 6900, 6400, 6500, 5800, 6700),
                 arrayListOf<Int>(6000, 6400, 5900, 5500, 5500, 6600, 6100, 6000, 5500, 5600, 4900, 5800),
                 arrayListOf<Int>(2900, 4500, 4200, 3200, 4000, 1700, 1500, 2300, 1300, 1000, 3600, 2000),
                 arrayListOf<Int>(1400, 1200, 900, 700, 900, 700, 800, 900, 750, 600, 900, 700))
             var selectedAmt = arrayOf(
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //햄버거
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //햄버거 (세트)
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //드링크
                 arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //사이드
-                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))  //토핑
-            var hotlist = arrayListOf<Int>(8,4) //사이드 , 콜라
-
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //토핑
+                arrayListOf<Int> (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),  //햄거버 (단품)
+            )
+            var hotlist = arrayListOf<Int>(9,3) //사이드 , 콜라
+       
+            fun set_image(binding2 :  FragmentSetmenuBinding){
+                for(i in 0 ..11)
+                {
+                    if(stock[0][i]==0) {
+                        when (i) {
+                            0 -> {
+                                binding2.menu1Img.alpha=1f
+                                binding2.menu1Img.isClickable=true
+                            }
+                            1 -> {
+                                binding2.menu2Img.alpha=1f
+                                binding2.menu2Img.isClickable=true
+                            }
+                            2-> {
+                                binding2.menu3Img.alpha=1f
+                                binding2.menu3Img.isClickable=true
+                            }
+                            3 -> {
+                                binding2.menu4Img.alpha=1f
+                                binding2.menu4Img.isClickable=true
+                            }
+                            4 -> {
+                                binding2.menu5Img.alpha=1f
+                                binding2.menu5Img.isClickable=true
+                            }
+                            5 -> {
+                                binding2.menu6Img.alpha=1f
+                                binding2.menu6Img.isClickable=true
+                            }
+                            6-> {
+                                binding2.menu7Img.alpha=1f
+                                binding2.menu7Img.isClickable=true
+                            }
+                            7 -> {
+                                binding2.menu8Img.alpha=1f
+                                binding2.menu8Img.isClickable=true
+                            }
+                            8 -> {
+                                binding2.menu9Img.alpha=1f
+                                binding2.menu9Img.isClickable=true
+                            }
+                            9 -> {
+                                binding2.menu10Img.alpha=1f
+                                binding2.menu10Img.isClickable=true
+                            }
+                            10-> {
+                                binding2.menu11Img.alpha=1f
+                                binding2.menu11Img.isClickable=true
+                            }
+                            11 -> {
+                                binding2.menu12Img.alpha=1f
+                                binding2.menu12Img.isClickable=true
+                            }
+                        }
+                    }
+                }
+            }
             fun whenSelected(menuOpt : Int,menuNum: Int) {
                 Log.d("option","${menuOpt}, ${menuNum}")
                 selectedAmt[menuOpt][menuNum]++
@@ -130,13 +196,10 @@ open class MainActivity : AppCompatActivity(R.layout.activity_main) {
             var top=0
             var dop=0
             var sop=0
-            fun set_btn(img : ImageView){
-                img.alpha=1f
-                img.isClickable=true
-                }
-            }
         }
     }
+
+}
 
 
 

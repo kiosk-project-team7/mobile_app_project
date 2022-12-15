@@ -39,11 +39,12 @@ import com.example.kioskui.MainActivity.menuInit.Companion.whenDelected
 import androidx.navigation.fragment.findNavController
 import com.example.kioskui.MainActivity.menuInit.Companion.detail_delete
 import com.example.kioskui.MainActivity.menuInit.Companion.dop
-import com.example.kioskui.MainActivity.menuInit.Companion.set_btn
+import com.example.kioskui.MainActivity.menuInit.Companion.set_image
 import com.example.kioskui.MainActivity.menuInit.Companion.sop
 import com.example.kioskui.MainActivity.menuInit.Companion.top
 import com.example.kioskui.MainActivity.menuInit.Companion.total_num
 import com.example.kioskui.MainActivity.menuInit.Companion.whenSelected
+import com.example.kioskui.databinding.FragmentSetmenuBinding
 
 class MyViewHolder(val binding :LayoutItemBinding): ViewHolder(binding.root){
 
@@ -112,14 +113,14 @@ class stepAdapter(private var dataset : MutableList<Itemview>,var binding2 : Fra
                     binding2.priceText.text = total_price.toString()+"원"
                     detail_delete(top,dop,sop)
                     Log.d("업데이트 후 data","${dataset[position]}")
-                    set_btn(viewHolder.menuImageView)
+
                 }
             }
             viewHolder.binding.allDelete.setOnClickListener {
                 var bug_Price = dataset[position].price * dataset[position].number_count.toInt()
                 total_price -= bug_Price
                 dataset[position].total_price-=bug_Price
-                set_btn(viewHolder.menuImageView)
+
                 for(i in 0 until dataset[position].number_count.toInt())
                 {
                     total_num--

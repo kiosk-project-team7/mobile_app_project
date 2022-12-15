@@ -65,7 +65,66 @@ class Manager_set : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 메뉴 사진 누르면 다이얼로그
+        for(i in 0 until 12){
+            Log.d("test","${i}")
+            if(stock[0][i]==0){
+                when(i){
+                    0 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu1Img.alpha = 0.3f
 
+                    }
+                    1 ->{
+                        binding.menu2Img.alpha=0.3f
+
+                    }
+                    2 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu3Img.alpha = 0.3f
+
+                    }
+                    3 ->{
+                        binding.menu4Img.alpha=0.3f
+
+                    }
+                    4 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu5Img.alpha = 0.3f
+
+                    }
+                    5 ->{
+                        binding.menu6Img.alpha=0.3f
+
+                    }
+                    6 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu7Img.alpha = 0.3f
+
+                    }
+                    7 ->{
+                        binding.menu8Img.alpha=0.3f
+
+                    }
+                    8 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu9Img.alpha = 0.3f
+
+                    }
+                    9 ->{
+                        binding.menu10Img.alpha=0.3f
+
+                    }
+                    10 -> {
+                        Log.d("test","재고가 떨어졋습니다:")
+                        binding.menu11Img.alpha = 0.3f
+
+                    }
+                    11 ->{
+                        binding.menu12Img.alpha=0.3f
+                    }
+                }
+            }
+        }
 
 
         binding.menu1Img.setOnClickListener {
