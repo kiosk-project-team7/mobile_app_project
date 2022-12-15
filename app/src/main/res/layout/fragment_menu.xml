@@ -185,7 +185,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_weight="3"
-                    android:text="이전" />
+                    android:text="이전"
+                    android:textSize="40dp" />
 
                 <Button
                     android:id="@+id/comBtn"
@@ -194,7 +195,8 @@
                     android:layout_gravity="bottom"
                     android:layout_weight="4"
                     android:backgroundTint="#FF8787"
-                    android:text="주문" />
+                    android:text="주문"
+                    android:textSize="40dp" />
             </LinearLayout>
         </LinearLayout>
 
